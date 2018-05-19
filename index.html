@@ -2,24 +2,41 @@
 <html>
 <head>
     <title>My personal website</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <style>
-        
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-      <div class="menu" role="navigation">
-          
+    <div class="page-wrapper">
+      <div id="page-menu" role="navigation">
+          <div>
+              <nav>
+                  <a href="">item</a>
+                  <a href="">item</a>
+                  <a href="">item</a>
+              </nav>
+          </div>
       </div>
-       <div class="header" role="banner">
-         <h1>Welcome</h1>  
-       </div>
-        <div class="content" role="main">
-            
+       <header id="page-header" class="masthead" role="banner">
+         <h1>Welcome!!!!</h1>  
+       </header>
+        <div id="page-content" role="main">
+            <section id="aboutme">Hi, i'm a frontend developer who loves web standards</section>
+            <section id="skills">css html javascript</section>
+            <section id="portfolio"></section>
+            <section id="location">
+                Natal, RN, Brazil
+            </section>
         </div>
-        <div class="footer" role="contentinfo">
-            
-        </div>
+        <footer id="page-footer" role="contentinfo">
+            contact
+        </footer>
     </div>
+    <script>
+        windows.addEventListener('load', function() {});
+    </script>
 </body>
 </html>
