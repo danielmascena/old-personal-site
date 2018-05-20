@@ -1,49 +1,95 @@
-<!DOCTYPE html>
 <html>
+<!DOCTYPE html>
 <head>
     <title>My personal website</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
     <style>
+        html, body {
+            height: 100%;
+        }
         body {
             font-family: 'Roboto', sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .page-wrapper {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        #page-menu {
+            background-color: aqua;
+            display: table-header-group;
+        }
+        #page-menu .menu-item{
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+        }
+        #page-header {
+            display: table-row-group;
+            background-color: aliceblue;
+        }
+        .masthead {
+            overflow: auto;
+        }
+        #page-content {
+            display: table;
+            width: 100%;
+            height: 100%;
+            background-color: aquamarine;
+        }
+        .main-content {
+            overflow: auto;
+        }
+        #page-footer {
+            background-color: beige;
+            display: table-footer-group;
+        }
+        #page-footer div {
+            overflow: auto;
         }
     </style>
 </head>
 <body>
     <div class="page-wrapper">
-      <div id="page-menu" role="navigation">
-          <div>
-              <nav>
-                  <a href="">item</a>
-                  <a href="">item</a>
-                  <a href="">item</a>
-              </nav>
-          </div>
-      </div>
-       <header id="page-header" class="masthead" role="banner">
-         <h1>Welcome!!!!</h1>  
-       </header>
+        <div id="page-menu" role="navigation">       
+          <nav>
+              <a href="" class="menu-item">item</a>
+              <a href="" class="menu-item">item</a>
+              <a href="" class="menu-item">item</a>
+          </nav>
+        </div>
+        <div id="page-header" role="banner">
+            <header class="masthead" >
+                <h1>Welcome!!!!</h1>
+            </header>
+        </div>
         <div id="page-content" role="main">
-            <section id="aboutme">
-                <h1>About Me</h1>
-                <div>Hi, i'm a frontend developer who loves web standards</div> 
-            </section>
-            <section id="skills">
-            <h1>Skills</h1>
-            <div>css html javascript</div>
-            </section>
-            <section id="portfolio">
-                <h1>Projects</h1>
-                <div></div>
-            </section>
-            <section id="location">
-                <h1>Where I`m</h1>
-                <div>Natal, RN, Brazil</div>
-                
-            </section>
+           <article class="main-content">
+                <section id="aboutme">
+                    <h1>About Me</h1>
+                    <div>Hi, i'm a frontend developer who loves web standards</div> 
+                </section>
+                <section id="skills">
+                <h1>Skills</h1>
+                <div>css html javascript</div>
+                </section>
+                <section id="portfolio">
+                    <h1>Projects</h1>
+                    <div></div>
+                </section>
+                <section id="location">
+                    <h1>Where I`m</h1>
+                    <div>Natal, RN, Brazil</div>
+                </section>
+            </article>
         </div>
         <footer id="page-footer" role="contentinfo">
-            contact
+           <div>        
+            <h1>Contact</h1>
+           </div>
         </footer>
     </div>
     <script>
