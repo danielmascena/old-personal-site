@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     
     <style>
+    
         :root {
             --cl-bg-menu: red;
         }
@@ -24,8 +25,11 @@
             table-layout: fixed;
         }
         #page-menu {
-           background-color: var(--cl-bg-menu);
-           display: table-header-group;
+            background-color: var(--cl-bg-menu);
+            position: fixed;
+            width: 100%;
+            height: 4rem;
+            box-shadow: 0 0 10px rgba(0,0,0, .5);
         }
         .menu-list {
             list-style: none;
@@ -43,6 +47,7 @@
             display: inline-block;
             color: #fff;
             font-weight: 600;
+            text-transform: uppercase;
         }
         .menu-item::after {
             content: "";
@@ -60,10 +65,15 @@
         }
         #page-header {
             display: table-row-group;
-            background-image: url(http://lorempixel.com/1436/418/);
+        }
+        .header-content {
+            display: table-cell;
+            padding-top: 4rem;
         }
         .masthead {
             overflow: auto;
+            background-image: url(http://lorempixel.com/1436/418/);
+            height: 400px;
         }
         .masthead h1 {
             color: #fff;
@@ -76,6 +86,11 @@
         .main-content {
             overflow: auto;
         }
+        #location {
+            background-image: url(http://lorempixel.com/1436/418/);
+            height: 400px;
+            overflow: auto;
+        }
         #page-footer {
             background-color: aquamarine;
             display: table-footer-group;
@@ -83,38 +98,80 @@
         #page-footer div {
             overflow: auto;
         }
+        
     </style>
 </head>
 <body>
     <div class="page-wrapper">
         <nav id="page-menu" role="navigation">
-            <div class="menu-content">
-                <ul class="menu-list">
-                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                </ul>
-            </div>
             
+            <ul class="menu-list">
+                <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+            </ul>
         </nav>
         <div id="page-header" role="banner">
-            <header class="masthead" >
-                <h1>Welcome!!!!</h1>
-            </header>
+            <div class="header-content">
+                <header class="masthead" >
+                    <h1>Welcome!!!!</h1>
+                </header>
+                
+            </div>
+
         </div>
         <div id="page-content" role="main">
            <div class="main-content">
                 <section id="aboutme">
                     <h1>About Me</h1>
-                    <div>Hi, i'm a frontend developer who loves web standards</div> 
+                    <div><p>Hi, i'm a frontend developer who loves web standards. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                    ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                    dolor in hendrerit in vulputate velit esse molestie consequat,
+                    vel illum dolore eu feugiat nulla facilisis at vero eros et
+                    accumsan et iusto odio dignissim qui blandit praesent luptatum
+                    zzril delenit augue duis dolore te feugait nulla facilisi.
+                    Nam liber tempor cum soluta nobis eleifend option congue
+                    nihil imperdiet doming id quod mazim placerat facer possim
+                    assum. Typi non habent claritatem insitam; est usus legentis
+                    in iis qui facit eorum claritatem.</p></div> 
                 </section>
                 <section id="skills">
                     <h1>Skills</h1>
                     <div>css html javascript</div>
+                    <p>Investigationes
+                    demonstraverunt lectores legere me lius quod ii legunt saepius.
+                    Claritas est etiam processus dynamicus, qui sequitur mutationem
+                    consuetudium lectorum. Mirum est notare quam littera gothica,
+                    quam nunc putamus parum claram, anteposuerit litterarum formas
+                    humanitatis per seacula quarta decima et quinta decima. Eodem
+                    modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+                    in futurum.</p>
                 </section>
                 <section id="portfolio">
                     <h1>Projects</h1>
-                    <div></div>
+                    <div><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                    ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                    dolor in hendrerit in vulputate velit esse molestie consequat,
+                    vel illum dolore eu feugiat nulla facilisis at vero eros et
+                    accumsan et iusto odio dignissim qui blandit praesent luptatum
+                    zzril delenit augue duis dolore te feugait nulla facilisi.
+                    Nam liber tempor cum soluta nobis eleifend option congue
+                    nihil imperdiet doming id quod mazim placerat facer possim
+                    assum. Typi non habent claritatem insitam; est usus legentis
+                    in iis qui facit eorum claritatem. Investigationes
+                    demonstraverunt lectores legere me lius quod ii legunt saepius.
+                    Claritas est etiam processus dynamicus, qui sequitur mutationem
+                    consuetudium lectorum. Mirum est notare quam littera gothica,
+                    quam nunc putamus parum claram, anteposuerit litterarum formas
+                    humanitatis per seacula quarta decima et quinta decima. Eodem
+                    modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+                    in futurum.</p></div>
                 </section>
                 <section id="location">
                     <h1>Where I'm</h1>
