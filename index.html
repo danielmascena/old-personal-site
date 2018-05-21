@@ -1,10 +1,14 @@
 <html>
 <!DOCTYPE html>
 <head>
+    <meta charset="utf-8">
     <title>My personal website</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     
     <style>
+        :root {
+            --cl-bg-menu: red;
+        }
         html, body {
             height: 100%;
         }
@@ -17,15 +21,42 @@
             display: table;
             width: 100%;
             height: 100%;
+            table-layout: fixed;
         }
         #page-menu {
-            background-color: aqua;
-            display: table-header-group;
+           background-color: var(--cl-bg-menu);
+           display: table-header-group;
         }
-        #page-menu .menu-item{
+        .menu-list {
+            list-style: none;
+            float: right;
+            margin-right: 20px;
+            padding: 0;
+        }
+        .menu-list-item {
+            float: left;
+            position: relative;
+        }
+        .menu-item {
             padding: 10px;
-            margin: 10px;
+            text-decoration: none;
             display: inline-block;
+            color: #fff;
+            font-weight: 600;
+        }
+        .menu-item::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: .2;
+            left: 0;
+            top: 0;
+            transition: opacity .2s;
+        }
+        .menu-list-item:hover .menu-item::after {
+            opacity: .3;
         }
         #page-header {
             display: table-row-group;
@@ -33,6 +64,9 @@
         }
         .masthead {
             overflow: auto;
+        }
+        .masthead h1 {
+            color: #fff;
         }
         #page-content {
             display: table;
@@ -53,37 +87,40 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <div id="page-menu" role="navigation">       
-          <nav>
-              <a href="" class="menu-item">item</a>
-              <a href="" class="menu-item">item</a>
-              <a href="" class="menu-item">item</a>
-          </nav>
-        </div>
+        <nav id="page-menu" role="navigation">
+            <div class="menu-content">
+                <ul class="menu-list">
+                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                </ul>
+            </div>
+            
+        </nav>
         <div id="page-header" role="banner">
             <header class="masthead" >
                 <h1>Welcome!!!!</h1>
             </header>
         </div>
         <div id="page-content" role="main">
-           <article class="main-content">
+           <div class="main-content">
                 <section id="aboutme">
                     <h1>About Me</h1>
                     <div>Hi, i'm a frontend developer who loves web standards</div> 
                 </section>
                 <section id="skills">
-                <h1>Skills</h1>
-                <div>css html javascript</div>
+                    <h1>Skills</h1>
+                    <div>css html javascript</div>
                 </section>
                 <section id="portfolio">
                     <h1>Projects</h1>
                     <div></div>
                 </section>
                 <section id="location">
-                    <h1>Where I`m</h1>
+                    <h1>Where I'm</h1>
                     <div>Natal, RN, Brazil</div>
                 </section>
-            </article>
+            </div>
         </div>
         <footer id="page-footer" role="contentinfo">
            <div>        
