@@ -26,21 +26,31 @@
             table-layout: fixed;
         }
         #page-menu {
-            background-color: var(--cl-bg-menu);
             position: fixed;
             width: 100%;
-            height: 4rem;
+            
+        }
+        #page-menu.small .menu-wrapper {
+            height: 3rem;
+            background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0, .5);
         }
-        #page-menu.small {
-            height: 3rem;
-            background-color: beige;
+        .menu-wrapper {
+            display: inline-table;
+            width: 100%;
+            height: 5rem;
+            transition: all .2s;
+            position: absolute;
+        }
+        .menu-content {
+            display: table-cell;
+            vertical-align: middle;
         }
         .menu-list {
             list-style: none;
-            float: right;
-            margin-right: 20px;
+            margin: 0 20px;
             padding: 0;
+            float: right;
         }
         .menu-list-item {
             float: left;
@@ -50,30 +60,15 @@
             padding: 10px;
             text-decoration: none;
             display: inline-block;
-            color: #fff;
             font-weight: 600;
             text-transform: uppercase;
         }
-        .menu-item::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            opacity: .2;
-            left: 0;
-            top: 0;
-            transition: opacity .2s;
-        }
-        .menu-list-item:hover .menu-item::after {
-            opacity: .3;
-        }
+
         #page-header {
             display: table-row-group;
         }
         .header-content {
             display: table-cell;
-            padding-top: 4rem;
         }
         .masthead {
             overflow: auto;
@@ -108,11 +103,15 @@
 <body>
     <div class="page-wrapper">
         <nav id="page-menu" class role="navigation">
-            <ul class="menu-list">
-                <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-            </ul>
+            <div class="menu-wrapper">
+            <div class="menu-content">
+                <ul class="menu-list">
+                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                </ul>
+            </div>
+            </div>
         </nav>
         <div id="page-header" role="banner">
             <div class="header-content">
@@ -142,14 +141,16 @@
                 </section>
                 <section id="skills">
                     <h1>Skills</h1>
-                    <div>
+                    <div style="font-size: 2rem">
                         <i class="fab fa-css3"></i> CSS3 <i class="fab fa-css3-alt"></i> HTML5 
                         <i class="fab fa-html5"></i> JavaScript <i class="fab fa-js"></i> 
                         <i class="fab fa-node-js"></i> <i class="fas fa-code"></i>
                         <i class="fab fa-jsfiddle"></i> <i class="fab fa-codepen"></i>
                         <i class="fab fa-node"></i> <i class="fab fa-github"></i>
                         <i class="fab fa-linkedin"></i> <i class="fab fa-microsoft"></i>
-                        <i class="fas fa-certificate"></i> <i class="fab fa-java"></i>
+                        <i class="fas fa-certificate" style="color: yellow; text-shadow: 0 0 10px black"></i> 
+                        <i class="fab fa-java"></i> <i class="fas fa-heart"></i>
+                        <i class="fas fa-hand-holding-heart"></i>
                     </div>
                     <p>Investigationes
                     demonstraverunt lectores legere me lius quod ii legunt saepius.
