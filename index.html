@@ -1,9 +1,10 @@
-<html>
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <title>My personal website</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     
     <style>
     
@@ -30,6 +31,10 @@
             width: 100%;
             height: 4rem;
             box-shadow: 0 0 10px rgba(0,0,0, .5);
+        }
+        #page-menu.small {
+            height: 3rem;
+            background-color: beige;
         }
         .menu-list {
             list-style: none;
@@ -76,7 +81,6 @@
             height: 400px;
         }
         .masthead h1 {
-            color: #fff;
         }
         #page-content {
             display: table;
@@ -103,8 +107,7 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <nav id="page-menu" role="navigation">
-            
+        <nav id="page-menu" class role="navigation">
             <ul class="menu-list">
                 <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
                 <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
@@ -116,15 +119,14 @@
                 <header class="masthead" >
                     <h1>Welcome!!!!</h1>
                 </header>
-                
             </div>
-
         </div>
         <div id="page-content" role="main">
            <div class="main-content">
                 <section id="aboutme">
                     <h1>About Me</h1>
-                    <div><p>Hi, i'm a frontend developer who loves web standards. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    <div><p>Hi, i'm a frontend developer who loves web standards. 
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
                     magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
                     quis nostrud exerci tation ullamcorper suscipit lobortis nisl
@@ -136,11 +138,19 @@
                     Nam liber tempor cum soluta nobis eleifend option congue
                     nihil imperdiet doming id quod mazim placerat facer possim
                     assum. Typi non habent claritatem insitam; est usus legentis
-                    in iis qui facit eorum claritatem.</p></div> 
+                    in iis qui facit eorum claritatem.</p></div>
                 </section>
                 <section id="skills">
                     <h1>Skills</h1>
-                    <div>css html javascript</div>
+                    <div>
+                        <i class="fab fa-css3"></i> CSS3 <i class="fab fa-css3-alt"></i> HTML5 
+                        <i class="fab fa-html5"></i> JavaScript <i class="fab fa-js"></i> 
+                        <i class="fab fa-node-js"></i> <i class="fas fa-code"></i>
+                        <i class="fab fa-jsfiddle"></i> <i class="fab fa-codepen"></i>
+                        <i class="fab fa-node"></i> <i class="fab fa-github"></i>
+                        <i class="fab fa-linkedin"></i> <i class="fab fa-microsoft"></i>
+                        <i class="fas fa-certificate"></i> <i class="fab fa-java"></i>
+                    </div>
                     <p>Investigationes
                     demonstraverunt lectores legere me lius quod ii legunt saepius.
                     Claritas est etiam processus dynamicus, qui sequitur mutationem
@@ -186,7 +196,29 @@
         </footer>
     </div>
     <script>
-        windows.addEventListener('load', function() {});
+        window.addEventListener('load', function() {
+            var last_known_scroll_position = 0;
+            var ticking = false;
+            
+            function smNavbar(scroll_pos) {
+                var navigation = document.querySelector('#page-menu'), 
+                        heightX = window.scrollY;
+                navigation.classList.toggle('small', (heightX > 200));
+                console.log('ok');
+            }
+            window.addEventListener('scroll', function(e) {
+              last_known_scroll_position = window.scrollY;
+            
+              if (!ticking) {
+                window.requestAnimationFrame(function() {
+                  smNavbar(last_known_scroll_position);
+                  ticking = false;
+                });
+                ticking = true;
+              }
+            });
+            window.scrollTo({top: 500, behavior: "smooth"});
+        }, false);
     </script>
 </body>
 </html>
