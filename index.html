@@ -2,7 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My personal website</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     
@@ -15,25 +19,25 @@
             height: 100%;
         }
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', Helvetica, sans-serif;
             margin: 0;
             box-sizing: border-box;
+            line-height: 1.5;
         }
         .page-wrapper {
             display: table;
             width: 100%;
             height: 100%;
-            table-layout: fixed;
         }
         #page-menu {
             position: fixed;
             width: 100%;
-            
         }
-        #page-menu.small .menu-wrapper {
+        .small .menu-wrapper {
             height: 3rem;
             background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0, .5);
+            /* border-bottom: solid 1px rgba(34,34,34,0.1); */
         }
         .menu-wrapper {
             display: inline-table;
@@ -63,7 +67,6 @@
             font-weight: 600;
             text-transform: uppercase;
         }
-
         #page-header {
             display: table-row-group;
         }
@@ -72,7 +75,7 @@
         }
         .masthead {
             overflow: auto;
-            background-image: url(http://lorempixel.com/1436/418/);
+            background: red url(http://lorempixel.com/1436/418/) no-repeat fixed center top;
             height: 400px;
         }
         .masthead h1 {
@@ -97,6 +100,11 @@
         #page-footer div {
             overflow: auto;
         }
+        .return-arrow {
+            float: right; 
+            border: 0; 
+            background: transparent;
+        }
         
     </style>
 </head>
@@ -104,13 +112,13 @@
     <div class="page-wrapper">
         <nav id="page-menu" class role="navigation">
             <div class="menu-wrapper">
-            <div class="menu-content">
-                <ul class="menu-list">
-                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                    <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                </ul>
-            </div>
+                <div class="menu-content">
+                    <ol class="menu-list">
+                        <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                        <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                        <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                    </ol>
+                </div>
             </div>
         </nav>
         <div id="page-header" role="banner">
@@ -150,7 +158,11 @@
                         <i class="fab fa-linkedin"></i> <i class="fab fa-microsoft"></i>
                         <i class="fas fa-certificate" style="color: yellow; text-shadow: 0 0 10px black"></i> 
                         <i class="fab fa-java"></i> <i class="fas fa-heart"></i>
-                        <i class="fas fa-hand-holding-heart"></i>
+                        <i class="fas fa-hand-holding-heart"></i> <i class="fas fa-mobile-alt"></i>
+                        <i class="fab fa-sass"></i> <i class="fas fa-laptop"></i>
+                        <i class="fab fa-angular"></i> <i class="fab fa-whatsapp"></i>
+                        <i class="fab fa-react"></i> <i class="fab fa-js-square"></i>
+                        <i class="fab fa-linkedin-in"></i>
                     </div>
                     <p>Investigationes
                     demonstraverunt lectores legere me lius quod ii legunt saepius.
@@ -186,13 +198,19 @@
                 </section>
                 <section id="location">
                     <h1>Where I'm</h1>
-                    <div>Natal, RN, Brazil</div>
+                    <div>Natal, RN, Brazil <i class="fas fa-map-marker-alt"></i></div>
                 </section>
             </div>
         </div>
         <footer id="page-footer" role="contentinfo">
            <div>        
-            <h1>Contact</h1>
+            	<p>
+            	    <small>&copy; Copyright Your Name Here 2018. All Rights Reserved.</small> 
+                	<button class="return-arrow" 
+                	    onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
+                	    <i class="fas fa-chevron-up"></i>
+                	</button>
+            	</p>
            </div>
         </footer>
     </div>
@@ -218,8 +236,11 @@
                 ticking = true;
               }
             });
-            window.scrollTo({top: 500, behavior: "smooth"});
+            
         }, false);
     </script>
+    <!--
+    <script>window.jQuery || document.write("<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'>\x3C/script>")</script>
+    -->
 </body>
 </html>
