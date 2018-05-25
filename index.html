@@ -24,12 +24,12 @@
             box-sizing: border-box;
             line-height: 1.5;
         }
-        .page-wrapper {
+        .wrapper-container {
             display: table;
             width: 100%;
             height: 100%;
         }
-        #page-menu {
+        #menu-container {
             position: fixed;
             width: 100%;
         }
@@ -56,31 +56,39 @@
             padding: 0;
             float: right;
         }
-        .menu-list-item {
+        .menu-item {
             float: left;
             position: relative;
         }
-        .menu-item {
+        .menu-link {
             padding: 10px;
             text-decoration: none;
             display: inline-block;
             font-weight: 600;
             text-transform: uppercase;
         }
-        #page-header {
+        .menu-link:hover {
+            transform: scale(1.2);
+        }
+        #header-container {
             display: table-row-group;
         }
-        .header-content {
-            display: table-cell;
-        }
         .masthead {
-            overflow: auto;
-            background: red url(http://lorempixel.com/1436/418/) no-repeat fixed center top;
-            height: 400px;
+            display: table-cell;
+            background: red url(http://lorempixel.com/1436/718/) no-repeat fixed center top;
+            height: 700px;
         }
-        .masthead h1 {
+        .masthead-content {
+           width: 40%;
+           border: 5px solid blue;
+           margin: 200px auto;
+           padding: 30px;
+           background: rgba(255,255,255,.8);
         }
-        #page-content {
+        .masthead-title {
+            text-transform: capitalize;
+        }
+        #main-container {
             display: table;
             width: 100%;
             height: 100%;
@@ -88,17 +96,18 @@
         .main-content {
             overflow: auto;
         }
-        #location {
+        #location-container {
             background-image: url(http://lorempixel.com/1436/418/);
             height: 400px;
             overflow: auto;
         }
-        #page-footer {
+        #footer-container {
             background-color: aquamarine;
             display: table-footer-group;
         }
-        #page-footer div {
+        .footer {
             overflow: auto;
+            padding: 30px 20px;
         }
         .return-arrow {
             float: right; 
@@ -109,108 +118,133 @@
     </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <nav id="page-menu" class role="navigation">
+    <div class="wrapper-container">
+        <nav id="menu-container" class role="navigation">
             <div class="menu-wrapper">
                 <div class="menu-content">
                     <ol class="menu-list">
-                        <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                        <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
-                        <li class="menu-list-item"><a href="" class="menu-item">item</a></li>
+                        <li class="menu-item"><a href="" class="menu-link">item</a></li>
+                        <li class="menu-item"><a href="" class="menu-link">item</a></li>
+                        <li class="menu-item"><a href="" class="menu-link">item</a></li>
                     </ol>
                 </div>
             </div>
         </nav>
-        <div id="page-header" role="banner">
-            <div class="header-content">
-                <header class="masthead" >
-                    <h1>Welcome!!!!</h1>
-                </header>
+        
+        <header id="header-container" role="banner">
+            <div class="masthead">
+                <div class="masthead-content" >
+                    <h1 class="masthead-title">Hi, welcome to my personal website</h1>
+                    <p>My name is Daniel Mascena and I'm a <strong>&lt;frontend &#47;&gt;</strong> developer who loves Web Standards</p>
+                </div>
             </div>
-        </div>
-        <div id="page-content" role="main">
+        </header>
+        
+        <div id="main-container" role="main">
            <div class="main-content">
-                <section id="aboutme">
-                    <h1>About Me</h1>
-                    <div><p>Hi, i'm a frontend developer who loves web standards. 
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                    dolor in hendrerit in vulputate velit esse molestie consequat,
-                    vel illum dolore eu feugiat nulla facilisis at vero eros et
-                    accumsan et iusto odio dignissim qui blandit praesent luptatum
-                    zzril delenit augue duis dolore te feugait nulla facilisi.
-                    Nam liber tempor cum soluta nobis eleifend option congue
-                    nihil imperdiet doming id quod mazim placerat facer possim
-                    assum. Typi non habent claritatem insitam; est usus legentis
-                    in iis qui facit eorum claritatem.</p></div>
-                </section>
-                <section id="skills">
-                    <h1>Skills</h1>
-                    <div style="font-size: 2rem">
-                        <i class="fab fa-css3"></i> CSS3 <i class="fab fa-css3-alt"></i> HTML5 
-                        <i class="fab fa-html5"></i> JavaScript <i class="fab fa-js"></i> 
-                        <i class="fab fa-node-js"></i> <i class="fas fa-code"></i>
-                        <i class="fab fa-jsfiddle"></i> <i class="fab fa-codepen"></i>
-                        <i class="fab fa-node"></i> <i class="fab fa-github"></i>
-                        <i class="fab fa-linkedin"></i> <i class="fab fa-microsoft"></i>
-                        <i class="fas fa-certificate" style="color: yellow; text-shadow: 0 0 10px black"></i> 
-                        <i class="fab fa-java"></i> <i class="fas fa-heart"></i>
-                        <i class="fas fa-hand-holding-heart"></i> <i class="fas fa-mobile-alt"></i>
-                        <i class="fab fa-sass"></i> <i class="fas fa-laptop"></i>
-                        <i class="fab fa-angular"></i> <i class="fab fa-whatsapp"></i>
-                        <i class="fab fa-react"></i> <i class="fab fa-js-square"></i>
-                        <i class="fab fa-linkedin-in"></i>
+                <section id="aboutme-container">
+                    <div class="aboutme">
+                        <div class="aboutme-content">
+                            <h1>About Me</h1>
+                            <p>Hi, i'm a frontend developer who loves web standards. 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                            quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                            dolor in hendrerit in vulputate velit esse molestie consequat,
+                            vel illum dolore eu feugiat nulla facilisis at vero eros et
+                            accumsan et iusto odio dignissim qui blandit praesent luptatum
+                            zzril delenit augue duis dolore te feugait nulla facilisi.
+                            Nam liber tempor cum soluta nobis eleifend option congue
+                            nihil imperdiet doming id quod mazim placerat facer possim
+                            assum. Typi non habent claritatem insitam; est usus legentis
+                            in iis qui facit eorum claritatem.</p>
+                        </div>
                     </div>
-                    <p>Investigationes
-                    demonstraverunt lectores legere me lius quod ii legunt saepius.
-                    Claritas est etiam processus dynamicus, qui sequitur mutationem
-                    consuetudium lectorum. Mirum est notare quam littera gothica,
-                    quam nunc putamus parum claram, anteposuerit litterarum formas
-                    humanitatis per seacula quarta decima et quinta decima. Eodem
-                    modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
-                    in futurum.</p>
                 </section>
-                <section id="portfolio">
-                    <h1>Projects</h1>
-                    <div><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                    dolor in hendrerit in vulputate velit esse molestie consequat,
-                    vel illum dolore eu feugiat nulla facilisis at vero eros et
-                    accumsan et iusto odio dignissim qui blandit praesent luptatum
-                    zzril delenit augue duis dolore te feugait nulla facilisi.
-                    Nam liber tempor cum soluta nobis eleifend option congue
-                    nihil imperdiet doming id quod mazim placerat facer possim
-                    assum. Typi non habent claritatem insitam; est usus legentis
-                    in iis qui facit eorum claritatem. Investigationes
-                    demonstraverunt lectores legere me lius quod ii legunt saepius.
-                    Claritas est etiam processus dynamicus, qui sequitur mutationem
-                    consuetudium lectorum. Mirum est notare quam littera gothica,
-                    quam nunc putamus parum claram, anteposuerit litterarum formas
-                    humanitatis per seacula quarta decima et quinta decima. Eodem
-                    modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
-                    in futurum.</p></div>
+                
+                <section id="skills-container">
+                    <div class="skills">
+                        <div class="skills-content">
+                            <h1>Skills</h1>
+                            <div style="font-size: 2rem">
+                                <i class="fab fa-css3"></i> 
+                                <i class="fab fa-css3-alt"></i> 
+                                <i class="fab fa-html5"></i> 
+                                <i class="fab fa-js"></i> 
+                                <i class="fab fa-js-square"></i>
+                                <i class="fab fa-node-js"></i> 
+                                <i class="fab fa-node"></i> 
+                                <i class="fab fa-microsoft"></i> 
+                                <i class="fas fa-mobile-alt"></i>
+                                <i class="fas fa-certificate" style="color: yellow; text-shadow: 0 0 10px black"></i> 
+                                <i class="fab fa-java"></i> 
+                                <i class="fas fa-code"></i>
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-hand-holding-heart"></i> 
+                                <i class="fab fa-sass"></i> 
+                                <i class="fas fa-laptop"></i>
+                                <i class="fab fa-angular"></i> 
+                                <i class="fab fa-react"></i> 
+                                
+                            </div>
+                            <p>Investigationes
+                            demonstraverunt lectores legere me lius quod ii legunt saepius.
+                            Claritas est etiam processus dynamicus, qui sequitur mutationem
+                            consuetudium lectorum. Mirum est notare quam littera gothica,
+                            quam nunc putamus parum claram, anteposuerit litterarum formas
+                            humanitatis per seacula quarta decima et quinta decima. Eodem
+                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+                            in futurum.</p>
+                        </div>
+                    </div>
                 </section>
-                <section id="location">
+                <section id="portfolio-container">
+                    <div class="portfolio">
+                        <div class="portfolio-content">
+                            <h1>Projects</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                            quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                            dolor in hendrerit in vulputate velit esse molestie consequat,
+                            vel illum dolore eu feugiat nulla facilisis at vero eros et
+                            accumsan et iusto odio dignissim qui blandit praesent luptatum
+                            zzril delenit augue duis dolore te feugait nulla facilisi.
+                            Nam liber tempor cum soluta nobis eleifend option congue
+                            nihil imperdiet doming id quod mazim placerat facer possim
+                            assum. Typi non habent claritatem insitam; est usus legentis
+                            in iis qui facit eorum claritatem. Investigationes
+                            demonstraverunt lectores legere me lius quod ii legunt saepius.
+                            Claritas est etiam processus dynamicus, qui sequitur mutationem
+                            consuetudium lectorum. Mirum est notare quam littera gothica,
+                            quam nunc putamus parum claram, anteposuerit litterarum formas
+                            humanitatis per seacula quarta decima et quinta decima. Eodem
+                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+                            in futurum.</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="location-container">
                     <h1>Where I'm</h1>
                     <div>Natal, RN, Brazil <i class="fas fa-map-marker-alt"></i></div>
                 </section>
             </div>
         </div>
-        <footer id="page-footer" role="contentinfo">
-           <div>        
-            	<p>
-            	    <small>&copy; Copyright Your Name Here 2018. All Rights Reserved.</small> 
+        <footer id="footer-container" role="contentinfo">
+           <div class="footer">  
+            	<div class="footer-content">
+            	    <small>&copy; Copyright Your Name Here 2018. All Rights Reserved.</small>
+            	    <i class="fab fa-whatsapp"></i> <i class="fab fa-linkedin"></i>
+            	    <i class="fab fa-jsfiddle"></i> <i class="fab fa-codepen"></i>
+            	    <i class="fab fa-github"></i>
                 	<button class="return-arrow" 
                 	    onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
                 	    <i class="fas fa-chevron-up"></i>
                 	</button>
-            	</p>
+            	</div>
            </div>
         </footer>
     </div>
@@ -220,10 +254,9 @@
             var ticking = false;
             
             function smNavbar(scroll_pos) {
-                var navigation = document.querySelector('#page-menu'), 
+                var navigation = document.querySelector('#menu-container'), 
                         heightX = window.scrollY;
                 navigation.classList.toggle('small', (heightX > 200));
-                console.log('ok');
             }
             window.addEventListener('scroll', function(e) {
               last_known_scroll_position = window.scrollY;
@@ -236,7 +269,6 @@
                 ticking = true;
               }
             });
-            
         }, false);
     </script>
     <!--
