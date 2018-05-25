@@ -33,18 +33,18 @@
             position: fixed;
             width: 100%;
         }
-        .small .menu-wrapper {
-            height: 3rem;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0, .5);
-            /* border-bottom: solid 1px rgba(34,34,34,0.1); */
-        }
-        .menu-wrapper {
+        .menu {
             display: inline-table;
             width: 100%;
             height: 5rem;
             transition: all .2s;
             position: absolute;
+        }
+        .menu.small {
+            height: 3rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0, .5);
+            /* border-bottom: solid 1px rgba(34,34,34,0.1); */
         }
         .menu-content {
             display: table-cell;
@@ -75,13 +75,13 @@
         }
         .masthead {
             display: table-cell;
-            background: red url(http://lorempixel.com/1436/718/) no-repeat fixed center top;
-            height: 700px;
+            background: red url(http://lorempixel.com/1436/618/) no-repeat fixed center top;
+            height: 600px;
         }
         .masthead-content {
            width: 40%;
-           border: 5px solid blue;
-           margin: 200px auto;
+           border: 5px solid black;
+           margin: 200px auto 100px;
            padding: 30px;
            background: rgba(255,255,255,.8);
         }
@@ -119,30 +119,30 @@
 </head>
 <body>
     <div class="wrapper-container">
-        <nav id="menu-container" class role="navigation">
-            <div class="menu-wrapper">
-                <div class="menu-content">
+        <div id="menu-container" class="container">
+            <div class="menu">
+                <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
                         <li class="menu-item"><a href="" class="menu-link">item</a></li>
                         <li class="menu-item"><a href="" class="menu-link">item</a></li>
                         <li class="menu-item"><a href="" class="menu-link">item</a></li>
                     </ol>
-                </div>
+                </nav>
             </div>
-        </nav>
+        </div>
         
-        <header id="header-container" role="banner">
+        <div id="header-container" class="container">
             <div class="masthead">
-                <div class="masthead-content" >
+                <header class="masthead-content" role="banner">
                     <h1 class="masthead-title">Hi, welcome to my personal website</h1>
                     <p>My name is Daniel Mascena and I'm a <strong>&lt;frontend &#47;&gt;</strong> developer who loves Web Standards</p>
-                </div>
+                </header>
             </div>
-        </header>
+        </div>
         
-        <div id="main-container" role="main">
+        <div id="main-container" class="container" role="main">
            <div class="main-content">
-                <section id="aboutme-container">
+                <section id="aboutme-container" class="container">
                     <div class="aboutme">
                         <div class="aboutme-content">
                             <h1>About Me</h1>
@@ -164,7 +164,7 @@
                     </div>
                 </section>
                 
-                <section id="skills-container">
+                <section id="skills-container" class="container">
                     <div class="skills">
                         <div class="skills-content">
                             <h1>Skills</h1>
@@ -200,7 +200,7 @@
                         </div>
                     </div>
                 </section>
-                <section id="portfolio-container">
+                <section id="portfolio-container" class="container">
                     <div class="portfolio">
                         <div class="portfolio-content">
                             <h1>Projects</h1>
@@ -227,13 +227,13 @@
                         </div>
                     </div>
                 </section>
-                <section id="location-container">
+                <section id="location-container" class="container">
                     <h1>Where I'm</h1>
                     <div>Natal, RN, Brazil <i class="fas fa-map-marker-alt"></i></div>
                 </section>
             </div>
         </div>
-        <footer id="footer-container" role="contentinfo">
+        <footer id="footer-container" class="container" role="contentinfo">
            <div class="footer">  
             	<div class="footer-content">
             	    <small>&copy; Copyright Your Name Here 2018. All Rights Reserved.</small>
@@ -254,7 +254,7 @@
             var ticking = false;
             
             function smNavbar(scroll_pos) {
-                var navigation = document.querySelector('#menu-container'), 
+                var navigation = document.querySelector('.menu'), 
                         heightX = window.scrollY;
                 navigation.classList.toggle('small', (heightX > 200));
             }
