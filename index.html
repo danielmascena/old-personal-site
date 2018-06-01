@@ -15,9 +15,7 @@
         :root {
             --cl-bg-menu: red;
         }
-        html, body {
-            height: 100%;
-        }
+  
         body {
             font-family: 'Roboto', Helvetica, sans-serif;
             margin: 0;
@@ -25,32 +23,30 @@
             line-height: 1.5;
         }
         .container {
+            
         }
         #wrapper-container {
-            display: table;
-            width: 100%;
-            height: 100%;
+
         }
-        #menu-container {
+        #main-menu {
             position: fixed;
             width: 100%;
+            height: 5rem;
+            line-height: 5rem;
+            transition: all .2s;
+        }
+        #main-menu.small {
+            height: 3rem;
         }
         .menu {
-            display: inline-table;
-            width: 100%;
-            height: 5rem;
-            transition: all .2s;
-            position: absolute;
+            
         }
-        .menu.small {
-            height: 3rem;
+        .menu .small {
             background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0, .5);
             /* border-bottom: solid 1px rgba(34,34,34,0.1); */
         }
         .menu-content {
-            display: table-cell;
-            vertical-align: middle;
         }
         .menu-list {
             list-style: none;
@@ -59,13 +55,12 @@
             float: right;
         }
         .menu-item {
+            padding: 10px;
             float: left;
             position: relative;
         }
         .menu-link {
-            padding: 10px;
             text-decoration: none;
-            display: inline-block;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -73,10 +68,8 @@
             transform: scale(1.2);
         }
         #header-container {
-            display: table-row-group;
         }
         .masthead {
-            display: table-cell;
             background: red url(http://lorempixel.com/1436/618/) no-repeat fixed center top;
             height: 600px;
         }
@@ -91,24 +84,17 @@
             text-transform: capitalize;
         }
         #main-container {
-            display: table;
-            width: 100%;
-            height: 100%;
         }
         .main-content {
-            overflow: auto;
         }
         #location-container {
             background-image: url(http://lorempixel.com/1436/418/);
             height: 400px;
-            overflow: auto;
         }
         #footer-container {
             background-color: aquamarine;
-            display: table-footer-group;
         }
         .footer {
-            overflow: auto;
             padding: 30px 20px;
         }
         .return-arrow {
@@ -120,8 +106,8 @@
     </style>
 </head>
 <body>
-    <div id="wrapper-container" class="container" >
-        <div id="menu-container" class="container">
+    <div id="wrapper-container" class="container">
+        <div id="main-menu" class="container">
             <div class="menu">
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
@@ -256,7 +242,7 @@
             var ticking = false;
             
             function smNavbar(scroll_pos) {
-                var navigation = document.querySelector('.menu'), 
+                var navigation = document.querySelector('#main-menu'), 
                         heightX = window.scrollY;
                 navigation.classList.toggle('small', (heightX > 200));
             }
