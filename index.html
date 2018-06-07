@@ -43,6 +43,7 @@
             list-style: none;
             margin: 0 2.5%;
             padding: 0;
+            display: flex;
             float: right;
         }
         .menu-item {
@@ -60,9 +61,7 @@
         .menu-link:hover {
             color: black;
         }
-        .small .menu-link {
-            color: #737373;
-        }
+
         #page-header {
             background: red url(http://lorempixel.com/1436/618/) no-repeat fixed center top;
             height: 600px;
@@ -98,11 +97,26 @@
             width: 80%;
             margin: 100px auto 120px;
         }
+        .container:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .testimonial-heading {
+            margin-bottom: 100px;
+        }
+        .testimonial {
+            float: left;
+            width: 48%;
+        }
+        .testimonial:first-of-type {
+            padding-right: 4%;
+        }
         .testimonial-avatar {
-            width: 100px;
+            width: 60px;
             border-radius: 50%;
         }
-        #location-container {
+        #location-section {
             background-image: url(http://lorempixel.com/1436/418/);
             height: 400px;
         }
@@ -123,7 +137,7 @@
 <body role="document">
     <div id="page-container">
         <nav id="page-menu" class="main-menu" role="navigation">
-            <ol class="menu-list" role=>
+            <ol class="menu-list">
                 <li class="menu-item"><a href="" class="menu-link">item</a></li>
                 <li class="menu-item"><a href="" class="menu-link">item</a></li>
                 <li class="menu-item"><a href="" class="menu-link">item</a></li>
@@ -196,7 +210,9 @@
                     quis nostrud exerci tation ullamcorper suscipit lobortis nisl
                     ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
                     dolor in hendrerit in vulputate velit esse molestie consequat,
-                    vel illum dolore eu feugiat nulla facilisis at vero eros et
+                    vel illum dolore eu feugiat nulla f
+            display: flex;
+            flex-direction: column;acilisis at vero eros et
                     accumsan et iusto odio dignissim qui blandit praesent luptatum
                     zzril delenit augue duis dolore te feugait nulla facilisi.
                     Nam liber tempor cum soluta nobis eleifend option congue
@@ -214,8 +230,8 @@
             </section>
             
             <aside id="testimonial-section" role="complementary">
-                <div class="container">
-                    <h2>Testimonials</h2>
+                <section class="container">
+                    <h2 class="testimonial-heading">Testimonials</h2>
                     <div class="testimonial">
                          <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h3>
                         <p>Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
@@ -231,7 +247,7 @@
     Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
     For me it's a privilegie work together with professionals like him. <date>April 5, 2017</date></p>
                     </div>
-                </div>
+                </section>
             </aside>
             
             <section id="location-section" role="region">
