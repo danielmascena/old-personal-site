@@ -66,7 +66,7 @@
         }
 
         #page-header {
-            background: red url(http://lorempixel.com/1436/618/) no-repeat fixed center top;
+            background: red url(http://lorempixel.com/1920/618/) no-repeat fixed center top;
             height: 600px;
             text-align: center;
         }
@@ -109,12 +109,12 @@
         }
         #testimonial-section {
             position: relative;
-            
         }
         .play-button {
             width: 50px;
             height: 50px;
-            background-color: navy;
+            background-color: red;
+            transform: background-color .2s ease;
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -130,7 +130,7 @@
             height: 100%;
         }
         .play-button:active {
-            animation: animatingButton .2s ease-in .5s;
+            bottom: -10px;
         }
         [class*='fa-p'] {
             vertical-align: middle;
@@ -150,13 +150,18 @@
             opacity: 0;
         }
         
-        .hidden-checkbox:checked + .testimonial-container {
+        .hidden-checkbox:checked + .testimonial-container>.testimonial-content {
             animation-play-state: paused;
         }
+        .hidden-checkbox:checked + .testimonial-container>.play-button {
+            background-color: green;
+        }
         .testimonial-container {
+           padding-bottom: 100px;
+        }
+        .testimonial-content {
             width: 200vw;
             animation: switchingTestimonial 7s ease 2s infinite running;
-            padding-bottom: 100px;
         }
         .testimonial {
             float: left;
@@ -320,26 +325,30 @@
             
             <aside id="testimonial-section" role="complementary">
                 <h2 class="testimonial-heading">Testimonials</h2>
-                <a class="play-button">
-                    <i class="fas fa-play"></i>
-                    <i class="fas fa-pause"></i>
-                </a>
+                
                 <input type="checkbox" class="hidden-checkbox">
                 <div class="testimonial-container">
-                    <div class="testimonial">
-                        <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h3>
-                        <p>Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
-    When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
-    After about a year of hard work we did it! We impacted for better the lives of millions of Brazilian who depends on these systems to receive benefits from Brazilian government and I'm really proud of the work we did and the team we built.
-    Now (2017) he is leading the frontend development team and is working hard to master new technologies (like React and React Native), so we can teach it to other teams to help them modernize our frontend stack and help business to archive their needs faster.
-    I really believe that Daniel can be a great team member and will make the different in any team he joins. <date>April 17, 2017</date></p>
+                    <div class="testimonial-content">
+                        <div class="testimonial">
+                            <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h3>
+                            <p>Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
+        When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
+        After about a year of hard work we did it! We impacted for better the lives of millions of Brazilian who depends on these systems to receive benefits from Brazilian government and I'm really proud of the work we did and the team we built.
+        Now (2017) he is leading the frontend development team and is working hard to master new technologies (like React and React Native), so we can teach it to other teams to help them modernize our frontend stack and help business to archive their needs faster.
+        I really believe that Daniel can be a great team member and will make the different in any team he joins. <date>April 17, 2017</date></p>
+                        </div>
+                        <div class="testimonial">
+                            <h3> <img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h3>
+                            <p>If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
+        In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
+        Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
+        For me it's a privilegie work together with professionals like him. <date>April 5, 2017</date></p>
+                        </div>
                     </div>
-                    <div class="testimonial">
-                        <h3> <img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h3>
-                        <p>If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
-    In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
-    Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
-    For me it's a privilegie work together with professionals like him. <date>April 5, 2017</date></p>
+                    
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                        <i class="fas fa-pause"></i>
                     </div>
                 </div>
             </aside>
