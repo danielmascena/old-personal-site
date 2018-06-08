@@ -107,10 +107,56 @@
             display: table;
             clear: both;
         }
-
+        #testimonial-section {
+            position: relative;
+            
+        }
+        .play-button {
+            width: 50px;
+            height: 50px;
+            background-color: navy;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            border-radius: 50%;
+            text-align: center;
+            border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+        }
+        .play-button:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .play-button:active {
+            animation: animatingButton .2s ease-in .5s;
+        }
+        [class*='fa-p'] {
+            vertical-align: middle;
+            color: white;
+        }
+        .hidden-checkbox {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 10;
+            bottom: 0;
+            left: 50%;
+            margin: 0;
+            padding: 0;
+            line-height: 30px;
+            text-align: center;
+            opacity: 0;
+        }
+        
+        .hidden-checkbox:checked + .testimonial-container {
+            animation-play-state: paused;
+        }
         .testimonial-container {
             width: 200vw;
-            animation: switchingTestimonial 7s ease 2s infinite;
+            animation: switchingTestimonial 7s ease 2s infinite running;
+            padding-bottom: 100px;
         }
         .testimonial {
             float: left;
@@ -164,7 +210,14 @@
             }
         }
        
-        
+        @keyframes animatingButton {
+            40% {
+                background-color: green;
+            }
+            80% {
+                background-color: black;
+            }
+        }
     </style>
 </head>
 <body role="document">
@@ -267,6 +320,11 @@
             
             <aside id="testimonial-section" role="complementary">
                 <h2 class="testimonial-heading">Testimonials</h2>
+                <a class="play-button">
+                    <i class="fas fa-play"></i>
+                    <i class="fas fa-pause"></i>
+                </a>
+                <input type="checkbox" class="hidden-checkbox">
                 <div class="testimonial-container">
                     <div class="testimonial">
                         <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h3>
