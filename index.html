@@ -16,7 +16,6 @@
             --cl-bg-menu: red;
             -webkit-font-smoothing: antialiased;
         }
-  
         body {
             font-family: 'Roboto', Helvetica, sans-serif;
             margin: 0;
@@ -27,7 +26,6 @@
             background: white;
             overflow-x: hidden;
         }
-
         #page-menu {
             position: fixed;
             z-index: 10;
@@ -42,7 +40,6 @@
             background-color: #fefefe;
             border-bottom: solid 1px rgba(34,34,34,0.1);
         }
-
         .menu-list {
             list-style: none;
             margin: 0 2.5%;
@@ -64,7 +61,6 @@
         .menu-link:hover {
             color: black;
         }
-
         #page-header {
             background: red url(http://lorempixel.com/1920/618/) no-repeat fixed center top;
             height: 600px;
@@ -77,29 +73,27 @@
         	height: 100%;
         }
         .masthead-content {
-           margin-top: 5rem;
-           width: 50%;
-           box-shadow: 0 0 10px rgba(0,0,0, .5);
-           display: inline-block;
-           vertical-align: middle;
-           background: rgba(255,255,255,.8);
-           text-align: left;
-           padding: 2rem;
+            margin-top: 5rem;
+            width: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0, .5);
+            display: inline-block;
+            vertical-align: middle;
+            background: rgba(255,255,255,.8);
+            text-align: left;
+            padding: 2rem;
         }
         .masthead-title {
             padding-top: 4rem;
             text-transform: capitalize;
             font-size: 2rem;
         }
-        .masthead-content p {
+        .masthead-intro {
             padding-bottom: 4rem;
-        }
-        #page-content {
         }
         .container,
         .testimonial-heading {
             width: 80%;
-            margin: 100px auto 120px;
+            margin: 100px auto 50px;
         }
         .container:after, 
         .testimonial-container:after {
@@ -114,14 +108,14 @@
             width: 50px;
             height: 50px;
             background-color: red;
-            transform: background-color .2s ease;
+            transition: background-color .2s ease;
             position: absolute;
             bottom: 0;
             left: 50%;
             border-radius: 50%;
             text-align: center;
             border: none;
-            box-shadow: 0 0 10px rgba(0,0,0,.5);
+            box-shadow: 0 0 5px rgba(0,0,0,.5);
         }
         .play-button:after {
             content: "";
@@ -129,10 +123,7 @@
             vertical-align: middle;
             height: 100%;
         }
-        .play-button:active {
-            bottom: -10px;
-        }
-        [class*='fa-p'] {
+        .play-pause-icons {
             vertical-align: middle;
             color: white;
         }
@@ -149,7 +140,6 @@
             text-align: center;
             opacity: 0;
         }
-        
         .hidden-checkbox:checked + .testimonial-container>.testimonial-content {
             animation-play-state: paused;
         }
@@ -157,19 +147,20 @@
             background-color: green;
         }
         .testimonial-container {
-           padding-bottom: 100px;
+            padding-bottom: 50px;
         }
         .testimonial-content {
+            padding: 20px 5% 30px;
             width: 200vw;
             animation: switchingTestimonial 7s ease 2s infinite running;
         }
         .testimonial {
-            float: left;
-            width: 40%;
-            padding: 0 5% 30px;
+            display: inline-block;
+            width: 30%;
+            padding: 0 9.5% 30px;
             text-align: justify;
+            vertical-align: middle;
         }
-
         .testimonial-avatar {
             width: 60px;
             border-radius: 50%;
@@ -214,7 +205,6 @@
                 transform: translateX(0%);
             }
         }
-       
         @keyframes animatingButton {
             40% {
                 background-color: green;
@@ -241,7 +231,7 @@
         <header id="page-header" class="masthead" role="banner">
             <div class="masthead-content">
                 <h1 class="masthead-title">Hi, welcome to my personal website</h1>
-                <p>My name is Daniel Mascena and I'm a <strong>&lt;frontend &#47;&gt;</strong> developer who loves Web Standards</p>
+                <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;frontend &#47;&gt;</strong> developer who loves Web Standards</p>
             </div>
         </header>
         
@@ -324,31 +314,33 @@
             </section>
             
             <aside id="testimonial-section" role="complementary">
-                <h2 class="testimonial-heading">Testimonials</h2>
+                <h2 class="testimonial-heading">Testimonials <small>(from my LinkedIn Profile)</small></h2>
                 
                 <input type="checkbox" class="hidden-checkbox">
                 <div class="testimonial-container">
                     <div class="testimonial-content">
                         <div class="testimonial">
                             <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h3>
+                            <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
                             <p>Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
         When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
         After about a year of hard work we did it! We impacted for better the lives of millions of Brazilian who depends on these systems to receive benefits from Brazilian government and I'm really proud of the work we did and the team we built.
         Now (2017) he is leading the frontend development team and is working hard to master new technologies (like React and React Native), so we can teach it to other teams to help them modernize our frontend stack and help business to archive their needs faster.
-        I really believe that Daniel can be a great team member and will make the different in any team he joins. <date>April 17, 2017</date></p>
+        I really believe that Daniel can be a great team member and will make the different in any team he joins.</p>
                         </div>
                         <div class="testimonial">
-                            <h3> <img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h3>
+                            <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h3>
+                            <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
                             <p>If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
         In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
         Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
-        For me it's a privilegie work together with professionals like him. <date>April 5, 2017</date></p>
+        For me it's a privilegie work together with professionals like him.</p>
                         </div>
                     </div>
                     
                     <div class="play-button">
-                        <i class="fas fa-play"></i>
-                        <i class="fas fa-pause"></i>
+                        <i class="fas fa-play play-pause-icons"></i>
+                        <i class="fas fa-pause play-pause-icons"></i>
                     </div>
                 </div>
             </aside>
@@ -363,7 +355,7 @@
         <footer id="page-footer"class="footer" role="contentinfo">  
     	    <small>&copy; Copyright Daniel Mascena 2018. All Rights Reserved.</small>
     	    <i class="fab fa-whatsapp"></i>
-    	    <i class="fab fa-linkedin"></i>
+    	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
     	    <i class="fab fa-jsfiddle"></i>
     	    <i class="fab fa-codepen"></i>
     	    <i class="fab fa-github"></i>
