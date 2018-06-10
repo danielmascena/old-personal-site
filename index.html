@@ -147,23 +147,33 @@
             background-color: green;
         }
         .testimonial-container {
-            padding-bottom: 50px;
+            padding-bottom: 20px;
         }
         .testimonial-content {
-            padding: 20px 5% 30px;
+            padding: 0px 5% 30px;
             width: 200vw;
+            font-size: 0;
             animation: switchingTestimonial 7s ease 2s infinite running;
         }
         .testimonial {
             display: inline-block;
-            width: 30%;
-            padding: 0 9.5% 30px;
+            width: 40%;
+            padding: 0 5% 30px;
             text-align: justify;
             vertical-align: middle;
+        }
+        .testimonial h4 {
+        	font-size: 1.1rem;
+        }
+        .testimonial h5 {
+        	font-size: .9rem;
         }
         .testimonial-avatar {
             width: 60px;
             border-radius: 50%;
+        }
+        .testimonial-post {
+        	font-size: .7rem;
         }
         #location-section {
             background-image: url(http://lorempixel.com/1436/418/);
@@ -226,7 +236,6 @@
         </ol>
     </nav>
     <div id="page-container">
-        
 
         <header id="page-header" class="masthead" role="banner">
             <div class="masthead-content">
@@ -314,24 +323,24 @@
             </section>
             
             <aside id="testimonial-section" role="complementary">
-                <h2 class="testimonial-heading">Testimonials <small>(from my LinkedIn Profile)</small></h2>
+                <h2 class="testimonial-heading">Testimonials</h2>
                 
                 <input type="checkbox" class="hidden-checkbox">
                 <div class="testimonial-container">
                     <div class="testimonial-content">
                         <div class="testimonial">
-                            <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h3>
+                            <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
                             <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
-                            <p>Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
+                            <p class="testimonial-post" >Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
         When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
         After about a year of hard work we did it! We impacted for better the lives of millions of Brazilian who depends on these systems to receive benefits from Brazilian government and I'm really proud of the work we did and the team we built.
         Now (2017) he is leading the frontend development team and is working hard to master new technologies (like React and React Native), so we can teach it to other teams to help them modernize our frontend stack and help business to archive their needs faster.
         I really believe that Daniel can be a great team member and will make the different in any team he joins.</p>
                         </div>
                         <div class="testimonial">
-                            <h3><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h3>
+                            <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
                             <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
-                            <p>If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
+                            <p class="testimonial-post" >If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
         In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
         Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
         For me it's a privilegie work together with professionals like him.</p>
