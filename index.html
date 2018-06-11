@@ -26,61 +26,85 @@
             background: white;
             overflow-x: hidden;
         }
-        * {
-        	outline: solid 1px;
+        .btn-burger {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            width: 16px;
+            height: 16px;
+        }
+        .btn-burger input {
+            opacity: 0;
+            width: 16px;
+            position: absolute;
+        }
+        .btn-burger .icons .fa-times {
+            display: none;
+        }
+        .btn-burger input:checked ~ .icons>.fa-times {
+            display: inline-block;
+        }
+        .btn-burger input:checked ~ .icons>.fa-bars {
+            display: none;
         }
         #page-menu {
-        	position:fixed;
+        	position: fixed;
+        	display: none;
+        	z-index: 10;
+        	width: 100%;
+        	background-color: #eee;
+        	box-shadow: 0 0 10px rgba(0,0,0, .5);
         }
-        
         .menu-list {
         	list-style: none;
-        	padding:0;
-        	margin:0;
-        	text-align:center;
-        }
-        
-        .menu-link {
-        	display:inline-block;
-        	width:100%;
-        }
-        
-        @media screen and (min-width: 620px) {
-        
-        #page-menu {
-            position: fixed;
-            z-index: 10;
-            width: 100%;
-            height: 6rem;
-            line-height: 6rem;
-            transition: all .2s;
-        }
-        #page-menu.small {
-            height: 3rem;
-            line-height: 3rem;
-            background-color: #fefefe;
-            border-bottom: solid 1px rgba(34,34,34,0.1);
-        }
-        .menu-list {
-            margin: 0 2.5%;
-            padding: 0;
-            text-align: center;
+        	padding: 0;
+        	margin: 0;
         }
         .menu-item {
-            margin-right: 30px;
-            display: inline;
+            line-height: 3rem;
+            padding-left: 10px;
         }
         .menu-link {
-            letter-spacing: 2px;
-            text-decoration: none;
+        	text-decoration: none;
+        	letter-spacing: 2px;
             font-weight: 600;
             color: #303030;
             text-transform: uppercase;
             transition:  color .4s linear;
         }
-        .menu-link:hover {
-            color: black;
-        }
+        
+        @media screen and (min-width: 701px) {
+        
+            #page-menu {
+                display: block;
+                height: 6rem;
+                line-height: 6rem;
+                transition: all .2s;
+                background-color: transparent;
+                box-shadow: none;
+            }
+            #page-menu.small {
+                height: 3rem;
+                line-height: 3rem;
+                background-color: #fefefe;
+                border-bottom: solid 1px rgba(34,34,34,0.1);
+            }
+            .menu-list {
+                margin: 0 2.5%;
+                padding: 0;
+                text-align: center;
+            }
+            .menu-item {
+                margin-right: 20px;
+                display: inline-block;
+            }
+            .menu-link {
+                
+            }
+            .menu-link:hover {
+                color: black;
+            }
         }
         #page-header {
             background: red url(http://lorempixel.com/1920/618/) no-repeat fixed center top;
@@ -125,7 +149,7 @@
         #testimonial-section {
             position: relative;
         }
-        .play-button {
+        .play-btn {
             width: 50px;
             height: 50px;
             background-color: red;
@@ -138,7 +162,7 @@
             border: none;
             box-shadow: 0 0 5px rgba(0,0,0,.5);
         }
-        .play-button:after {
+        .play-btn:after {
             content: "";
             display: inline-block;
             vertical-align: middle;
@@ -247,7 +271,15 @@
     </style>
 </head>
 <body role="document">
+    <div class="btn-burger">
+        <input type="checkbox">
+        <div class="icons">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
     <nav id="page-menu" class="main-menu" role="navigation">
+        
         <ol class="menu-list">
             <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
             <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
@@ -368,7 +400,7 @@
                         </div>
                     </div>
                     
-                    <div class="play-button">
+                    <div class="play-btn">
                         <i class="fas fa-play play-pause-icons"></i>
                         <i class="fas fa-pause play-pause-icons"></i>
                     </div>
@@ -397,27 +429,30 @@
         </footer>
     </div>
     <script>
-        window.addEventListener('load', function() {
-            var last_known_scroll_position = 0;
-            var ticking = false;
-            
-            function smNavbar(scroll_pos) {
-                var navigation = document.querySelector('#page-menu'), 
-                        heightY = window.scrollY;
-                navigation.classList.toggle('small', (heightY > 200));
-            }
-            window.addEventListener('scroll', function(e) {
-              last_known_scroll_position = window.scrollY;
-              
-              if (!ticking) {
-                window.requestAnimationFrame(function() {
-                  smNavbar(last_known_scroll_position);
-                  ticking = false;
+        if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 701) {
+            window.addEventListener('load', function() {
+                var last_known_scroll_position = 0;
+                var ticking = false;
+                
+                function smNavbar(scroll_pos) {
+                    var navigation = document.querySelector('#page-menu'), 
+                            heightY = window.scrollY;
+                    navigation.classList.toggle('small', (heightY > 200));
+                }
+                window.addEventListener('scroll', function(e) {
+                  last_known_scroll_position = window.scrollY;
+                  
+                  if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                      smNavbar(last_known_scroll_position);
+                      ticking = false;
+                    });
+                    ticking = true;
+                  }
                 });
-                ticking = true;
-              }
-            });
-        }, false);
+            }, false);
+        }
+        
     </script>
     <!--
     <script>window.jQuery || document.write("<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'>\x3C/script>")</script>
