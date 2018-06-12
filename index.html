@@ -45,11 +45,26 @@
             font-weight: 600;
             color: #303030;
         }
-        
+
+        .container:after, 
+        .testimonial-container:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+        .container h1 {
+            margin-bottom: 3rem;
+            margin-top: 0;
+        }
         @media screen and (max-width: 700px) {
 
             html {
               font-size: 62.5%;
+            }
+            .container,
+            .testimonial-heading {
+                margin: 2rem auto 1rem;
+                width: 90%;
             }
             .btn-burger,
             .icons-burger {
@@ -98,9 +113,20 @@
             .menu-link:hover {
                 transform: translateX(.5rem);
             }
+            .testimonial-content {
+                height: 40rem;
+            }
+            .testimonial {
+                width: 90%;
+            }
         }
         
         @media screen and (min-width: 701px) {
+            .container,
+            .testimonial-heading {
+                margin: 6rem auto 3rem;
+                width: 80%;
+            }
             .btn-burger,
             .icons-burger {
                 display: none;
@@ -134,6 +160,12 @@
                 text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
                 color: black;
             }
+            .testimonial-content {
+                height: 30rem;
+            }
+            .testimonial {
+                width: 500px;
+            }
         }
         
         #page-header {
@@ -164,21 +196,6 @@
         }
         .masthead-intro {
             padding-bottom: 4rem;
-        }
-        .container,
-        .testimonial-heading {
-            margin: 6rem auto 3rem;
-            width: 80%;
-        }
-        .container:after, 
-        .testimonial-container:after {
-            display: table;
-            clear: both;
-            content: "";
-        }
-        .container h1 {
-            margin-bottom: 3rem;
-            margin-top: 0;
         }
         #testimonial-section {
             margin-bottom: 3rem;
@@ -240,20 +257,19 @@
         .testimonial-content {
             padding-bottom: 3rem;
             position: relative;
-            min-height: 27rem;
-            font-size: 0;
         }
         .testimonial {
+            transform: translate(-50%, -50%);
             text-align: justify;
-            padding: 0 5% 3rem;
             position: absolute;
-            width: 90%;
+            left: 50%;
+            top: 50%;
         }
-        .testimonial:first-of-type {
+        .testimonial.first {
             animation: switch-testimonial-first 7s ease 1s infinite running;
         }
-        .testimonial:nth-child(2) {
-            animation: switch-testimonial-last 7s ease 1s infinite running;
+        .testimonial.second {
+            animation: switch-testimonial-first 7s ease 1s infinite reverse running;
         }
         .testimonial h4 {
         	font-size: 1.3rem;
@@ -306,7 +322,7 @@
             }
         }
         
-        @keyframes switch-testimonial-last {
+        @keyframes switch-testimonial-second {
             0% {
                 opacity: 1;
             }
@@ -433,7 +449,7 @@
                 
                 <input type="checkbox" class="hidden-checkbox" role="hidden">
                 <div class="testimonial-content">
-                    <div class="testimonial">
+                    <div class="testimonial first">
                         <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
                         <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
                         <p class="testimonial-post" >Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
@@ -443,7 +459,7 @@
     I really believe that Daniel can be a great team member and will make the different in any team he joins.</p>
                     </div>
                     
-                    <div class="testimonial">
+                    <div class="testimonial second">
                         <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
                         <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
                         <p class="testimonial-post" >If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
