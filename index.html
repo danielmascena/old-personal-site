@@ -18,59 +18,23 @@
         }
         body {
             font-family: 'Roboto', Helvetica, sans-serif;
-            margin: 0;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             line-height: 1.5;
             background: white;
             overflow-x: hidden;
-        }
-        .btn-burger,
-.icons-burger {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 16px;
-            height: 16px;
-            padding: 0;
             margin: 0;
-        }
-        .btn-burger {
-            opacity: 0;
-            z-index:30;
-        }
-        .icons-burger {
-        	z-index: 20;
-        }
-        .icons-burger .fa-times {
-            display: none;
-        }
-        .btn-burger:checked ~ .page-container>.icons-burger>.fa-times {
-            display: inline-block;
-        }
-        .btn-burger:checked ~ .page-container>.icons-burger>.fa-bars {
-            display: none;
-        }
-        .btn-burger:checked ~ .page-container>#page-menu {
-        	display: block;
         }
         #page-menu {
         	position: fixed;
-        	display: none;
         	z-index: 10;
-        	width: 100%;
-        	background-color: #eee;
-        	box-shadow: 0 0 10px rgba(0,0,0, .5);
+          	width: 100%;
         }
         .menu-list {
         	list-style: none;
         	padding: 0;
         	margin: 0;
-        }
-        .menu-item {
-            line-height: 3rem;
-            padding-left: 10px;
         }
         .menu-link {
         	text-decoration: none;
@@ -78,13 +42,65 @@
             font-weight: 600;
             color: #303030;
             text-transform: uppercase;
-            transition:  color .4s linear;
+            transition-timing-function: linear;
+            display: inline-block;
         }
-        
-        @media screen and (min-width: 701px) {
-        
+        @media screen and (max-width: 700px) {
+            .btn-burger,
+            .icons-burger {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                width: 14px;
+                line-height: 16px;
+                height: 16px;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+            .btn-burger {
+                opacity: 0;
+                z-index:30;
+            }
+            .icons-burger {
+            	z-index: 20;
+            }
+            .icons-burger .fa-times {
+                display: none;
+            }
+            .btn-burger:checked ~ .page-container>.icons-burger>.fa-times {
+                display: inline-block;
+            }
+            .btn-burger:checked ~ .page-container>.icons-burger>.fa-bars {
+                display: none;
+            }
+            .btn-burger:checked ~ .page-container>#page-menu {
+            	display: block;
+            }
             #page-menu {
-                display: block;
+            	display: none;
+            	background-color: #eee;
+            	box-shadow: 0 0 10px rgba(0,0,0, .5);
+            }
+            .menu-item {
+                line-height: 3rem;
+                padding-left: 10px;
+            }
+            .menu-link {
+                transition-property: transform;
+                transition-duration: .2s;
+            }
+            .menu-link:hover {
+                transform: translateX(5px);
+            }
+
+        }
+        @media screen and (min-width: 701px) {
+            .btn-burger,
+            .icons-burger {
+                display: none;
+            }
+            #page-menu {
                 height: 6rem;
                 line-height: 6rem;
                 transition: all .2s;
@@ -95,11 +111,10 @@
                 height: 3rem;
                 line-height: 3rem;
                 background-color: #fefefe;
-                border-bottom: solid 1px rgba(34,34,34,0.1);
+                border-bottom: solid 1px rgba(34, 34, 34, 0.1);
             }
             .menu-list {
                 margin: 0 2.5%;
-                padding: 0;
                 text-align: center;
             }
             .menu-item {
@@ -107,12 +122,15 @@
                 display: inline-block;
             }
             .menu-link {
-                
+                transition-property: color, text-shadow;
+                transition-duration: .4s;
             }
             .menu-link:hover {
                 color: black;
+                text-shadow: 0 0 5px rgba(0, 0, 0, .5);
             }
         }
+        
         #page-header {
             background: red url(http://lorempixel.com/1920/618/) no-repeat fixed center top;
             height: 600px;
@@ -166,7 +184,6 @@
             left: 50%;
             border-radius: 50%;
             text-align: center;
-            border: none;
             box-shadow: 0 0 5px rgba(0,0,0,.5);
         }
         .play-btn:after {
@@ -179,6 +196,12 @@
             vertical-align: middle;
             color: white;
         }
+        .fa-play {
+            padding-left: 8px;
+        }
+        .fa-pause {
+            padding-left: 5px;
+        }
         .hidden-checkbox {
             width: 50px;
             height: 50px;
@@ -188,25 +211,30 @@
             left: 50%;
             margin: 0;
             padding: 0;
-            line-height: 30px;
-            text-align: center;
             opacity: 0;
         }
         .hidden-checkbox:checked + .testimonial-container>.testimonial-content {
             animation-play-state: paused;
         }
-        .hidden-checkbox:checked + .testimonial-container>.play-button {
+        .hidden-checkbox:checked + .testimonial-container>.play-btn {
             background-color: green;
         }
+        .fa-play {
+            display: none;
+        }
+        .hidden-checkbox:checked + .testimonial-container>.play-btn>.fa-play {
+            display: inline-block;
+        }
+        .hidden-checkbox:checked + .testimonial-container>.play-btn>.fa-pause {
+            display: none;
+        }
         .testimonial-container {
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
         .testimonial-content {
-            padding: 0px 5% 30px;
             width: 200vw;
-            overflow: scroll;
             font-size: 0;
-            animation: switchingTestimonial 7s ease 2s infinite running;
+            animation: switchingTestimonial 7s ease infinite running;
         }
         .testimonial {
             display: inline-block;
