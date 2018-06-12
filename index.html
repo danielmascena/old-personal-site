@@ -21,9 +21,9 @@
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
-            line-height: 1.5;
-            background: white;
             overflow-x: hidden;
+            background: white;
+            line-height: 1.5;
             margin: 0;
         }
         #page-menu {
@@ -37,13 +37,13 @@
         	margin: 0;
         }
         .menu-link {
+            transition-timing-function: linear;
+            text-transform: uppercase;
         	text-decoration: none;
         	letter-spacing: .2rem;
+            display: inline-block;
             font-weight: 600;
             color: #303030;
-            text-transform: uppercase;
-            transition-timing-function: linear;
-            display: inline-block;
         }
         
         @media screen and (max-width: 700px) {
@@ -53,19 +53,19 @@
             }
             .btn-burger,
             .icons-burger {
-                position: fixed;
-                top: 1rem;
-                right: 1rem;
-                width: 1.4rem;
                 line-height: 1.6rem;
+                text-align: center;
+                position: fixed;
                 height: 1.6rem;
+                width: 1.4rem;
+                right: 1rem;
+                top: 1rem;
                 padding: 0;
                 margin: 0;
-                text-align: center;
             }
             .btn-burger {
-                opacity: 0;
                 z-index: 30;
+                opacity: 0;
             }
             .icons-burger {
             	z-index: 20;
@@ -83,13 +83,13 @@
             	display: block;
             }
             #page-menu {
-            	display: none;
-            	background-color: #eee;
             	box-shadow: 0 0 .1rem rgba(0,0,0, .5);
+            	background-color: #eee;
+            	display: none;
             }
             .menu-item {
-                line-height: 3rem;
                 padding-left: 1rem;
+                line-height: 3rem;
             }
             .menu-link {
                 transition-property: transform;
@@ -106,151 +106,154 @@
                 display: none;
             }
             #page-menu {
-                height: 6rem;
-                line-height: 6rem;
-                transition: all .2s;
                 background-color: transparent;
+                transition: all .2s;
+                line-height: 6rem;
                 box-shadow: none;
+                height: 6rem;
             }
             #page-menu.small {
-                height: 3rem;
-                line-height: 3rem;
-                background-color: #fefefe;
                 border-bottom: solid .1rem rgba(34, 34, 34, 0.1);
+                background-color: #fefefe;
+                line-height: 3rem;
+                height: 3rem;
             }
             .menu-list {
-                margin: 0 2.5%;
                 text-align: center;
+                margin: 0 2.5%;
             }
             .menu-item {
-                margin-right: 2rem;
                 display: inline-block;
+                margin-right: 2rem;
             }
             .menu-link {
                 transition-property: color, text-shadow;
                 transition-duration: .4s;
             }
             .menu-link:hover {
-                color: black;
                 text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+                color: black;
             }
         }
         
         #page-header {
             background: red url(http://lorempixel.com/1920/618/) no-repeat fixed center top;
-            height: 45rem;
             text-align: center;
+            height: 45rem;
         }
         #page-header:after {
-        	content: "";
-        	display: inline-block;
         	vertical-align: middle;
+        	display: inline-block;
         	height: 100%;
+        	content: "";
         }
         .masthead-content {
-            margin-top: 5rem;
-            width: 60%;
             box-shadow: 0 0 1rem rgba(0,0,0, .5);
+            background: rgba(255,255,255,.8);
             display: inline-block;
             vertical-align: middle;
-            background: rgba(255,255,255,.8);
+            margin-top: 5rem;
             text-align: left;
             padding: 2rem;
+            width: 60%;
         }
         .masthead-title {
-            padding-top: 4rem;
             text-transform: capitalize;
             font-size: 1.7rem;
+            padding-top: 4rem;
         }
         .masthead-intro {
             padding-bottom: 4rem;
         }
         .container,
         .testimonial-heading {
-            width: 80%;
             margin: 6rem auto 3rem;
+            width: 80%;
         }
         .container:after, 
         .testimonial-container:after {
-            content: "";
             display: table;
             clear: both;
+            content: "";
         }
         .container h1 {
-            margin-top: 0;
             margin-bottom: 3rem;
+            margin-top: 0;
         }
         #testimonial-section {
-            position: relative;
             margin-bottom: 3rem;
+            position: relative;
         }
         .play-btn {
-            width: 3rem;
-            height: 3rem;
-            background-color: red;
             transition: background-color .2s ease;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
+            box-shadow: 0 0 .5rem rgba(0,0,0,.5);
+            background-color: red;
             border-radius: 50%;
             text-align: center;
-            box-shadow: 0 0 .5rem rgba(0,0,0,.5);
+            position: absolute;
+            height: 3rem;
+            width: 3rem;
+            bottom: 0;
+            left: 50%;
         }
         .play-btn:after {
-            content: "";
-            display: inline-block;
             vertical-align: middle;
+            display: inline-block;
             height: 100%;
+            content: "";
         }
         .play-pause-icons {
             vertical-align: middle;
-            color: white;
             font-size: 1rem;
+            color: white;
         }
         .fa-play,
         .fa-pause {
-            padding-left: .4rem;
+            padding-left: .1rem;
         }
         .hidden-checkbox {
-            width: 5rem;
-            height: 5rem;
             position: absolute;
+            height: 5rem;
+            width: 5rem;
             z-index: 10;
+            padding: 0;
+            opacity: 0;
             bottom: 0;
             left: 50%;
             margin: 0;
-            padding: 0;
-            opacity: 0;
         }
-        .hidden-checkbox:checked + .testimonial-container>.testimonial-content {
+        .hidden-checkbox:checked + .testimonial-content>.testimonial {
             animation-play-state: paused;
         }
-        .hidden-checkbox:checked + .testimonial-container>.play-btn {
+        .hidden-checkbox:checked + .testimonial-content>.play-btn {
             background-color: green;
         }
         .fa-play {
             display: none;
         }
-        .hidden-checkbox:checked + .testimonial-container>.play-btn>.fa-play {
+        .hidden-checkbox:checked + .testimonial-content>.play-btn>.fa-play {
             display: inline-block;
         }
-        .hidden-checkbox:checked + .testimonial-container>.play-btn>.fa-pause {
+        .hidden-checkbox:checked + .testimonial-content>.play-btn>.fa-pause {
             display: none;
         }
-        .testimonial-container {
-            padding-bottom: 3rem;
-        }
         .testimonial-content {
-            width: 200vw;
+            padding-bottom: 3rem;
+            position: relative;
+            min-height: 27rem;
             font-size: 0;
-            animation: switchingTestimonial 7s ease infinite running;
         }
         .testimonial {
-            display: inline-block;
-            width: 40%;
-            padding: 0 5% 3rem;
             text-align: justify;
-            vertical-align: middle;
+            padding: 0 5% 3rem;
+            position: absolute;
+            width: 90%;
+        }
+        .testimonial:first-of-type {
+            animation: switch-testimonial-first 7s ease 1s infinite running;
+        }
+        .testimonial:nth-child(2) {
+            animation: switch-testimonial-last 7s ease 1s infinite running;
         }
         .testimonial h4 {
         	font-size: 1.3rem;
@@ -259,15 +262,15 @@
         	font-size: .9rem;
         }
         .testimonial-avatar {
-            width: 4rem;
             border-radius: 50%;
+            width: 4rem;
         }
         .testimonial-post {
         	font-size: 1rem;
         }
         #location-section {
-            overflow: auto;
             background-image: url(http://lorempixel.com/1436/418/);
+            overflow: auto;
             height: 45rem;
         }
         #page-footer {
@@ -277,45 +280,50 @@
             padding: 3rem 2rem;
         }
         .return-arrow {
-            float: right; 
-            border: 0; 
             background: transparent;
+            line-height: 1.5;
             cursor: pointer;
             font-size: 1rem;
-            line-height: 1.5;
+            float: right; 
+            border: 0; 
         }
-        @keyframes switchingTestimonial {
-            40% {
-                transform: translateX(0%);
-            }
-            45% {
-                transform: translateX(-50%);
-            }
-            85% {
-                transform: translateX(-50%);
-                opacity: 1;
-            }
-            90% {
-                transform: translateX(-100%);
+        
+        @keyframes switch-testimonial-first {
+            0% {
                 opacity: 0;
             }
-            95% {
-                transform: translateX(100%);
+            5% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            55% {
                 opacity: 0;
             }
             100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes switch-testimonial-last {
+            0% {
                 opacity: 1;
-                transform: translateX(0%);
+            }
+            5% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            55% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
             }
         }
-        @keyframes animatingButton {
-            40% {
-                background-color: green;
-            }
-            80% {
-                background-color: black;
-            }
-        }
+        
     </style>
 </head>
 <body role="document">
@@ -423,26 +431,25 @@
             <aside id="testimonial-section" role="complementary">
                 <h2 class="testimonial-heading">Testimonials</h2>
                 
-                <input type="checkbox" class="hidden-checkbox">
-                <div class="testimonial-container">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
-                            <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
-                            <p class="testimonial-post" >Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
-        When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
-        After about a year of hard work we did it! We impacted for better the lives of millions of Brazilian who depends on these systems to receive benefits from Brazilian government and I'm really proud of the work we did and the team we built.
-        Now (2017) he is leading the frontend development team and is working hard to master new technologies (like React and React Native), so we can teach it to other teams to help them modernize our frontend stack and help business to archive their needs faster.
-        I really believe that Daniel can be a great team member and will make the different in any team he joins.</p>
-                        </div>
-                        <div class="testimonial">
-                            <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
-                            <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
-                            <p class="testimonial-post" >If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
-        In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
-        Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
-        For me it's a privilegie work together with professionals like him.</p>
-                        </div>
+                <input type="checkbox" class="hidden-checkbox" role="hidden">
+                <div class="testimonial-content">
+                    <div class="testimonial">
+                        <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
+                        <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
+                        <p class="testimonial-post" >Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
+    When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
+    After about a year of hard work we did it! We impacted for better the lives of millions of Brazilian who depends on these systems to receive benefits from Brazilian government and I'm really proud of the work we did and the team we built.
+    Now (2017) he is leading the frontend development team and is working hard to master new technologies (like React and React Native), so we can teach it to other teams to help them modernize our frontend stack and help business to archive their needs faster.
+    I really believe that Daniel can be a great team member and will make the different in any team he joins.</p>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
+                        <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
+                        <p class="testimonial-post" >If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
+    In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
+    Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
+    For me it's a privilegie work together with professionals like him.</p>
                     </div>
                     
                     <div class="play-btn">
