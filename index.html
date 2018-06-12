@@ -38,29 +38,34 @@
         }
         .menu-link {
         	text-decoration: none;
-        	letter-spacing: 2px;
+        	letter-spacing: .2rem;
             font-weight: 600;
             color: #303030;
             text-transform: uppercase;
             transition-timing-function: linear;
             display: inline-block;
         }
+        
         @media screen and (max-width: 700px) {
+
+            html {
+              font-size: 62.5%;
+            }
             .btn-burger,
             .icons-burger {
                 position: fixed;
-                top: 10px;
-                right: 10px;
-                width: 14px;
-                line-height: 16px;
-                height: 16px;
+                top: 1rem;
+                right: 1rem;
+                width: 1.4rem;
+                line-height: 1.6rem;
+                height: 1.6rem;
                 padding: 0;
                 margin: 0;
                 text-align: center;
             }
             .btn-burger {
                 opacity: 0;
-                z-index:30;
+                z-index: 30;
             }
             .icons-burger {
             	z-index: 20;
@@ -80,21 +85,21 @@
             #page-menu {
             	display: none;
             	background-color: #eee;
-            	box-shadow: 0 0 10px rgba(0,0,0, .5);
+            	box-shadow: 0 0 .1rem rgba(0,0,0, .5);
             }
             .menu-item {
                 line-height: 3rem;
-                padding-left: 10px;
+                padding-left: 1rem;
             }
             .menu-link {
                 transition-property: transform;
                 transition-duration: .2s;
             }
             .menu-link:hover {
-                transform: translateX(5px);
+                transform: translateX(.5rem);
             }
-
         }
+        
         @media screen and (min-width: 701px) {
             .btn-burger,
             .icons-burger {
@@ -111,14 +116,14 @@
                 height: 3rem;
                 line-height: 3rem;
                 background-color: #fefefe;
-                border-bottom: solid 1px rgba(34, 34, 34, 0.1);
+                border-bottom: solid .1rem rgba(34, 34, 34, 0.1);
             }
             .menu-list {
                 margin: 0 2.5%;
                 text-align: center;
             }
             .menu-item {
-                margin-right: 20px;
+                margin-right: 2rem;
                 display: inline-block;
             }
             .menu-link {
@@ -127,13 +132,13 @@
             }
             .menu-link:hover {
                 color: black;
-                text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+                text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
             }
         }
         
         #page-header {
             background: red url(http://lorempixel.com/1920/618/) no-repeat fixed center top;
-            height: 600px;
+            height: 45rem;
             text-align: center;
         }
         #page-header:after {
@@ -145,7 +150,7 @@
         .masthead-content {
             margin-top: 5rem;
             width: 60%;
-            box-shadow: 0 0 10px rgba(0,0,0, .5);
+            box-shadow: 0 0 1rem rgba(0,0,0, .5);
             display: inline-block;
             vertical-align: middle;
             background: rgba(255,255,255,.8);
@@ -163,7 +168,7 @@
         .container,
         .testimonial-heading {
             width: 80%;
-            margin: 100px auto 50px;
+            margin: 6rem auto 3rem;
         }
         .container:after, 
         .testimonial-container:after {
@@ -171,12 +176,17 @@
             display: table;
             clear: both;
         }
+        .container h1 {
+            margin-top: 0;
+            margin-bottom: 3rem;
+        }
         #testimonial-section {
             position: relative;
+            margin-bottom: 3rem;
         }
         .play-btn {
-            width: 50px;
-            height: 50px;
+            width: 3rem;
+            height: 3rem;
             background-color: red;
             transition: background-color .2s ease;
             position: absolute;
@@ -184,7 +194,7 @@
             left: 50%;
             border-radius: 50%;
             text-align: center;
-            box-shadow: 0 0 5px rgba(0,0,0,.5);
+            box-shadow: 0 0 .5rem rgba(0,0,0,.5);
         }
         .play-btn:after {
             content: "";
@@ -195,16 +205,17 @@
         .play-pause-icons {
             vertical-align: middle;
             color: white;
+            font-size: 1rem;
         }
         .fa-play {
-            padding-left: 8px;
+            padding-left: .6rem;
         }
         .fa-pause {
-            padding-left: 5px;
+            padding-left: .4rem;
         }
         .hidden-checkbox {
-            width: 50px;
-            height: 50px;
+            width: 5rem;
+            height: 5rem;
             position: absolute;
             z-index: 10;
             bottom: 0;
@@ -229,7 +240,7 @@
             display: none;
         }
         .testimonial-container {
-            padding-bottom: 30px;
+            padding-bottom: 3rem;
         }
         .testimonial-content {
             width: 200vw;
@@ -239,38 +250,41 @@
         .testimonial {
             display: inline-block;
             width: 40%;
-            padding: 0 5% 30px;
+            padding: 0 5% 3rem;
             text-align: justify;
             vertical-align: middle;
         }
         .testimonial h4 {
-        	font-size: 1.1rem;
+        	font-size: 1.3rem;
         }
         .testimonial h5 {
         	font-size: .9rem;
         }
         .testimonial-avatar {
-            width: 60px;
+            width: 4rem;
             border-radius: 50%;
         }
         .testimonial-post {
-        	font-size: .7rem;
+        	font-size: 1rem;
         }
         #location-section {
+            overflow: auto;
             background-image: url(http://lorempixel.com/1436/418/);
-            height: 400px;
+            height: 45rem;
         }
         #page-footer {
             background-color: aquamarine;
         }
         .footer {
-            padding: 30px 20px;
+            padding: 3rem 2rem;
         }
         .return-arrow {
             float: right; 
             border: 0; 
             background: transparent;
             cursor: pointer;
+            font-size: 1rem;
+            line-height: 1.5;
         }
         @keyframes switchingTestimonial {
             40% {
@@ -308,22 +322,21 @@
 </head>
 <body role="document">
     
-        <input type="checkbox" class="btn-burger">
-    
+    <input type="checkbox" class="btn-burger">
     <div class="page-container">
     	<div class="icons-burger">
             <i class="fas fa-bars"></i>
             <i class="fas fa-times"></i>
         </div>
-<nav id="page-menu" class="main-menu" role="navigation">
-        <ol class="menu-list">
-            <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
-            <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
-            <li class="menu-item"><a href="#portfolio-section" class="menu-link">Portfolio</a></li>
-            <li class="menu-item"><a href="#testimonial-section" class="menu-link">Testimonials</a></li>
-            <li class="menu-item"><a href="#location-section" class="menu-link">Location</a></li>
-        </ol>
-    </nav>
+        <nav id="page-menu" class="main-menu" role="navigation">
+            <ol class="menu-list">
+                <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
+                <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
+                <li class="menu-item"><a href="#portfolio-section" class="menu-link">Portfolio</a></li>
+                <li class="menu-item"><a href="#testimonial-section" class="menu-link">Testimonials</a></li>
+                <li class="menu-item"><a href="#location-section" class="menu-link">Location</a></li>
+            </ol>
+        </nav>
         <header id="page-header" class="masthead" role="banner">
             <div class="masthead-content">
                 <h1 class="masthead-title">Hi, welcome to my personal website</h1>
