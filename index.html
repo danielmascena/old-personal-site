@@ -266,10 +266,10 @@
             top: 50%;
         }
         .testimonial.first {
-            animation: switch-testimonial-first 7s ease 1s infinite running;
+            animation: switch-testimonial 7s ease .8s infinite running;
         }
         .testimonial.second {
-            animation: switch-testimonial-first 7s ease 1s infinite reverse running;
+            animation: switch-testimonial 7s ease 1s infinite reverse running;
         }
         .testimonial h4 {
         	font-size: 1.3rem;
@@ -304,7 +304,7 @@
             border: 0; 
         }
         
-        @keyframes switch-testimonial-first {
+        @keyframes switch-testimonial {
             0% {
                 opacity: 0;
             }
@@ -322,23 +322,6 @@
             }
         }
         
-        @keyframes switch-testimonial-second {
-            0% {
-                opacity: 1;
-            }
-            5% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 0;
-            }
-            55% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
         
     </style>
 </head>
