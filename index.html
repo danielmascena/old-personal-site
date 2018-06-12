@@ -26,27 +26,31 @@
             background: white;
             overflow-x: hidden;
         }
-        .btn-burger {
-            position: absolute;
+        .btn-burger,
+.icons-burger {
+            position: fixed;
             top: 10px;
             right: 10px;
-            color: white;
             width: 16px;
             height: 16px;
+            padding: 0;
+            margin: 0;
         }
-        .btn-burger input {
+        .btn-burger {
             opacity: 0;
-            width: 16px;
-            position: absolute;
+            z-index:100;
         }
-        .btn-burger .icons .fa-times {
+        .icons-burger .fa-times {
             display: none;
         }
-        .btn-burger input:checked ~ .icons>.fa-times {
+        .btn-burger:checked ~ .page-container>.icons-burger>.fa-times {
             display: inline-block;
         }
-        .btn-burger input:checked ~ .icons>.fa-bars {
+        .btn-burger:checked ~ .page-container>.icons-burger>.fa-bars {
             display: none;
+        }
+        .btn-burger:checked ~ .page-container>#page-menu {
+        	display: block;
         }
         #page-menu {
         	position: fixed;
@@ -271,15 +275,15 @@
     </style>
 </head>
 <body role="document">
-    <div class="btn-burger">
-        <input type="checkbox">
-        <div class="icons">
+    
+        <input type="checkbox" class="btn-burger">
+    
+    <div class="page-container">
+    	<div class="icons-burger">
             <i class="fas fa-bars"></i>
             <i class="fas fa-times"></i>
         </div>
-    </div>
-    <nav id="page-menu" class="main-menu" role="navigation">
-        
+<nav id="page-menu" class="main-menu" role="navigation">
         <ol class="menu-list">
             <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
             <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
@@ -288,8 +292,6 @@
             <li class="menu-item"><a href="#location-section" class="menu-link">Location</a></li>
         </ol>
     </nav>
-    <div id="page-container">
-
         <header id="page-header" class="masthead" role="banner">
             <div class="masthead-content">
                 <h1 class="masthead-title">Hi, welcome to my personal website</h1>
