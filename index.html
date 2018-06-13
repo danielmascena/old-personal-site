@@ -59,11 +59,11 @@
         @media screen and (max-width: 700px) {
 
             html {
-              font-size: 62.5%;
+              font-size: 70%;
             }
             .container,
             .testimonial-heading {
-                margin: 2rem auto 1rem;
+                margin: 3rem auto 1.5rem;
                 width: 90%;
             }
             .btn-burger,
@@ -113,11 +113,12 @@
             .menu-link:hover {
                 transform: translateX(.5rem);
             }
-            .testimonial-content {
-                height: 40rem;
-            }
-            .testimonial {
+            
+            .testimonial.first {
                 width: 90%;
+            }
+            .testimonial.second {
+            	width: 80%;
             }
         }
         
@@ -161,7 +162,7 @@
                 color: black;
             }
             .testimonial-content {
-                height: 30rem;
+             
             }
             .testimonial {
                 width: 500px;
@@ -259,17 +260,20 @@
             position: relative;
         }
         .testimonial {
+        	text-align:justify;
+        }
+        .testimonial.second {
             transform: translate(-50%, -50%);
-            text-align: justify;
             position: absolute;
             left: 50%;
             top: 50%;
         }
         .testimonial.first {
-            animation: switch-testimonial 7s ease .8s infinite running;
+        	margin:auto;
+            animation: switch-testimonial 7s ease infinite running;
         }
         .testimonial.second {
-            animation: switch-testimonial 7s ease 1s infinite reverse running;
+            animation: switch-testimonial 7s ease .2s infinite reverse running;
         }
         .testimonial h4 {
         	font-size: 1.3rem;
