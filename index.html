@@ -202,6 +202,50 @@
         .masthead-intro {
             padding-bottom: 4rem;
         }
+        .meter-box {
+            background-color: #aaa;
+            border: 1px solid;
+            width: 100px;
+        }
+        .meter-box meter {
+            display: none;
+        }
+        .meter-progress {
+            height: 1rem;
+            line-height: 1rem;
+            overflow: hidden;
+            width: 80%;
+            position: relative;
+        }
+        .meter-progress:after {
+            content: "CSS3";
+            text-align: center;
+            color: #fff;
+            display: block;
+            height: 100%;
+            background: blue;
+            box-shadow: 0 0 5px white;
+            animation: meter-animation 1s ease infinite reverse;
+            z-index: 100;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+        }
+        .meter-progress:before {
+            content: "";
+            display: block;
+            height: 100%;
+            background-color: #fff;
+            z-index: 10;
+        }
+        @keyframes meter-animation {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
         #testimonial-section {
             margin-bottom: 3rem;
             position: relative;
@@ -413,8 +457,8 @@
                         humanitatis per seacula quarta decima et quinta decima. Eodem
                         modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
                         in futurum.</p>
-                        <div>
-                            <div class="meter-skill"></div>
+                        <div class="meter-box">
+                            <div class="meter-progress"></div>
                             <meter value="80" max="100"></meter>
                         </div>
                     </section>
