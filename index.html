@@ -45,26 +45,28 @@
             font-weight: 600;
             color: #303030;
         }
-
-        .container:after, 
-        .testimonial-container:after {
+        .container {
+            position: relative;
+            padding: 3rem;
+            margin: auto;
+        }
+        .container:after {
             display: table;
             clear: both;
             content: "";
         }
-        .container h1 {
-            margin-bottom: 3rem;
-            margin-top: 0;
-        }
+
         @media screen and (max-width: 700px) {
 
             html {
               font-size: 70%;
             }
-            .container,
-            .testimonial-heading {
-                margin: 3rem auto 1.5rem;
+            .container {
                 width: 90%;
+            }
+            .container h1 {
+                margin-bottom: 3rem;
+                margin-top: 0;
             }
             .btn-burger,
             .icons-burger {
@@ -74,8 +76,8 @@
                 height: 1.6rem;
                 width: 1.4rem;
                 right: 1rem;
-                top: 1rem;
                 padding: 0;
+                top: 1rem;
                 margin: 0;
             }
             .btn-burger {
@@ -113,7 +115,6 @@
             .menu-link:hover {
                 transform: translateX(.5rem);
             }
-            
             .testimonial.first {
                 width: 90%;
             }
@@ -123,10 +124,12 @@
         }
         
         @media screen and (min-width: 701px) {
-            .container,
-            .testimonial-heading {
-                margin: 6rem auto 3rem;
-                width: 80%;
+            .container {
+                width: 70%;
+            }
+            .container h1 {
+                margin-bottom: 3rem;
+                margin-top: 0;
             }
             .btn-burger,
             .icons-burger {
@@ -161,9 +164,6 @@
                 text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
                 color: black;
             }
-            .testimonial-content {
-             
-            }
             .testimonial {
                 width: 500px;
             }
@@ -183,8 +183,8 @@
         .masthead-content {
             box-shadow: 0 0 1rem rgba(0,0,0, .5);
             background: rgba(255,255,255,.8);
-            display: inline-block;
             vertical-align: middle;
+            display: inline-block;
             margin-top: 5rem;
             text-align: left;
             padding: 2rem;
@@ -202,65 +202,59 @@
             margin-bottom: 3rem;
             position: relative;
         }
-        .play-btn {
+        .hidden-checkbox,
+        .control-btn {
+            position: absolute;
+            height: 3rem;
+            width: 3rem;
+            left: 50%;
+            bottom: 0;
+        }
+        .hidden-checkbox {
+            z-index: 10;
+            padding: 0;
+            opacity: 0;
+            margin: 0;
+        }
+        .control-btn {
             transition: background-color .2s ease;
             box-shadow: 0 0 .5rem rgba(0,0,0,.5);
             background-color: red;
             border-radius: 50%;
             text-align: center;
-            position: absolute;
-            height: 3rem;
-            width: 3rem;
-            bottom: 0;
-            left: 50%;
         }
-        .play-btn:after {
+        .control-btn:after {
             vertical-align: middle;
             display: inline-block;
             height: 100%;
             content: "";
         }
-        .play-pause-icons {
+        .control-icons {
             vertical-align: middle;
+            padding-left: .3rem;
             font-size: 1rem;
             color: white;
         }
-        .fa-play,
-        .fa-pause {
-            padding-left: .1rem;
-        }
-        .hidden-checkbox {
-            position: absolute;
-            height: 5rem;
-            width: 5rem;
-            z-index: 10;
-            padding: 0;
-            opacity: 0;
-            bottom: 0;
-            left: 50%;
-            margin: 0;
-        }
-        .hidden-checkbox:checked + .testimonial-content>.testimonial {
+        .hidden-checkbox:checked + .container>.testimonial {
             animation-play-state: paused;
         }
-        .hidden-checkbox:checked + .testimonial-content>.play-btn {
+        .hidden-checkbox:checked + .container>.control-btn {
             background-color: green;
         }
         .fa-play {
             display: none;
         }
-        .hidden-checkbox:checked + .testimonial-content>.play-btn>.fa-play {
+        .hidden-checkbox:checked + .container>.control-btn>.fa-play {
             display: inline-block;
         }
-        .hidden-checkbox:checked + .testimonial-content>.play-btn>.fa-pause {
+        .hidden-checkbox:checked + .container>.control-btn>.fa-pause {
             display: none;
         }
         .testimonial-content {
             padding-bottom: 3rem;
-            position: relative;
         }
         .testimonial {
-        	text-align:justify;
+        	text-align: justify;
         }
         .testimonial.second {
             transform: translate(-50%, -50%);
@@ -269,8 +263,8 @@
             top: 50%;
         }
         .testimonial.first {
-        	margin:auto;
             animation: switch-testimonial 7s ease infinite running;
+            margin: auto;
         }
         .testimonial.second {
             animation: switch-testimonial 7s ease .2s infinite reverse running;
@@ -287,6 +281,7 @@
         }
         .testimonial-post {
         	font-size: 1rem;
+        	padding: 0 2rem;
         }
         #location-section {
             background-image: url(http://lorempixel.com/1436/418/);
@@ -345,12 +340,12 @@
                 <li class="menu-item"><a href="#location-section" class="menu-link">Location</a></li>
             </ol>
         </nav>
-        <header id="page-header" class="masthead" role="banner">
-            <div class="masthead-content">
+        <div id="page-header" class="masthead">
+            <header class="masthead-content" role="banner">
                 <h1 class="masthead-title">Hi, welcome to my personal website</h1>
                 <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;frontend &#47;&gt;</strong> developer who loves Web Standards</p>
-            </div>
-        </header>
+            </header>
+        </div>
         
         <div id="page-content" role="main">
             <section id="aboutme-section" role="region">
@@ -431,10 +426,11 @@
             </section>
             
             <aside id="testimonial-section" role="complementary">
-                <h2 class="testimonial-heading">Testimonials</h2>
                 
                 <input type="checkbox" class="hidden-checkbox" role="hidden">
-                <div class="testimonial-content">
+                
+                <div class="container">
+                    <h1>Testimonials</h1>
                     <div class="testimonial first">
                         <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
                         <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
@@ -454,9 +450,9 @@
     For me it's a privilegie work together with professionals like him.</p>
                     </div>
                     
-                    <div class="play-btn">
-                        <i class="fas fa-play play-pause-icons"></i>
-                        <i class="fas fa-pause play-pause-icons"></i>
+                    <div class="control-btn">
+                        <i class="fas fa-play control-icons"></i>
+                        <i class="fas fa-pause control-icons"></i>
                     </div>
                 </div>
             </aside>
@@ -469,14 +465,14 @@
             </section>
         </div>
         <footer id="page-footer"class="footer" role="contentinfo">  
-        	<p>made with pure &lt;HTML5 only&gt;, CSS3 {frameworks: none} e JS.plugins(0)
+        	<p>made with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;; css3 {frameworks: none} && JavaScript.plugins(0)</code>
     	    <small>&copy; Copyright Daniel Mascena 2018. All Rights Reserved.</small>
     	    <i class="fab fa-whatsapp"></i>
     	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
     	    <i class="fab fa-jsfiddle"></i>
     	    <i class="fab fa-codepen"></i>
     	    <i class="fab fa-github"></i>
-    	    <i class="fas fa-hand-holding-heart"></i> 
+    	     
         	<button class="return-arrow" 
         	    onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
         	    <i class="fas fa-chevron-up"></i>
