@@ -222,6 +222,7 @@
             text-align: center;
             color: #fff;
             display: block;
+            font-weight: 600;
             height: 100%;
             background: blue;
             box-shadow: 0 0 5px white;
@@ -373,6 +374,50 @@
                 opacity: 0;
             }
         }
+        .aboutme-content,
+        .skill-content {
+            animation-timing-function: ease;
+            animation-iteration-count: 1;
+            animation-play-state: paused;
+            animation-duration: 1s;
+            animation-delay: .5s;
+        }
+        @supports (animation-name: from-left) {
+            .aboutme-content {
+                animation-name: from-left;
+                opacity: 0;
+            }
+            .skill-content {
+                animation-name: from-right;
+                opacity: 0;
+            }
+        }
+        
+        .left
+        .right {
+            animation-play-state: running;
+            opacity: 1;
+        }
+        @keyframes from-left {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+        @keyframes from-right {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
         
     </style>
 </head>
@@ -410,7 +455,7 @@
         <div id="page-content" role="main">
             <div id="aboutme-section">
                 <div class="container">
-                    <section aria-label="About Myself" role="region">
+                    <section class="aboutme-content" aria-label="About Myself" role="region">
                         <h1>About Me</h1>
                         <p>Hi, i'm a frontend developer who loves web standards. 
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -432,7 +477,7 @@
             
             <div id="skill-section">
                 <div class="container">
-                    <section aria-label="Skills" role="region">
+                    <section class="skill-content" aria-label="Skills" role="region">
                         <h1>Skills</h1>
                         <p style="font-size: 2rem">
                             <i class="fab fa-css3-alt"></i> 
@@ -559,9 +604,13 @@
                 var ticking = false;
                 
                 function smNavbar(scroll_pos) {
-                    var navigation = document.querySelector('#page-menu'), 
+                    var navigation = document.querySelector('#page-menu'),
+                        about = document.querySelector('.aboutme-content'),
+                        skill = document.querySelector('.skill-content'),
                             heightY = window.scrollY;
                     navigation.classList.toggle('small', (heightY > 200));
+                    about.classList.add('left', (heightY >= 520));
+                    skill.classList.add('right', (heightY >= 1020));
                 }
                 window.addEventListener('scroll', function(e) {
                   last_known_scroll_position = window.scrollY;
