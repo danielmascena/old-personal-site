@@ -72,6 +72,7 @@
             .icons-burger {
                 line-height: 1.6rem;
                 text-align: center;
+                font-size: 1.5rem;
                 position: fixed;
                 height: 1.6rem;
                 width: 1.4rem;
@@ -90,23 +91,26 @@
             .icons-burger .fa-times {
                 display: none;
             }
-            .btn-burger:checked ~ .page-container>.icons-burger>.fa-times {
+            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-times {
                 display: inline-block;
             }
-            .btn-burger:checked ~ .page-container>.icons-burger>.fa-bars {
+            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-bars {
                 display: none;
             }
-            .btn-burger:checked ~ .page-container>#page-menu {
+            .btn-burger:checked ~ .menu-container>.menu-content {
             	display: block;
             }
-            #page-menu {
+            .menu-content {
             	box-shadow: 0 0 .1rem rgba(0,0,0, .5);
             	background-color: #eee;
             	display: none;
             }
             .menu-item {
-                padding-left: 1rem;
+                margin: .5rem 1rem;
                 line-height: 3rem;
+            }
+            .menu-item:first-child {
+                margin-top: 0;
             }
             .menu-link {
                 transition-property: transform;
@@ -325,21 +329,27 @@
 </head>
 <body role="document">
     
-    <input type="checkbox" class="btn-burger">
+    
     <div class="page-container">
-    	<div class="icons-burger">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-times"></i>
+        <div id="page-menu" class="main-menu">
+            <input type="checkbox" class="btn-burger">
+            <div class="menu-container">
+                <div class="icons-burger">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+                <nav class="menu-content" role="navigation">
+                    <ol class="menu-list">
+                        <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
+                        <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
+                        <li class="menu-item"><a href="#portfolio-section" class="menu-link">Portfolio</a></li>
+                        <li class="menu-item"><a href="#testimonial-section" class="menu-link">Testimonials</a></li>
+                        <li class="menu-item"><a href="#location-section" class="menu-link">Location</a></li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-        <nav id="page-menu" class="main-menu" role="navigation">
-            <ol class="menu-list">
-                <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
-                <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
-                <li class="menu-item"><a href="#portfolio-section" class="menu-link">Portfolio</a></li>
-                <li class="menu-item"><a href="#testimonial-section" class="menu-link">Testimonials</a></li>
-                <li class="menu-item"><a href="#location-section" class="menu-link">Location</a></li>
-            </ol>
-        </nav>
+    	
         <div id="page-header" class="masthead">
             <header class="masthead-content" role="banner">
                 <h1 class="masthead-title">Hi, welcome to my personal website</h1>
