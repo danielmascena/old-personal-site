@@ -211,22 +211,26 @@
             display: none;
         }
         .meter-progress {
-            height: 1rem;
-            line-height: 1rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
             overflow: hidden;
             width: 80%;
             position: relative;
         }
         .meter-progress:after {
             content: "CSS3";
-            text-align: center;
             color: #fff;
             display: block;
             font-weight: 600;
             height: 100%;
-            background: blue;
+            background: red;
+            background: -webkit-linear-gradient(blue, green);
+            background: -moz-linear-gradient(blue, green);
+            background: -o-linear-gradient(blue, green);
+            background: linear-gradient(blue, green);
             box-shadow: 0 0 5px white;
-            animation: meter-animation 1s ease 2s 1 reverse paused;
+            animation: meter-animation 1s ease 1.5s 1 reverse paused;
+            transition: background linear 1s;
             z-index: 100;
             width: 100%;
             position: absolute;
@@ -237,10 +241,25 @@
             display: block;
             height: 100%;
             background-color: #fff;
-            z-index: 10;
+            z-index: 100;
+            position: absolute;
+            animation: changing-background 1.5s ease-out 3s infinite;
         }
         .skill-content.right .meter-progress:after {
             animation-play-state: running;
+        }
+        @keyframes changing-background {
+            from {
+                transform: translate(90%);
+                width: 80%;
+            }
+            to {
+                z-index: 1000;
+                transform: scale(-20deg) translate(0%);
+                width: 100%;
+                opacity: 0;
+                
+            }
         }
         @keyframes meter-animation {
             from {
@@ -287,19 +306,19 @@
             font-size: 1rem;
             color: white;
         }
-        .hidden-checkbox:checked + .container>.testimonial {
+        .hidden-checkbox:checked + .container > .testimonial-content > .testimonial {
             animation-play-state: paused;
         }
-        .hidden-checkbox:checked + .container>.control-btn {
+        .hidden-checkbox:checked + .container > .testimonial-content > .control-btn {
             background-color: green;
         }
         .fa-play {
             display: none;
         }
-        .hidden-checkbox:checked + .container>.control-btn>.fa-play {
+        .hidden-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-play {
             display: inline-block;
         }
-        .hidden-checkbox:checked + .container>.control-btn>.fa-pause {
+        .hidden-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-pause {
             display: none;
         }
         .testimonial-content {
@@ -514,7 +533,7 @@
             
             <div id="portfolio-section">
                 <div class="container">
-                    <section aria-label="Portfolio" role="region">
+                    <section class="portfolio-content" aria-label="Portfolio" role="region">
                         <h1>Projects</h1>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                         sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -543,7 +562,7 @@
             <div id="testimonial-section">
                 <input type="checkbox" class="hidden-checkbox" role="hidden">
                 <div class="container">
-                    <section aria-label="Testimonials" role="region">
+                    <section class="testimonial-content" aria-label="Testimonials" role="region">
                         <h1>Testimonials</h1>
                         <div class="testimonial first">
                             <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
@@ -600,8 +619,12 @@
         </footer>
     </div>
     <script>
+    
+        document.body.style.display = 'none';
         if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 701) {
+            
             window.addEventListener('load', function() {
+                document.body.style.display = 'block';
                 var last_known_scroll_position = 0;
                 var ticking = false;
                 
@@ -611,8 +634,8 @@
                         skill = document.querySelector('.skill-content'),
                             heightY = window.scrollY;
                     navigation.classList.toggle('small', (heightY > 200));
-                    about.classList.add('left', (heightY >= 800));
-                    skill.classList.add('right', (heightY >= 1600));
+                    about.classList.add('left', (heightY > 800));
+                    skill.classList.add('right', (heightY > 2000));
                 }
                 window.addEventListener('scroll', function(e) {
                   last_known_scroll_position = window.scrollY;
