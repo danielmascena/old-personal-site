@@ -202,39 +202,77 @@
         .masthead-intro {
             padding-bottom: 4rem;
         }
+        .skills-levels {
+            
+        }
+        .meter-widget {
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+            font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
+        }
+        .meter-widget.css3:before {
+            content: "CSS \f38b";
+        }
+        .meter-widget.html5:before {
+            content: "HTML \f13b";
+        }
+        .meter-widget.js:before {
+            content: "JavaScript \f3b8";
+        }
         .meter-box {
+            margin-top: .2rem;
+            font-size: 1rem;
             background-color: #aaa;
             border: 1px solid;
-            width: 100px;
+            box-shadow: 0 0 5px black;
         }
-        .meter-box meter {
+        .meter-widget > meter {
             display: none;
         }
         .meter-progress {
             height: 1.5rem;
             line-height: 1.5rem;
             overflow: hidden;
-            width: 80%;
             position: relative;
+            box-shadow: 0 0 5px black;
+        }
+        .meter-widget.css3 .meter-progress {
+            width: 80%;
+        }
+        .meter-widget.html5 .meter-progress {
+            width: 70%;
+        }
+        .meter-widget.js .meter-progress {
+            width: 60%;
         }
         .meter-progress:after {
-            content: "CSS3";
             color: #fff;
+            padding-left: 5px;
+            text-shadow: 0 0 0px blue;
             display: block;
             font-weight: 600;
             height: 100%;
-            background: red;
-            background: -webkit-linear-gradient(blue, green);
-            background: -moz-linear-gradient(blue, green);
-            background: -o-linear-gradient(blue, green);
-            background: linear-gradient(blue, green);
-            box-shadow: 0 0 5px white;
-            animation: meter-animation 1s ease 1.5s 1 reverse paused;
+            background: black;
+            background: -webkit-linear-gradient(black, gray);
+            background: -moz-linear-gradient(black, gray);
+            background: -o-linear-gradient(black, gray);
+            background: linear-gradient(black, gray);
+            animation: meter-animation 2s ease 2.5s 1 reverse paused;
             transition: background linear 1s;
             z-index: 100;
             width: 100%;
             position: absolute;
             top: 0px;
+        }
+        .meter-widget.css3 .meter-progress:after {
+            content: "80%";
+        }
+        .meter-widget.html5 .meter-progress:after {
+            content: "70%";
+        }
+        .meter-widget.js .meter-progress:after {
+            content: "60%";
         }
         .meter-progress:before {
             content: "";
@@ -243,22 +281,19 @@
             background-color: #fff;
             z-index: 100;
             position: absolute;
-            animation: changing-background 1.5s ease-out 3s infinite;
+            width: 100%;
+            animation: changing-background 1.5s ease-out 5s infinite;
         }
         .skill-content.right .meter-progress:after {
             animation-play-state: running;
         }
         @keyframes changing-background {
             from {
-                transform: translate(90%);
-                width: 80%;
+                transform: translate(100%);
             }
             to {
                 z-index: 1000;
-                transform: scale(-20deg) translate(0%);
-                width: 100%;
                 opacity: 0;
-                
             }
         }
         @keyframes meter-animation {
@@ -273,7 +308,7 @@
             margin-bottom: 3rem;
             position: relative;
         }
-        .hidden-checkbox,
+        .control-checkbox,
         .control-btn {
             position: absolute;
             height: 3rem;
@@ -281,7 +316,7 @@
             left: 50%;
             bottom: 0;
         }
-        .hidden-checkbox {
+        .control-checkbox {
             z-index: 10;
             padding: 0;
             opacity: 0;
@@ -306,19 +341,19 @@
             font-size: 1rem;
             color: white;
         }
-        .hidden-checkbox:checked + .container > .testimonial-content > .testimonial {
+        .control-checkbox:checked + .container > .testimonial-content > .testimonial {
             animation-play-state: paused;
         }
-        .hidden-checkbox:checked + .container > .testimonial-content > .control-btn {
+        .control-checkbox:checked + .container > .testimonial-content > .control-btn {
             background-color: green;
         }
         .fa-play {
             display: none;
         }
-        .hidden-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-play {
+        .control-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-play {
             display: inline-block;
         }
-        .hidden-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-pause {
+        .control-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-pause {
             display: none;
         }
         .testimonial-content {
@@ -445,9 +480,9 @@
 <body role="document">
     <div class="page-container">
         <div id="page-menu" class="main-menu">
-            <input type="checkbox" class="btn-burger">
+            <input type="checkbox" class="btn-burger hidden">
             <div class="menu-container">
-                <div class="icons-burger">
+                <div class="icons-burger" role="button">
                     <i class="fas fa-bars"></i>
                     <i class="fas fa-times"></i>
                 </div>
@@ -510,7 +545,6 @@
                             <i class="fas fa-mobile-alt"></i>
                             <i class="fas fa-certificate" style="color: yellow; text-shadow: 0 0 10px black"></i> 
                             <i class="fab fa-java"></i> 
-                            <i class="fas fa-code"></i>
                             <i class="fas fa-heart"></i>
                             <i class="fab fa-sass"></i> 
                             <i class="fas fa-laptop"></i>
@@ -523,9 +557,28 @@
                         humanitatis per seacula quarta decima et quinta decima. Eodem
                         modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
                         in futurum.</p>
-                        <div class="meter-box">
-                            <div class="meter-progress"></div>
-                            <meter value="80" max="100"></meter>
+                        
+                        <div class="skills-levels" role="group">
+                            <div class="meter-widget css3" role="progressbar">
+                                <div class="meter-box">
+                                    <div class="meter-progress"></div>
+                                </div>
+                                <meter value="80" max="100" role="hidden"></meter>
+                            </div>
+                            
+                            <div class="meter-widget html5" role="progressbar">
+                                <div class="meter-box">
+                                    <div class="meter-progress"></div>
+                                </div>
+                                <meter value="70" max="100" role="hidden"></meter>
+                            </div>
+                            
+                            <div class="meter-widget js" role="progressbar">
+                                <div class="meter-box">
+                                    <div class="meter-progress"></div>
+                                </div>
+                                <meter value="60" max="100" role="hidden"></meter>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -560,12 +613,12 @@
             </div>
             
             <div id="testimonial-section">
-                <input type="checkbox" class="hidden-checkbox" role="hidden">
+                <input type="checkbox" class="control-checkbox hidden">
                 <div class="container">
                     <section class="testimonial-content" aria-label="Testimonials" role="region">
                         <h1>Testimonials</h1>
                         <div class="testimonial first">
-                            <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
+                            <h4><img role="presentation" class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
                             <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
                             <p class="testimonial-post" >Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
         When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
@@ -575,7 +628,7 @@
                         </div>
                         
                         <div class="testimonial second">
-                            <h4><img class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHJ1gfwl3ZGKQ/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=yolBI0J3tIbJcw5vV-htBMCW6av-q3u9z_q2nDGINZo"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
+                            <h4><img role="presentation" class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHBVBY93SB5Ug/profile-displayphoto-shrink_800_800/0?e=1534377600&v=beta&t=P_j9gh67yHyeriwsl0BnwlILV5PRFZGTyLskydkTLZk"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
                             <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
                             <p class="testimonial-post" >If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
         In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
@@ -583,7 +636,7 @@
         For me it's a privilegie work together with professionals like him.</p>
                         </div>
                         
-                        <div class="control-btn">
+                        <div class="control-btn" role="button">
                             <i class="fas fa-play control-icons"></i>
                             <i class="fas fa-pause control-icons"></i>
                         </div>
@@ -602,8 +655,8 @@
         </div>
         <footer id="page-footer" class="footer" role="contentinfo">
             <div class="footer-container">
-                <p>made with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;; css3 {frameworks: none} && JavaScript.plugins(0)</code>
-            	    <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 2018. All Rights Reserved.</small>
+                <p>coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;; css3 {frameworks: none} && JavaScript.plugins(0)</code>
+            	    (icons by <a href="https://fontawesome.com/">FontAwesome</a>) <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 2018. All Rights Reserved.</small>
             	    <a href="tel:+5584981718181" style="color: green"><i class="fab fa-whatsapp"></i></a>
             	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
             	    <i class="fab fa-jsfiddle"></i>
@@ -620,8 +673,8 @@
     </div>
     <script>
     
-        document.body.style.display = 'none';
-        if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 701) {
+        //if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 701) {
+            document.body.style.display = 'none';
             
             window.addEventListener('load', function() {
                 document.body.style.display = 'block';
@@ -649,7 +702,7 @@
                   }
                 });
             }, false);
-        }
+        //}
         
     </script>
     <!--
