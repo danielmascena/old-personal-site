@@ -16,7 +16,7 @@
             -webkit-font-smoothing: antialiased;
         }
         body {
-            font-family: 'Roboto', Helvetica, sans-serif;
+            font-family: 'Roboto', Helvetica,  sans-serif;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -25,6 +25,12 @@
             line-height: 1.5;
             margin: 0;
         }
+        .hidden.clickable {
+        	opacity: 0;
+        }
+        .hidden.removed {
+        	display:none;
+       	}
         #page-menu {
         	position: fixed;
         	z-index: 10;
@@ -83,7 +89,6 @@
             }
             .btn-burger {
                 z-index: 30;
-                opacity: 0;
             }
             .icons-burger {
             	z-index: 20;
@@ -168,6 +173,9 @@
                 text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
                 color: black;
             }
+            .skills-levels {
+            	width: 200px;
+           	}
             .testimonial {
                 width: 500px;
             }
@@ -227,9 +235,7 @@
             border: 1px solid;
             box-shadow: 0 0 5px black;
         }
-        .meter-widget > meter {
-            display: none;
-        }
+        
         .meter-progress {
             height: 1.5rem;
             line-height: 1.5rem;
@@ -319,7 +325,6 @@
         .control-checkbox {
             z-index: 10;
             padding: 0;
-            opacity: 0;
             margin: 0;
         }
         .control-btn {
@@ -480,7 +485,7 @@
 <body role="document">
     <div class="page-container">
         <div id="page-menu" class="main-menu">
-            <input type="checkbox" class="btn-burger hidden">
+            <input type="checkbox" class="btn-burger hidden clickable">
             <div class="menu-container">
                 <div class="icons-burger" role="button">
                     <i class="fas fa-bars"></i>
@@ -563,21 +568,21 @@
                                 <div class="meter-box">
                                     <div class="meter-progress"></div>
                                 </div>
-                                <meter value="80" max="100" role="hidden"></meter>
+                                <meter class="hidden removed"  value="80" max="100" role="hidden"></meter>
                             </div>
                             
                             <div class="meter-widget html5" role="progressbar">
                                 <div class="meter-box">
                                     <div class="meter-progress"></div>
                                 </div>
-                                <meter value="70" max="100" role="hidden"></meter>
+                                <meter class="hidden removed" value="70" max="100" role="hidden"></meter>
                             </div>
                             
                             <div class="meter-widget js" role="progressbar">
                                 <div class="meter-box">
                                     <div class="meter-progress"></div>
                                 </div>
-                                <meter value="60" max="100" role="hidden"></meter>
+                                <meter class="hidden removed" value="60" max="100" role="hidden"></meter>
                             </div>
                         </div>
                     </section>
@@ -613,7 +618,7 @@
             </div>
             
             <div id="testimonial-section">
-                <input type="checkbox" class="control-checkbox hidden">
+                <input type="checkbox" class="control-checkbox hidden clickable">
                 <div class="container">
                     <section class="testimonial-content" aria-label="Testimonials" role="region">
                         <h1>Testimonials</h1>
@@ -646,7 +651,7 @@
             
             <div id="location-section">
                 <div class="container">
-                    <section aria-label="Location" role="region">
+                    <section class="" aria-label="Location" role="region">
                         <h1>Where I'm</h1>
                         <div>Natal, RN, Brazil <i class="fas fa-map-marker-alt"></i></div>
                     </section>
