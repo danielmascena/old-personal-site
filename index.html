@@ -439,18 +439,18 @@
         @supports (animation-name: from-left) {
             .aboutme-content {
                 animation-name: from-left;
-                opacity: 0;
+                display: none;
             }
             .skills-content {
                 animation-name: from-right;
-                opacity: 0;
+                display: none;
             }
         }
         
         .left,
         .right {
             animation-play-state: running;
-            opacity: 1;
+            display: block;
         }
         @keyframes from-left {
             from {
