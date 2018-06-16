@@ -29,7 +29,7 @@
         	opacity: 0;
         }
         .hidden.removed {
-        	display:none;
+        	display: none;
        	}
         #page-menu {
         	position: fixed;
@@ -92,9 +92,6 @@
             }
             .icons-burger {
             	z-index: 20;
-            }
-            .icons-burger .fa-times {
-                display: none;
             }
             .btn-burger:checked ~ .menu-container>.icons-burger>.fa-times {
                 display: inline-block;
@@ -210,9 +207,7 @@
         .masthead-intro {
             padding-bottom: 4rem;
         }
-        .skills-levels {
-            
-        }
+        
         .meter-widget {
             margin-top: 1rem;
             font-weight: 600;
@@ -290,7 +285,7 @@
             width: 100%;
             animation: changing-background 1.5s ease-out 5s infinite;
         }
-        .skill-content.right .meter-progress:after {
+        .skills-content.right .meter-progress:after {
             animation-play-state: running;
         }
         @keyframes changing-background {
@@ -352,9 +347,7 @@
         .control-checkbox:checked + .container > .testimonial-content > .control-btn {
             background-color: green;
         }
-        .fa-play {
-            display: none;
-        }
+        
         .control-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-play {
             display: inline-block;
         }
@@ -437,7 +430,7 @@
             }
         }
         .aboutme-content,
-        .skill-content {
+        .skills-content {
             animation-timing-function: ease;
             animation-iteration-count: 1;
             animation-play-state: paused;
@@ -448,7 +441,7 @@
                 animation-name: from-left;
                 opacity: 0;
             }
-            .skill-content {
+            .skills-content {
                 animation-name: from-right;
                 opacity: 0;
             }
@@ -489,7 +482,7 @@
             <div class="menu-container">
                 <div class="icons-burger" role="button">
                     <i class="fas fa-bars"></i>
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times hidden removed"></i>
                 </div>
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
@@ -536,9 +529,9 @@
                 </div>
             </div>
             
-            <div id="skill-section">
+            <div id="skills-section">
                 <div class="container">
-                    <section class="skill-content" aria-label="Skills" role="region">
+                    <section class="skills-content" aria-label="Skills" role="region">
                         <h1>Skills</h1>
                         <p style="font-size: 2rem">
                             <i class="fab fa-css3-alt"></i> 
@@ -642,7 +635,7 @@
                         </div>
                         
                         <div class="control-btn" role="button">
-                            <i class="fas fa-play control-icons"></i>
+                            <i class="fas fa-play control-icons hidden removed"></i>
                             <i class="fas fa-pause control-icons"></i>
                         </div>
                     </section>
@@ -651,7 +644,7 @@
             
             <div id="location-section">
                 <div class="container">
-                    <section class="" aria-label="Location" role="region">
+                    <section class="location-content" aria-label="Location" role="region">
                         <h1>Where I'm</h1>
                         <div>Natal, RN, Brazil <i class="fas fa-map-marker-alt"></i></div>
                     </section>
@@ -689,11 +682,11 @@
                 function smNavbar(scroll_pos) {
                     var navigation = document.querySelector('#page-menu'),
                         about = document.querySelector('.aboutme-content'),
-                        skill = document.querySelector('.skill-content'),
+                        skills = document.querySelector('.skills-content'),
                             heightY = window.scrollY;
                     navigation.classList.toggle('small', (heightY > 200));
                     about.classList.add('left', (heightY > 800));
-                    skill.classList.add('right', (heightY > 2000));
+                    skills.classList.add('right', (heightY > 2000));
                 }
                 window.addEventListener('scroll', function(e) {
                   last_known_scroll_position = window.scrollY;
