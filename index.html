@@ -15,20 +15,24 @@
             --cl-bg-menu: red;
             -webkit-font-smoothing: antialiased;
         }
+        *,
+        *::before,
+        *::after {
+        	
+        }
         body {
             font-family: 'Roboto', Helvetica,  sans-serif;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
-            overflow-x: hidden;
-            background: white;
+            background-color: #fff;
             line-height: 1.5;
             margin: 0;
         }
-        .hidden.clickable {
+        .invisible.clickable {
         	opacity: 0;
         }
-        .hidden.removed {
+        [hidden] {
         	display: none;
        	}
         #page-menu {
@@ -478,11 +482,11 @@
 <body role="document">
     <div class="page-container">
         <div id="page-menu" class="main-menu">
-            <input type="checkbox" class="btn-burger hidden clickable">
+            <input type="checkbox" class="btn-burger invisible clickable">
             <div class="menu-container">
                 <div class="icons-burger" role="button">
                     <i class="fas fa-bars"></i>
-                    <i class="fas fa-times hidden removed"></i>
+                    <i class="fas fa-times" hidden></i>
                 </div>
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
@@ -561,21 +565,21 @@
                                 <div class="meter-box">
                                     <div class="meter-progress"></div>
                                 </div>
-                                <meter class="hidden removed"  value="80" max="100" role="hidden"></meter>
+                                <meter value="80" max="100" hidden></meter>
                             </div>
                             
                             <div class="meter-widget html5" role="progressbar">
                                 <div class="meter-box">
                                     <div class="meter-progress"></div>
                                 </div>
-                                <meter class="hidden removed" value="70" max="100" role="hidden"></meter>
+                                <meter value="70" max="100" hidden></meter>
                             </div>
                             
                             <div class="meter-widget js" role="progressbar">
                                 <div class="meter-box">
                                     <div class="meter-progress"></div>
                                 </div>
-                                <meter class="hidden removed" value="60" max="100" role="hidden"></meter>
+                                <meter value="60" max="100" hidden></meter>
                             </div>
                         </div>
                     </section>
@@ -611,7 +615,8 @@
             </div>
             
             <div id="testimonial-section">
-                <input type="checkbox" class="control-checkbox hidden clickable">
+            
+                <input type="checkbox" class="control-checkbox invisible clickable">
                 <div class="container">
                     <section class="testimonial-content" aria-label="Testimonials" role="region">
                         <h1>Testimonials</h1>
@@ -635,7 +640,7 @@
                         </div>
                         
                         <div class="control-btn" role="button">
-                            <i class="fas fa-play control-icons hidden removed"></i>
+                            <i class="fas fa-play control-icons" hidden></i>
                             <i class="fas fa-pause control-icons"></i>
                         </div>
                     </section>
@@ -653,7 +658,7 @@
         </div>
         <footer id="page-footer" class="footer" role="contentinfo">
             <div class="footer-container">
-                <p>coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;&lt;style&gt;css3 :not(.ui-frameworks){all:initial}&lt;/style&gt;&lt;script&gt;(($,jsPlugins) =&gt; window.$ = $ && null; $.fn.plugin = jsPlugins && 0)();&lt;/script&gt;</code>
+                <p>coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;&lt;style&gt;css3 :not(.ui-frameworks){all:initial}&lt;/style&gt;&lt;script&gt;((window,jsLibs,jsPlugins) =&gt; window.jsLibs = window.jsPlugins = null)(window);&lt;/script&gt;</code>
             	    (icons by <a href="https://fontawesome.com/">FontAwesome</a>) <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 2018. All Rights Reserved.</small>
             	    <a href="tel:+5584981718181" style="color: green"><i class="fab fa-whatsapp"></i></a>
             	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
