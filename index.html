@@ -223,7 +223,8 @@
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
         }
         .meter-widget:before {
-        	text-shadow: 0 0 5px 10px darkgray;
+        	text-shadow: 0 0 50px 1px darkgray;
+        	display: inline-block;
         }
         .meter-widget.css3 {
         	color: dodgerblue;
@@ -250,7 +251,7 @@
             margin-top: .2rem;
             font-size: 1rem;
             background-color: #aaa;
-            border: 1px solid;
+            border: 1px solid black;
             box-shadow: 0 0 5px black;
         }
         
@@ -307,6 +308,15 @@
             position: absolute;
             width: 100%;
             animation: changing-background 1.5s ease-out 5s infinite;
+        }
+        .meter-widget.css3 .meter-progress:before {
+        	background-color: dodgerblue;
+        }
+        .meter-widget.html5 .meter-progress:before {
+        	background-color: orangered;
+        }
+        .meter-widget.js .meter-progress:before {
+        	background-color: gold;
         }
         .skills-content.right .meter-progress:after {
             animation-play-state: running;
