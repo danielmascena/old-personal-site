@@ -121,6 +121,7 @@
             .menu-link {
                 transition-property: transform;
                 transition-duration: .2s;
+                width: 100%;
             }
             .menu-link:hover {
                 transform: translateX(.5rem);
@@ -211,21 +212,39 @@
         .masthead-intro {
             padding-bottom: 4rem;
         }
-        
+        .skills-levels {
+        	background: ghostwhite;
+            padding: 5%;
+        }
         .meter-widget {
             margin-top: 1rem;
             font-weight: 600;
             font-size: 1.3rem;
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
         }
+        .meter-widget:before {
+        	text-shadow: 0 0 5px 10px darkgray;
+        }
+        .meter-widget.css3 {
+        	color: dodgerblue;
+        }
         .meter-widget.css3:before {
             content: "CSS \f38b";
+         }
+         .meter-widget.html5 {
+         	color: orangered;
+         
         }
         .meter-widget.html5:before {
             content: "HTML \f13b";
+     
+        }
+        .meter-widget.js {
+        	color: gold;
         }
         .meter-widget.js:before {
             content: "JavaScript \f3b8";
+           
         }
         .meter-box {
             margin-top: .2rem;
@@ -658,7 +677,7 @@
         </div>
         <footer id="page-footer" class="footer" role="contentinfo">
             <div class="footer-container">
-                <p>coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;&lt;style&gt;css3 :not(.ui-frameworks){all:initial}&lt;/style&gt;&lt;script&gt;((window,jsLibs,jsPlugins) =&gt; window.jsLibs = window.jsPlugins = null)(window);&lt;/script&gt;</code>
+                <p>coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;&lt;style&gt;html :not(.ui-frameworks){using: just-css3} .ui-frameworks * {all: revert;}&lt;/style&gt;&lt;script&gt;"use js vanilla"; ((window,jsLibs,jsPlugins) =&gt; window.jsLibs = window.jsPlugins = null)(window);&lt;/script&gt;</code>
             	    (icons by <a href="https://fontawesome.com/">FontAwesome</a>) <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 2018. All Rights Reserved.</small>
             	    <a href="tel:+5584981718181" style="color: green"><i class="fab fa-whatsapp"></i></a>
             	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
