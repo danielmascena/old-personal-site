@@ -216,62 +216,58 @@
         	background: ghostwhite;
             padding: 5%;
         }
-        .meter-widget {
+        .progress-widget {
             margin-top: 1rem;
             font-weight: 600;
             font-size: 1.3rem;
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
         }
-        .meter-widget:before {
+        .progress-widget:before {
         	text-shadow: 0 0 50px 1px darkgray;
         	display: inline-block;
         }
-        .meter-widget.css3 {
+        .progress-widget.css3 {
         	color: dodgerblue;
         }
-        .meter-widget.css3:before {
+        .progress-widget.css3:before {
             content: "CSS \f38b";
          }
-         .meter-widget.html5 {
+         .progress-widget.html5 {
          	color: orangered;
-         
         }
-        .meter-widget.html5:before {
+        .progress-widget.html5:before {
             content: "HTML \f13b";
-     
         }
-        .meter-widget.js {
+        .progress-widget.js {
         	color: gold;
         }
-        .meter-widget.js:before {
+        .progress-widget.js:before {
             content: "JavaScript \f3b8";
-           
         }
-        .meter-box {
+        .progress-box {
             margin-top: .2rem;
             font-size: 1rem;
             background-color: #aaa;
             border: 1px solid black;
             box-shadow: 0 0 5px black;
         }
-        
-        .meter-progress {
+        .progress-content {
             height: 1.5rem;
             line-height: 1.5rem;
             overflow: hidden;
             position: relative;
             box-shadow: 0 0 5px black;
         }
-        .meter-widget.css3 .meter-progress {
+        .progress-widget.css3 .progress-content {
             width: 80%;
         }
-        .meter-widget.html5 .meter-progress {
+        .progress-widget.html5 .progress-content {
             width: 70%;
         }
-        .meter-widget.js .meter-progress {
+        .progress-widget.js .progress-content {
             width: 60%;
         }
-        .meter-progress:after {
+        .progress-content:after {
             color: #fff;
             padding-left: 5px;
             text-shadow: 0 0 0px blue;
@@ -283,23 +279,23 @@
             background: -moz-linear-gradient(black, gray);
             background: -o-linear-gradient(black, gray);
             background: linear-gradient(black, gray);
-            animation: meter-animation 2s ease 2.5s 1 reverse paused;
+            animation: progress-animation 2s ease 2.5s 1 reverse paused;
             transition: background linear 1s;
             z-index: 100;
             width: 100%;
             position: absolute;
             top: 0px;
         }
-        .meter-widget.css3 .meter-progress:after {
+        .progress-widget.css3 .progress-content:after {
             content: "80%";
         }
-        .meter-widget.html5 .meter-progress:after {
+        .progress-widget.html5 .progress-content:after {
             content: "70%";
         }
-        .meter-widget.js .meter-progress:after {
+        .progress-widget.js .progress-content:after {
             content: "60%";
         }
-        .meter-progress:before {
+        .progress-content:before {
             content: "";
             display: block;
             height: 100%;
@@ -309,16 +305,16 @@
             width: 100%;
             animation: changing-background 1.5s ease-out 5s infinite;
         }
-        .meter-widget.css3 .meter-progress:before {
+        .progress-widget.css3 .progress-content:before {
         	background-color: dodgerblue;
         }
-        .meter-widget.html5 .meter-progress:before {
+        .progress-widget.html5 .progress-content:before {
         	background-color: orangered;
         }
-        .meter-widget.js .meter-progress:before {
+        .progress-widget.js .progress-content:before {
         	background-color: gold;
         }
-        .skills-content.right .meter-progress:after {
+        .skills-content.right .progress-content:after {
             animation-play-state: running;
         }
         @keyframes changing-background {
@@ -330,7 +326,7 @@
                 opacity: 0;
             }
         }
-        @keyframes meter-animation {
+        @keyframes progress-animation {
             from {
                 transform: translateX(0%);
             }
@@ -479,7 +475,6 @@
                 display: none;
             }
         }
-        
         .left,
         .right {
             animation-play-state: running;
@@ -511,9 +506,9 @@
 <body role="document">
     <div class="page-container">
         <div id="page-menu" class="main-menu">
-            <input type="checkbox" class="btn-burger invisible clickable">
+            <input type="checkbox" class="btn-burger invisible clickable" tabindex="-1">
             <div class="menu-container">
-                <div class="icons-burger" role="button">
+                <div class="icons-burger" role="button" tabindex="-1">
                     <i class="fas fa-bars"></i>
                     <i class="fas fa-times" hidden></i>
                 </div>
@@ -590,23 +585,23 @@
                         in futurum.</p>
                         
                         <div class="skills-levels" role="group">
-                            <div class="meter-widget css3" role="progressbar">
-                                <div class="meter-box">
-                                    <div class="meter-progress"></div>
+                            <div class="progress-widget css3" role="progressbar">
+                                <div class="progress-box">
+                                    <div class="progress-content" aria-label="80%"></div>
                                 </div>
                                 <progress value="80" max="100" hidden></progress>
                             </div>
                             
-                            <div class="meter-widget html5" role="progressbar">
-                                <div class="meter-box">
-                                    <div class="meter-progress"></div>
+                            <div class="progress-widget html5" role="progressbar">
+                                <div class="progress-box">
+                                    <div class="progress-content" aria-label="70%"></div>
                                 </div>
                                 <progress value="70" max="100" hidden></progress>
                             </div>
                             
-                            <div class="meter-widget js" role="progressbar">
-                                <div class="meter-box">
-                                    <div class="meter-progress"></div>
+                            <div class="progress-widget js" role="progressbar">
+                                <div class="progress-box">
+                                    <div class="progress-content" aria-label="60%"></div>
                                 </div>
                                 <progress value="60" max="100" hidden></progress>
                             </div>
@@ -652,7 +647,7 @@
                         <div class="testimonial first">
                             <h4><img role="presentation" class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
                             <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
-                            <p class="testimonial-post" >Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
+                            <p class="testimonial-post">Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
         When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
         After about a year of hard work we did it! We impacted for better the lives of millions of Brazilian who depends on these systems to receive benefits from Brazilian government and I'm really proud of the work we did and the team we built.
         Now (2017) he is leading the frontend development team and is working hard to master new technologies (like React and React Native), so we can teach it to other teams to help them modernize our frontend stack and help business to archive their needs faster.
@@ -662,13 +657,13 @@
                         <div class="testimonial second">
                             <h4><img role="presentation" class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHBVBY93SB5Ug/profile-displayphoto-shrink_800_800/0?e=1534377600&v=beta&t=P_j9gh67yHyeriwsl0BnwlILV5PRFZGTyLskydkTLZk"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
                             <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
-                            <p class="testimonial-post" >If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
+                            <p class="testimonial-post">If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
         In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
         Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
         For me it's a privilegie work together with professionals like him.</p>
                         </div>
                         
-                        <div class="control-btn" role="button">
+                        <div class="control-btn" role="button" tabindex="-1">
                             <i class="fas fa-play control-icons" hidden></i>
                             <i class="fas fa-pause control-icons"></i>
                         </div>
