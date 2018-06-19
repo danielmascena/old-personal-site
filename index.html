@@ -24,7 +24,8 @@
         }
         body {
             font-family: 'Roboto', Helvetica,  sans-serif;
-            background-color: #fff;
+            background-color: -var(--bg-color);
+            color: -var(--tx-color);
             line-height: 1.5;
             margin: 0;
         }
@@ -131,6 +132,9 @@
             .testimonial.second {
             	width: 80%;
             }
+            .testimonial-post {
+            	padding: 0;
+            }
         }
         
         @media screen and (min-width: 766px) {
@@ -180,6 +184,7 @@
             .testimonial {
                 width: 500px;
             }
+            
         }
         
         #page-header {
@@ -539,6 +544,7 @@
         .select-box input:checked + label {
             padding-left: 20px;
         }
+        @supports (display: flex) {}
     </style>
 </head>
 <body role="document">
@@ -577,9 +583,9 @@
                     <label for="openCloseOptions">Theme</label>
                     <input id="openCloseOptions" type="checkbox" hidden>
                     <div class="select-box" hidden>
-                        <input type="radio" name="myselect" id="optionLight" value="light" hidden>
+                        <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="alert('light')">
                         <label for="optionLight">Light</label>
-                        <input type="radio" name="myselect" id="optionDark" value="dark" hidden>
+                        <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="alert('dark')">
                         <label for="optionDark">Dark</label>
                     </div>
                 </div>
