@@ -24,8 +24,6 @@
         }
         body {
             font-family: 'Roboto', Helvetica,  sans-serif;
-            background-color: -var(--bg-color);
-            color: -var(--tx-color);
             line-height: 1.5;
             margin: 0;
         }
@@ -126,6 +124,9 @@
             .menu-link:hover {
                 transform: translateX(.5rem);
             }
+            .masthead {
+            	width: 90%;
+            }
             .testimonial.first {
                 width: 90%;
             }
@@ -188,7 +189,7 @@
         }
         
         #page-header {
-            background: red url(http://lorempixel.com/1920/800/) no-repeat fixed center top;
+            background: red url("frontcode.png") no-repeat fixed center top;
             text-align: center;
             position: relative;
             height: 45rem;
@@ -431,7 +432,7 @@
         	padding: 0 2rem;
         }
         #location-section {
-            background-image: url(http://lorempixel.com/1436/418/);
+            background-image: url("frontend.png");
             height: 45rem;
         }
         #page-footer {
@@ -529,20 +530,37 @@
         }
         .select-widget #openCloseOptions:checked + .select-box {
             display: block;
+            transition: display linear .5s;
         }
         .select-box {
-            box-shadow: 0 0 5px rgba(0,0,0,.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
         }
-        .select-box label {
+        .select-box > label {
             display: block;
             width: 100%;
             padding: 10px;
             background: gray;
             border-bottom: 1px solid;
             text-align: left;
+            transform: perspective(600px) rotateX(88deg);
+            transform-style:preserve-3d;
+            perspective-origin: top;
+            transition-delay: 1s;
+            transition-duration: 1s;
+            transition-property: transform;
+            transition-timing-function: linear;
         }
-        .select-box input:checked + label {
+        .select-box > input:checked + label {
             padding-left: 20px;
+            transform: rotateX(80deg);
+            
+        }
+        #openCloseOptions:checked + .select-box > label {
+        	transform: rotateX(10deg);
+        	
+        }
+        .footer-parag {
+        	text-align: justify;
         }
         @supports (display: flex) {}
     </style>
@@ -559,7 +577,7 @@
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
                         <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
-                        <li class="menu-item"><a href="#skill-section" class="menu-link">Skills</a></li>
+                        <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
                         <li class="menu-item"><a href="#portfolio-section" class="menu-link">Portfolio</a></li>
                         <li class="menu-item"><a href="#testimonial-section" class="menu-link">Testimonials</a></li>
                         <li class="menu-item"><a href="#location-section" class="menu-link">Location</a></li>
@@ -572,7 +590,7 @@
             <div class="container">
                 <header class="masthead" role="banner">
                     <h1 class="masthead-title">Hi, welcome to my personal website</h1>
-                    <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;frontend &#47;&gt;</strong> developer who loves Web Standards</p>
+                    <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;front-end &#47;&gt;</strong> developer who loves Web Standards</p>
                 </header>
                 <div class="select-widget">
                     <select name="theme" hidden>
@@ -582,15 +600,14 @@
                     
                     <label for="openCloseOptions">Theme</label>
                     <input id="openCloseOptions" type="checkbox" hidden>
-                    <div class="select-box" hidden>
-                        <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="alert('light')">
+                    <div class="select-box" hidde>
+                        <input type="radio" name="myselect" id="optionLight" value="light" hidde onclick="alert('light')">
                         <label for="optionLight">Light</label>
-                        <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="alert('dark')">
+                        <input type="radio" name="myselect" id="optionDark" value="dark" hidde onclick="alert('dark')">
                         <label for="optionDark">Dark</label>
                     </div>
                 </div>
             </div>
-            
         </div>
         
         <div id="page-content" role="main">
@@ -707,7 +724,7 @@
                     <section class="testimonial-content" aria-label="Testimonials" role="region">
                         <h1>Testimonials</h1>
                         <div class="testimonial first">
-                            <h4><img role="presentation" class="testimonial-avatar" src="https://media.licdn.com/dms/image/C5603AQE0sijUJWNJCw/profile-displayphoto-shrink_800_800/0?e=1533772800&v=beta&t=iqbbixpU7agAK_Yr1ghh62S77fBRFgxisfN7pRJGjis"> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
+                            <h4><img role="presentation" class="testimonial-avatar" src=""> Douglas Soares de Andrade <small>Production Engineer at Shopify</small></h4>
                             <h5><date>April 17, 2017</date>, Douglas managed Daniel directly</h5>
                             <p class="testimonial-post">Daniel is a great frontend developer and is a wonderful person as well - we worked together at Dataprev and I was the the coordinator of the developer team at the time.
         When I arrived at the company, I had the mission to improve the frontend of two of the biggest and most important government applications that had a lot of UX, frontend and design problems.
@@ -717,8 +734,8 @@
                         </div>
                         
                         <div class="testimonial second">
-                            <h4><img role="presentation" class="testimonial-avatar" src="https://media.licdn.com/dms/image/C4D03AQHBVBY93SB5Ug/profile-displayphoto-shrink_800_800/0?e=1534377600&v=beta&t=P_j9gh67yHyeriwsl0BnwlILV5PRFZGTyLskydkTLZk"> Décio Benício <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
-                            <h5><date>April 5, 2017</date>, Daniel worked with Décio in the same group</h5>
+                            <h4><img role="presentation" class="testimonial-avatar" src=""> D�cio Ben�cio <small>Lead Designer at Dataprev <br>Creative Head at Black Tiger</small></h4>
+                            <h5><date>April 5, 2017</date>, Daniel worked with D�cio in the same group</h5>
                             <p class="testimonial-post">If you need a guy with really strong knowledge in front-end this guy has a name: Daniel Mascena.
         In last 3 years we work together in a lot of projects with different kinds of technologic stacks, like primefaces, XHTML, JS, HTML5, CSS, LESS, SASS, etc.
         Nowadays we working in a huge project of frontend guidelines for our different clients in dataprev. They are Ministery, institutes and other big sectors of Brazilian Governement.
@@ -744,8 +761,7 @@
         </div>
         <footer id="page-footer" class="footer" role="contentinfo">
             <div class="footer-container">
-                <p>coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt;&lt;style&gt;html :not(.ui-frameworks){using: just-css3} .ui-frameworks * {all: revert;}&lt;/style&gt;&lt;script&gt;"use js vanilla"; ((window,jsLibs,jsPlugins) =&gt; window.jsLibs = window.jsPlugins = null)(window);&lt;/script&gt;</code>
-            	    (icons by <a href="https://fontawesome.com/">FontAwesome</a>) <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 2018. All Rights Reserved.</small>
+                <p class="footer-parag">coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt; &lt;style&gt; html :not(.ui-frameworks) { using: just-css; } .ui-frameworks * { all: revert; } &lt;/style&gt; &lt;script&gt; "use js vanilla"; ((window, jsLibs, jsPlugins) =&gt; window.jsLibs = window.jsPlugins = null;)(window); &lt;/script&gt;</code> (icons by <a href="https://fontawesome.com/">FontAwesome</a>) <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 2018. All Rights Reserved.</small>
             	    <a href="tel:+5584981718181" style="color: green"><i class="fab fa-whatsapp"></i></a>
             	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
             	    <i class="fab fa-jsfiddle"></i>
