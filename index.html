@@ -30,6 +30,9 @@
         .invisible.clickable {
         	opacity: 0;
         }
+        .invisible {
+        	visibility:hidden;
+        }
         [hidden] {
         	display: none;
        	}
@@ -533,7 +536,7 @@
             transition: display linear .5s;
         }
         .select-box {
-            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        	
         }
         .select-box > label {
             display: block;
@@ -542,21 +545,24 @@
             background: gray;
             border-bottom: 1px solid;
             text-align: left;
-            transform: perspective(600px) rotateX(88deg);
+            transform: perspective(600px) rotateX(-90deg);
             transform-style:preserve-3d;
-            perspective-origin: top;
-            transition-delay: 1s;
+            transform-origin: top;
+            transition-delay: 2s;
             transition-duration: 1s;
             transition-property: transform;
-            transition-timing-function: linear;
+            transition-timing-function: ease-in;
         }
         .select-box > input:checked + label {
             padding-left: 20px;
             transform: rotateX(80deg);
             
         }
+        #openCloseOptions:checked + .select-box {
+        	visibility:visible;
+        }
         #openCloseOptions:checked + .select-box > label {
-        	transform: rotateX(10deg);
+        	transform: rotateX(0deg);
         	
         }
         .footer-parag {
@@ -600,10 +606,10 @@
                     
                     <label for="openCloseOptions">Theme</label>
                     <input id="openCloseOptions" type="checkbox" hidden>
-                    <div class="select-box" hidde>
-                        <input type="radio" name="myselect" id="optionLight" value="light" hidde onclick="alert('light')">
+                    <div class="select-box invisible">
+                        <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="alert('light')">
                         <label for="optionLight">Light</label>
-                        <input type="radio" name="myselect" id="optionDark" value="dark" hidde onclick="alert('dark')">
+                        <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="alert('dark')">
                         <label for="optionDark">Dark</label>
                     </div>
                 </div>
