@@ -407,13 +407,20 @@
             display: block;
             padding: 5px;
         }
-        .combobox-widget #openCloseOptions:checked + .drop-down-list {
+        .drop-down-list {
+            transition-timing-function: linear;
+            transition-property: visibility;
+            transition-duration: 1s;
+            transition-delay: 1s;
+        }
+        .combobox-widget #collapseList:checked + .drop-down-list {
             display: block;
             transition: display linear .5s;
         }
-        .drop-down-list {
+        #collapseList:checked + .drop-down-list {
+        	visibility: visible;
         }
-        .drop-down-list > label {
+        .drop-down-item {
             display: block;
             width: 100%;
             padding: 10px;
@@ -427,29 +434,25 @@
             transition-property: transform;
             transition-timing-function: ease-in;
         }
-        .drop-down-list > #labelLight {
-            transition-delay: .1s;
-        }
-        .drop-down-list > #labelDark {
-            transition-delay: .5s;
-        }
-        .drop-down-list > input:checked + label {
+        .drop-down-list > input:checked + .drop-down-item {
             transform: rotateX(80deg);
             padding-left: 20px;
         }
-        #openCloseOptions:checked + .drop-down-list {
-        	visibility:visible;
-        }
-        #openCloseOptions:checked + .drop-down-list > label {
+        #collapseList:checked + .drop-down-list > .drop-down-item {
         	transform: rotateX(0deg);
         }
-        .footer-parag {
-        	text-align: justify;
+        .drop-down-item > #labelLight {
+            transition-delay: .1s;
         }
+        .drop-down-item > #labelDark {
+            transition-delay: .5s;
+        }
+        
         @supports (display: flex) {
             
         }
         
+        /* Mobile viewport */
         @media screen and (max-width: 765px) {
 
             html {
@@ -519,6 +522,7 @@
             }
         }
         
+        /* Desktop viewport */
         @media screen and (min-width: 766px) {
             .container {
                 width: 70%;
@@ -597,19 +601,23 @@
                     <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;front-end &#47;&gt;</strong> developer who loves Web Standards</p>
                 </header>
                 <div class="combobox-widget">
+                    <label for="collapseList" role="button">Theme</label>
+                    <input id="collapseList" type="checkbox" hidden>
+                    <div class="drop-down-list invisible" role="listbox">
+                        <div class="drop-down-item">
+                            <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="alert('light')">
+                            <label role="option" id="labelLight" for="optionLight">Light</label>
+                        </div>
+                        <div class="drop-down-item">
+                            <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="alert('dark')">
+                            <label role="option" id="labelDark" for="optionDark">Dark</label>
+                        </div>
+                    </div>
+                    
                     <select name="theme" hidden>
                         <option value="light">Light</option>
                         <option value="dark">Dark</option>
                     </select>
-                    
-                    <label for="openCloseOptions">Theme</label>
-                    <input id="openCloseOptions" type="checkbox" hidden>
-                    <div class="drop-down-list invisible" role="listbox">
-                        <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="alert('light')">
-                        <label role="option" id="labelLight" for="optionLight">Light</label>
-                        <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="alert('dark')">
-                        <label role="option" id="labelDark" for="optionDark">Dark</label>
-                    </div>
                 </div>
             </div>
         </div>
@@ -765,25 +773,30 @@
         </div>
         <footer id="page-footer" class="footer" role="contentinfo">
             <div class="footer-container">
-                <p class="footer-parag">coded <i class="fas fa-code"></i> with 
-                <i class="fas fa-hand-holding-heart"></i> and pure 
-                <code>&lt;html5 only&gt; &lt;!--The Web platform: HTML5 technologies--&gt;&lt; style&gt; 
-                /*Nothing but a good pieces of CSS3 features, no ui frameworks or third party 
-                layout systems here*/ html :not(.ui-frameworks) { using: just-css; } 
-                .ui-frameworks * { all: revert; } &lt;/style&gt; &lt;script&gt; "use js vanilla"; 
-                /*Using native JavaScript features and browser APIs, coding without a framework or library*/
-                ((window, jsLibs, jsPlugins) =&gt; 
-                window.jsLibs = window.jsPlugins = null;)(window); &lt;/script&gt;</code> 
-                (icons by <a href="https://fontawesome.com/">FontAwesome</a>) 
-                <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 
-                2018. All Rights Reserved.</small>
-            	    <a href="tel:+5584981718181" style="color: green"><i class="fab fa-whatsapp"></i></a>
-            	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
+                <p class="footer-parag">coded 
+                    <i class="fas fa-code"></i> with 
+                    <i class="fas fa-hand-holding-heart"></i> and pure 
+                    <code>&lt;html5 only&gt; &lt;!--The Web platform: HTML5 technologies--&gt;&lt; style&gt; 
+                    /*Nothing but a good pieces of CSS3 features, no ui frameworks or third party 
+                    layout systems here*/ html :not(.ui-frameworks) { using: just-css; } 
+                    .ui-frameworks * { all: revert; } &lt;/style&gt; &lt;script&gt; "use js vanilla"; 
+                    /*Using native JavaScript features and browser APIs, coding without a framework or library*/
+                    ((window, jsLibs, jsPlugins) =&gt; 
+                    window.jsLibs = window.jsPlugins = null;)(window); &lt;/script&gt;</code> 
+                    (icons by <a href="https://fontawesome.com/">FontAwesome</a>) 
+                    <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 
+                    2018. All Rights Reserved.</small>
+                    <a href="tel:+5584981718181" style="color: green">
+            	        <i class="fab fa-whatsapp"></i>
+            	    </a>
+            	    <a href="www.linkedin.com/in/danielmascena/" target="blank">
+            	        <i class="fab fa-linkedin"></i>
+            	    </a>
             	    <i class="fab fa-jsfiddle"></i>
             	    <i class="fab fa-codepen"></i>
             	    <i class="fab fa-github"></i>
             	     
-                	<button class="return-arrow" 
+                    <button class="return-arrow" role="button"
                 	    onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
                 	    <i class="fas fa-chevron-up"></i>
                 	</button>
