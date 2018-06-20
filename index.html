@@ -12,8 +12,9 @@
     <style>
     
         :root {
-            --cl-bg-menu: red;
             -webkit-font-smoothing: antialiased;
+            --pd-container: 3rem;
+            --cl-bg-menu: red;
         }
         *,
         *::before,
@@ -24,6 +25,7 @@
         }
         body {
             font-family: 'Roboto', Helvetica,  sans-serif;
+            text-align: justify;
             line-height: 1.5;
             margin: 0;
         }
@@ -38,7 +40,7 @@
        	}
         #page-menu {
         	position: fixed;
-        	z-index: 10;
+        	z-index: 1000;
           	width: 100%;
         }
         .menu-list {
@@ -56,9 +58,9 @@
             color: #303030;
         }
         .container {
+            padding: var(--pd-container);
             position: relative;
             min-height: 30rem;
-            padding: 3rem;
             margin: auto;
         }
         .container:after {
@@ -66,131 +68,6 @@
             clear: both;
             content: "";
         }
-
-        @media screen and (max-width: 765px) {
-
-            html {
-              font-size: 70%;
-            }
-            .container {
-                width: 90%;
-            }
-            .container h1 {
-                margin-bottom: 3rem;
-                margin-top: 0;
-            }
-            .btn-burger,
-            .icons-burger {
-                line-height: 1.6rem;
-                text-align: center;
-                font-size: 1.5rem;
-                position: fixed;
-                height: 1.6rem;
-                width: 1.4rem;
-                right: 1rem;
-                padding: 0;
-                top: 1rem;
-                margin: 0;
-            }
-            .btn-burger {
-                z-index: 30;
-            }
-            .icons-burger {
-            	z-index: 20;
-            }
-            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-times {
-                display: inline-block;
-            }
-            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-bars {
-                display: none;
-            }
-            .btn-burger:checked ~ .menu-container>.menu-content {
-            	display: block;
-            }
-            .menu-content {
-            	box-shadow: 0 0 .1rem rgba(0,0,0, .5);
-            	background-color: #eee;
-            	display: none;
-            }
-            .menu-item {
-                margin: .5rem 1rem;
-                line-height: 3rem;
-            }
-            .menu-item:first-child {
-                margin-top: 0;
-            }
-            .menu-link {
-                transition-property: transform;
-                transition-duration: .2s;
-                width: 100%;
-            }
-            .menu-link:hover {
-                transform: translateX(.5rem);
-            }
-            .masthead {
-            	width: 90%;
-            }
-            .testimonial.first {
-                width: 90%;
-            }
-            .testimonial.second {
-            	width: 80%;
-            }
-            .testimonial-post {
-            	padding: 0;
-            }
-        }
-        
-        @media screen and (min-width: 766px) {
-            .container {
-                width: 70%;
-            }
-            .container h1 {
-                margin-bottom: 3rem;
-                margin-top: 0;
-            }
-            .btn-burger,
-            .icons-burger {
-                display: none;
-            }
-            #page-menu {
-                background-color: transparent;
-                transition: all .2s;
-                line-height: 6rem;
-                box-shadow: none;
-                height: 6rem;
-            }
-            #page-menu.small {
-                border-bottom: solid .1rem rgba(34, 34, 34, 0.1);
-                background-color: #fefefe;
-                line-height: 3rem;
-                height: 3rem;
-            }
-            .menu-list {
-                text-align: center;
-                margin: 0 2.5%;
-            }
-            .menu-item {
-                display: inline-block;
-                margin-right: 2rem;
-            }
-            .menu-link {
-                transition-property: color, text-shadow;
-                transition-duration: .4s;
-            }
-            .menu-link:hover {
-                text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
-                color: black;
-            }
-            .skills-levels {
-            	width: 200px;
-           	}
-            .testimonial {
-                width: 500px;
-            }
-            
-        }
-        
         #page-header {
             background: red url("frontcode.png") no-repeat fixed center top;
             text-align: center;
@@ -226,11 +103,11 @@
             padding: 5%;
         }
         .progress-widget {
+            font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
+            vertical-align: bottom;
             margin-top: 1rem;
             font-weight: 600;
             font-size: 1rem;
-            vertical-align: bottom;
-            font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
         }
         .progress-widget label:before {
         	display: inline-block;
@@ -239,42 +116,42 @@
         	color: dodgerblue;
         }
         .progress-widget.css3 label:before {
-            content: "\f38b";
             background-color: #fff;
+            content: "\f38b";
          }
          .progress-widget.html5 {
          	color: orangered;
         }
         .progress-widget.html5 label:before {
-            content: "\f13b";
             background-color: #fff;
+            content: "\f13b";
         }
         .progress-widget.js {
         	color: gold;
         }
         .progress-widget.js label:before {
-            content: "\f3b8";
             background-color: #000;
+            content: "\f3b8";
         }
         .progress-widget label:before {
             vertical-align: middle;
-            line-height: .8;
             font-size: 1.3rem;
             margin-right: 5px;
+            line-height: .8;
         }
         .progress-box {
+            box-shadow: 0 0 5px black;
+            border: 1px solid black;
+            background-color: #aaa;
             margin-top: .2rem;
             font-size: 1rem;
-            background-color: #aaa;
-            border: 1px solid black;
-            box-shadow: 0 0 5px black;
         }
         .progress-content {
-            height: 1.5rem;
-            line-height: 1.5rem;
-            overflow: hidden;
-            position: relative;
             box-shadow: 0 0 5px black;
+            line-height: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            height: 1.5rem;
         }
         .progress-widget.css3 .progress-content {
             width: 80%;
@@ -287,8 +164,6 @@
         }
         .progress-content:after {
             color: #fff;
-            padding-left: 5px;
-            font-size: .8rem;
             display: block;
             font-weight: 600;
             height: 100%;
@@ -299,9 +174,11 @@
             background: linear-gradient(black, gray);
             animation: progress-animation 2s ease 2.5s 1 reverse paused;
             transition: background linear 1s;
-            z-index: 100;
-            width: 100%;
             position: absolute;
+            padding-left: 5px;
+            font-size: .8rem;
+            z-index: 10;
+            width: 100%;
             top: 0px;
         }
         .progress-widget.css3 .progress-content:after {
@@ -314,14 +191,14 @@
             content: "60%";
         }
         .progress-content:before {
+            animation: changing-background 1.5s ease-out 5s infinite;
+            background-color: #fff;
+            position: absolute;
             content: "";
             display: block;
             height: 100%;
-            background-color: #fff;
-            z-index: 100;
-            position: absolute;
+            z-index: 10;
             width: 100%;
-            animation: changing-background 1.5s ease-out 5s infinite;
         }
         .progress-widget.css3 .progress-content:before {
         	background-color: dodgerblue;
@@ -371,7 +248,7 @@
         }
         .control-btn {
             transition: background-color .2s ease;
-            box-shadow: 0 0 .5rem rgba(0,0,0,.5);
+            box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
             background-color: red;
             border-radius: 50%;
             text-align: center;
@@ -394,7 +271,6 @@
         .control-checkbox:checked + .container > .testimonial-content > .control-btn {
             background-color: green;
         }
-        
         .control-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-play {
             display: inline-block;
         }
@@ -405,7 +281,7 @@
             padding-bottom: 3rem;
         }
         .testimonial {
-        	text-align: justify;
+        	
         }
         .testimonial.second {
             transform: translate(-50%, -50%);
@@ -519,26 +395,25 @@
             }
         }
         
-        .select-widget {
+        .combobox-widget {
             width: 5rem;
             position: absolute;
             right: 0;
             top: 8rem;
             color: #fff;
         }
-        .select-widget > label {
+        .combobox-widget > label {
             background-color: navy;
             display: block;
             padding: 5px;
         }
-        .select-widget #openCloseOptions:checked + .select-box {
+        .combobox-widget #openCloseOptions:checked + .drop-down-list {
             display: block;
             transition: display linear .5s;
         }
-        .select-box {
-        	
+        .drop-down-list {
         }
-        .select-box > label {
+        .drop-down-list > label {
             display: block;
             width: 100%;
             padding: 10px;
@@ -548,27 +423,150 @@
             transform: perspective(600px) rotateX(-90deg);
             transform-style:preserve-3d;
             transform-origin: top;
-            transition-delay: 2s;
-            transition-duration: 1s;
+            transition-duration: .5s;
             transition-property: transform;
             transition-timing-function: ease-in;
         }
-        .select-box > input:checked + label {
-            padding-left: 20px;
-            transform: rotateX(80deg);
-            
+        .drop-down-list > #labelLight {
+            transition-delay: .1s;
         }
-        #openCloseOptions:checked + .select-box {
+        .drop-down-list > #labelDark {
+            transition-delay: .5s;
+        }
+        .drop-down-list > input:checked + label {
+            transform: rotateX(80deg);
+            padding-left: 20px;
+        }
+        #openCloseOptions:checked + .drop-down-list {
         	visibility:visible;
         }
-        #openCloseOptions:checked + .select-box > label {
+        #openCloseOptions:checked + .drop-down-list > label {
         	transform: rotateX(0deg);
-        	
         }
         .footer-parag {
         	text-align: justify;
         }
-        @supports (display: flex) {}
+        @supports (display: flex) {
+            
+        }
+        
+        @media screen and (max-width: 765px) {
+
+            html {
+              font-size: 70%;
+            }
+            .container h1 {
+                margin-bottom: 3rem;
+                margin-top: 0;
+            }
+            .btn-burger,
+            .icons-burger {
+                line-height: 1.6rem;
+                text-align: center;
+                font-size: 1.5rem;
+                position: fixed;
+                height: 1.6rem;
+                width: 1.4rem;
+                right: 1rem;
+                padding: 0;
+                top: 1rem;
+                margin: 0;
+            }
+            .btn-burger {
+                z-index: 30;
+            }
+            .icons-burger {
+            	z-index: 20;
+            }
+            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-times {
+                display: inline-block;
+            }
+            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-bars {
+                display: none;
+            }
+            .btn-burger:checked ~ .menu-container>.menu-content {
+            	display: block;
+            }
+            .menu-content {
+            	box-shadow: 0 0 .1rem rgba(0,0,0, .5);
+            	background-color: #eee;
+            	display: none;
+            }
+            .menu-item {
+                margin: .5rem 1rem;
+                line-height: 3rem;
+            }
+            .menu-item:first-child {
+                margin-top: 0;
+            }
+            .menu-link {
+                transition-property: transform;
+                transition-duration: .2s;
+                width: 100%;
+            }
+            .menu-link:hover {
+                transform: translateX(.5rem);
+            }
+            .masthead {
+            	width: 90%;
+            }
+            .testimonial.second {
+            	padding: 0 var(--pd-container);
+            	width: 100%;
+            }
+            .testimonial-post {
+            	padding: 0;
+            }
+        }
+        
+        @media screen and (min-width: 766px) {
+            .container {
+                width: 70%;
+            }
+            .container h1 {
+                margin-bottom: 3rem;
+                margin-top: 0;
+            }
+            .btn-burger,
+            .icons-burger {
+                display: none;
+            }
+            #page-menu {
+                background-color: transparent;
+                transition: all .2s;
+                line-height: 6rem;
+                box-shadow: none;
+                height: 6rem;
+            }
+            #page-menu.small {
+                border-bottom: solid .1rem rgba(34, 34, 34, 0.1);
+                background-color: #fefefe;
+                line-height: 3rem;
+                height: 3rem;
+            }
+            .menu-list {
+                text-align: center;
+                margin: 0 2.5%;
+            }
+            .menu-item {
+                display: inline-block;
+                margin-right: 2rem;
+            }
+            .menu-link {
+                transition-property: color, text-shadow;
+                transition-duration: .4s;
+            }
+            .menu-link:hover {
+                text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+                color: black;
+            }
+            .skills-levels {
+            	width: 200px;
+           	}
+            .testimonial {
+                width: 500px;
+            }
+        }
     </style>
 </head>
 <body role="document">
@@ -598,7 +596,7 @@
                     <h1 class="masthead-title">Hi, welcome to my personal website</h1>
                     <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;front-end &#47;&gt;</strong> developer who loves Web Standards</p>
                 </header>
-                <div class="select-widget">
+                <div class="combobox-widget">
                     <select name="theme" hidden>
                         <option value="light">Light</option>
                         <option value="dark">Dark</option>
@@ -606,11 +604,11 @@
                     
                     <label for="openCloseOptions">Theme</label>
                     <input id="openCloseOptions" type="checkbox" hidden>
-                    <div class="select-box invisible">
+                    <div class="drop-down-list invisible" role="listbox">
                         <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="alert('light')">
-                        <label for="optionLight">Light</label>
+                        <label role="option" id="labelLight" for="optionLight">Light</label>
                         <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="alert('dark')">
-                        <label for="optionDark">Dark</label>
+                        <label role="option" id="labelDark" for="optionDark">Dark</label>
                     </div>
                 </div>
             </div>
@@ -767,7 +765,18 @@
         </div>
         <footer id="page-footer" class="footer" role="contentinfo">
             <div class="footer-container">
-                <p class="footer-parag">coded <i class="fas fa-code"></i> with <i class="fas fa-hand-holding-heart"></i> and pure <code>&lt;html5 only&gt; &lt;style&gt; html :not(.ui-frameworks) { using: just-css; } .ui-frameworks * { all: revert; } &lt;/style&gt; &lt;script&gt; "use js vanilla"; ((window, jsLibs, jsPlugins) =&gt; window.jsLibs = window.jsPlugins = null;)(window); &lt;/script&gt;</code> (icons by <a href="https://fontawesome.com/">FontAwesome</a>) <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 2018. All Rights Reserved.</small>
+                <p class="footer-parag">coded <i class="fas fa-code"></i> with 
+                <i class="fas fa-hand-holding-heart"></i> and pure 
+                <code>&lt;html5 only&gt; &lt;!--The Web platform: HTML5 technologies--&gt;&lt; style&gt; 
+                /*Nothing but a good pieces of CSS3 features, no ui frameworks or third party 
+                layout systems here*/ html :not(.ui-frameworks) { using: just-css; } 
+                .ui-frameworks * { all: revert; } &lt;/style&gt; &lt;script&gt; "use js vanilla"; 
+                /*Using native JavaScript features and browser APIs, coding without a framework or library*/
+                ((window, jsLibs, jsPlugins) =&gt; 
+                window.jsLibs = window.jsPlugins = null;)(window); &lt;/script&gt;</code> 
+                (icons by <a href="https://fontawesome.com/">FontAwesome</a>) 
+                <small>&copy; Copyright <a rel="author">Daniel Mascena</a> 
+                2018. All Rights Reserved.</small>
             	    <a href="tel:+5584981718181" style="color: green"><i class="fab fa-whatsapp"></i></a>
             	    <a href="www.linkedin.com/in/danielmascena/" target="blank"><i class="fab fa-linkedin"></i></a>
             	    <i class="fab fa-jsfiddle"></i>
