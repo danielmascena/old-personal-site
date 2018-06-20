@@ -42,6 +42,16 @@
         [hidden] {
         	display: none;
        	}
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .icon-actionable {
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
         #page-menu {
         	position: fixed;
         	z-index: 1000;
@@ -73,10 +83,9 @@
             content: "";
         }
         #page-header {
-            background: red url("frontcode.png") no-repeat fixed center top;
+            background: lime url("frontcode.png") no-repeat fixed center top;
             text-align: center;
             position: relative;
-            height: 45rem;
         }
         #page-header:after {
         	vertical-align: middle;
@@ -89,11 +98,14 @@
             background: rgba(255,255,255,.8);
             vertical-align: middle;
             display: inline-block;
-            margin-top: 5rem;
+            margin: 10rem 0 4rem;
             text-align: left;
             padding: 2rem;
             width: 60%;
             color: #000;
+        }
+        #page-header .jump-to-main-content {
+            
         }
         .masthead-title {
             text-transform: capitalize;
@@ -217,6 +229,7 @@
         .skills-content.right .progress-content:after {
             animation-play-state: running;
         }
+        
         @keyframes changing-background {
             from {
                 transform: translate(100%);
@@ -234,6 +247,7 @@
                 transform: translateX(100%);
             }
         }
+        
         #testimonial-section {
             margin-bottom: 3rem;
             position: relative;
@@ -317,7 +331,6 @@
         }
         #location-section {
             background-image: url("frontend.png");
-            height: 45rem;
             color: #000;
         }
         #page-footer {
@@ -332,14 +345,6 @@
             background: #000;
             padding: .3rem;
             color: #01c301;
-        }
-        .return-arrow {
-            background: transparent;
-            line-height: 1.5;
-            cursor: pointer;
-            font-size: 1rem;
-            float: right; 
-            border: 0; 
         }
         
         @keyframes switch-testimonial {
@@ -359,6 +364,7 @@
                 opacity: 0;
             }
         }
+        
         .aboutme-content,
         .skills-content {
             animation-timing-function: ease;
@@ -366,6 +372,7 @@
             animation-play-state: paused;
             animation-duration: 1s;
         }
+        
         @supports (animation-name: from-left) {
             .aboutme-content {
                 animation-name: from-left;
@@ -376,11 +383,13 @@
                 display: none;
             }
         }
+        
         .left,
         .right {
             animation-play-state: running;
             display: block;
         }
+        
         @keyframes from-left {
             from {
                 opacity: 0;
@@ -391,6 +400,7 @@
                 transform: translateX(0%);
             }
         }
+        
         @keyframes from-right {
             from {
                 opacity: 0;
@@ -469,32 +479,28 @@
                 margin-bottom: 3rem;
                 margin-top: 0;
             }
-            .btn-burger,
-            .icons-burger {
-                line-height: 1.6rem;
+            .mobile-menu[role="button"] {
+                margin: 0;
+                z-index: 30;
+            }
+            .mobile-menu {
                 text-align: center;
-                font-size: 1.5rem;
                 position: fixed;
                 height: 1.6rem;
                 width: 1.4rem;
                 right: 1rem;
-                padding: 0;
                 top: 1rem;
-                margin: 0;
             }
-            .btn-burger {
-                z-index: 30;
-            }
-            .icons-burger {
+            .mobile-menu {
             	z-index: 20;
             }
-            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-times {
+            .mobile-menu[type="checkbox"]:checked ~ .menu-container .fa-times {
                 display: inline-block;
             }
-            .btn-burger:checked ~ .menu-container>.icons-burger>.fa-bars {
+            .mobile-menu[type="checkbox"]:checked ~ .menu-container .fa-bars {
                 display: none;
             }
-            .btn-burger:checked ~ .menu-container>.menu-content {
+            .mobile-menu[type="checkbox"]:checked ~ .menu-container>.menu-content {
             	display: block;
             }
             .menu-content {
@@ -538,8 +544,8 @@
                 margin-bottom: 3rem;
                 margin-top: 0;
             }
-            .btn-burger,
-            .icons-burger {
+            .mobile-menu,
+            .mobile-menu {
                 display: none;
             }
             #page-menu {
@@ -583,12 +589,12 @@
 <body role="document">
     <div class="page-container">
         <div id="page-menu" class="main-menu">
-            <input type="checkbox" class="btn-burger crystallized" tabindex="-1">
+            <input type="checkbox" class="mobile-menu crystallized" role="button" tabindex="-1">
             <div class="menu-container">
-                <div class="icons-burger" role="button" tabindex="-1">
+                <a class="mobile-menu icon-actionable" tabindex="-1">
                     <i class="fas fa-bars"></i>
                     <i class="fas fa-times" hidden></i>
-                </div>
+                </a>
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
                         <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
@@ -607,6 +613,7 @@
                     <h1 class="masthead-title">Hi, welcome to my personal website</h1>
                     <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;front-end &#47;&gt;</strong> developer who loves Web Standards</p>
                 </header>
+                
                 <div class="combobox-widget">
                     <label for="collapseList" role="button">Theme</label>
                     <input id="collapseList" type="checkbox" hidden>
@@ -627,30 +634,13 @@
                     </select>
                 </div>
             </div>
+            <a class="icon-actionable" role="button" onclick="window.scrollTo({top: (document.getElementById('page-content').offsetTop), behavior: 'smooth'});">
+                <i class="fas fa-arrow-down"></i>
+            </a>
+            
         </div>
         
         <div id="page-content" role="main">
-            <div id="aboutme-section">
-                <div class="container">
-                    <section class="aboutme-content" aria-label="About Myself" role="region">
-                        <h1>About Me</h1>
-                        <p>Hi, i'm a frontend developer who loves web standards. 
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                        quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                        ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                        dolor in hendrerit in vulputate velit esse molestie consequat,
-                        vel illum dolore eu feugiat nulla facilisis at vero eros et
-                        accumsan et iusto odio dignissim qui blandit praesent luptatum
-                        zzril delenit augue duis dolore te feugait nulla facilisi.
-                        Nam liber tempor cum soluta nobis eleifend option congue
-                        nihil imperdiet doming id quod mazim placerat facer possim
-                        assum. Typi non habent claritatem insitam; est usus legentis
-                        in iis qui facit eorum claritatem.</p>
-                    </section>
-                </div>
-            </div>
             
             <div id="skills-section">
                 <div class="container">
@@ -708,6 +698,28 @@
                 </div>
             </div>
             
+            <div id="aboutme-section">
+                <div class="container">
+                    <section class="aboutme-content" aria-label="About Myself" role="region">
+                        <h1>About Me</h1>
+                        <p>Hi, i'm a frontend developer who loves web standards. 
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                        quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                        ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                        dolor in hendrerit in vulputate velit esse molestie consequat,
+                        vel illum dolore eu feugiat nulla facilisis at vero eros et
+                        accumsan et iusto odio dignissim qui blandit praesent luptatum
+                        zzril delenit augue duis dolore te feugait nulla facilisi.
+                        Nam liber tempor cum soluta nobis eleifend option congue
+                        nihil imperdiet doming id quod mazim placerat facer possim
+                        assum. Typi non habent claritatem insitam; est usus legentis
+                        in iis qui facit eorum claritatem.</p>
+                    </section>
+                </div>
+            </div>
+            
             <div id="portfolio-section">
                 <div class="container">
                     <section class="portfolio-content" aria-label="Portfolio" role="region">
@@ -738,7 +750,7 @@
             
             <div id="testimonial-section">
             
-                <input type="checkbox" class="control-checkbox crystallized">
+                <input type="checkbox" role="button" class="control-checkbox crystallized">
                 <div class="container">
                     <section class="testimonial-content" aria-label="Testimonials" role="region">
                         <h1>Testimonials</h1>
@@ -761,7 +773,7 @@
         For me it's a privilegie work together with professionals like him.</p>
                         </div>
                         
-                        <div class="control-btn" role="button" tabindex="-1">
+                        <div class="control-btn icon-actionable" tabindex="-1">
                             <i class="fas fa-play control-icons" hidden></i>
                             <i class="fas fa-pause control-icons"></i>
                         </div>
@@ -787,7 +799,7 @@
                     /*Nothing but a good pieces of CSS3 features, no ui frameworks or third party 
                     layout systems here*/ html :not(.ui-frameworks) { using: just-css; } 
                     .ui-frameworks * { all: revert; } &lt;/style&gt; &lt;script&gt; "use js vanilla"; 
-                    /*Using native JavaScript features and browser APIs, coding without a framework or library*/
+                    /*Using native JavaScript features and Web/Browser APIs, coding without a framework or library*/
                     ((window, jsLibs, jsPlugins) =&gt; 
                     window.jsLibs = window.jsPlugins = null;)(window); &lt;/script&gt;</code> 
                     (icons by <a href="https://fontawesome.com/">FontAwesome</a>) 
@@ -802,11 +814,10 @@
             	    <i class="fab fa-jsfiddle"></i>
             	    <i class="fab fa-codepen"></i>
             	    <i class="fab fa-github"></i>
-            	     
-                    <button class="return-arrow" role="button"
-                	    onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
-                	    <i class="fas fa-chevron-up"></i>
-                	</button>
+            	    <a class="icon-actionable right" role="button" onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
+            	        <i class="fas fa-chevron-up"></i>
+            	    </a>
+            	    
             	</p>
             </div>
         </footer>
@@ -827,8 +838,10 @@
                         skills = document.querySelector('.skills-content'),
                             heightY = window.scrollY;
                     navigation.classList.toggle('small', (heightY > 200));
-                    about.classList.add('left', (heightY > 800));
-                    skills.classList.add('right', (heightY > 2000));
+                    console.log(`about top ${about.offsetTop}`, `skill top ${skills.offsetTop}`, `window height ${heightY}`);
+                    
+                    skills.classList.add('right', (heightY > 750));
+                    about.classList.add('left', (heightY > 1440));
                 }
                 window.addEventListener('scroll', function(e) {
                   last_known_scroll_position = window.scrollY;
