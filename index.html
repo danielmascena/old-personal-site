@@ -14,7 +14,8 @@
         :root {
             -webkit-font-smoothing: antialiased;
             --pd-container: 3rem;
-            --cl-bg-menu: red;
+            --bg-body: #fff;
+            --color-body: #000;
         }
         *,
         *::before,
@@ -28,6 +29,9 @@
             text-align: justify;
             line-height: 1.5;
             margin: 0;
+            background-color: var(--bg-body, white);
+            color: var(--color-body, black);
+            transition: all linear 1s;
         }
         .crystallized {
         	opacity: 0;
@@ -89,6 +93,7 @@
             text-align: left;
             padding: 2rem;
             width: 60%;
+            color: #000;
         }
         .masthead-title {
             text-transform: capitalize;
@@ -313,12 +318,14 @@
         #location-section {
             background-image: url("frontend.png");
             height: 45rem;
+            color: #000;
         }
         #page-footer {
             background-color: aquamarine;
         }
         .footer {
             padding: 3rem 2rem;
+            color: #000;
         }
         .footer code {
             text-shadow: 0 0 5px #01c301;
@@ -452,7 +459,7 @@
             
         }
         
-        /* Mobile viewport */
+        /* MOBILE viewport */
         @media screen and (max-width: 765px) {
 
             html {
@@ -522,7 +529,7 @@
             }
         }
         
-        /* Desktop viewport */
+        /* DESKTOP viewport */
         @media screen and (min-width: 766px) {
             .container {
                 width: 70%;
@@ -605,11 +612,11 @@
                     <input id="collapseList" type="checkbox" hidden>
                     <div class="drop-down-list invisible" role="listbox">
                         <div class="drop-down-item">
-                            <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="alert('light')">
+                            <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="document.body.style.setProperty('--bg-body', 'white');document.body.style.setProperty('--color-body', 'black');">
                             <label role="option" id="labelLight" for="optionLight">Light</label>
                         </div>
                         <div class="drop-down-item">
-                            <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="alert('dark')">
+                            <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="document.body.style.setProperty('--bg-body', 'black');document.body.style.setProperty('--color-body', 'white');">
                             <label role="option" id="labelDark" for="optionDark">Dark</label>
                         </div>
                     </div>
