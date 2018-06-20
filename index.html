@@ -42,15 +42,9 @@
         [hidden] {
         	display: none;
        	}
-        .left {
-            float: left;
-        }
-        .right {
-            float: right;
-        }
         .icon-actionable {
-            cursor: pointer;
             font-size: 1.2rem;
+            cursor: pointer;
         }
         #page-menu {
         	position: fixed;
@@ -98,14 +92,11 @@
             background: rgba(255,255,255,.8);
             vertical-align: middle;
             display: inline-block;
-            margin: 10rem 0 4rem;
+            margin: 10rem 0 2rem;
             text-align: left;
             padding: 2rem;
             width: 60%;
             color: #000;
-        }
-        #page-header .jump-to-main-content {
-            
         }
         .masthead-title {
             text-transform: capitalize;
@@ -115,9 +106,18 @@
         .masthead-intro {
             padding-bottom: 4rem;
         }
+        .jump-to-main {
+            display: inline-block;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #000;
+        }
         .skills-levels {
         	background-color: ghostwhite;
             padding: 5%;
+            max-width: 30rem;
+            margin: auto;
         }
         .progress-widget {
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
@@ -189,7 +189,7 @@
             background: -moz-linear-gradient(black, gray);
             background: -o-linear-gradient(black, gray);
             background: linear-gradient(black, gray);
-            animation: progress-animation 2s ease 2.5s 1 reverse paused;
+            animation: progress-animation 1.5s ease 2s 1 reverse paused;
             transition: background linear 1s;
             position: absolute;
             padding-left: 5px;
@@ -208,7 +208,7 @@
             content: "60%";
         }
         .progress-content:before {
-            animation: changing-background 1.5s ease-out 5s infinite;
+            animation: changing-background 1.5s ease-out 4s infinite;
             background-color: #fff;
             position: absolute;
             content: "";
@@ -226,7 +226,7 @@
         .progress-widget.js .progress-content:before {
         	background-color: gold;
         }
-        .skills-content.right .progress-content:after {
+        .skills-content.from-right .progress-content:after {
             animation-play-state: running;
         }
         
@@ -252,55 +252,53 @@
             margin-bottom: 3rem;
             position: relative;
         }
-        .control-checkbox,
-        .control-btn {
+        .control-button,
+        .control-icons {
             position: absolute;
             height: 3rem;
             width: 3rem;
             left: 50%;
             bottom: 0;
         }
-        .control-checkbox {
+        .control-button {
+            cursor: pointer;
             z-index: 10;
             padding: 0;
             margin: 0;
         }
-        .control-btn {
+        .control-icons {
             transition: background-color .2s ease;
             box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
             background-color: red;
             border-radius: 50%;
             text-align: center;
         }
-        .control-btn:after {
+        .control-icons:after {
             vertical-align: middle;
             display: inline-block;
             height: 100%;
             content: "";
         }
-        .control-icons {
+        .control-icons .fas {
             vertical-align: middle;
             padding-left: .3rem;
             font-size: 1rem;
             color: white;
         }
-        .control-checkbox:checked + .container > .testimonial-content > .testimonial {
+        .control-button:checked + .container > .testimonial-content > .testimonial {
             animation-play-state: paused;
         }
-        .control-checkbox:checked + .container > .testimonial-content > .control-btn {
+        .control-button:checked + .container > .testimonial-content > .control-icons {
             background-color: green;
         }
-        .control-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-play {
+        .control-button:checked + .container > .testimonial-content > .control-icons > .fa-play {
             display: inline-block;
         }
-        .control-checkbox:checked + .container > .testimonial-content > .control-btn > .fa-pause {
+        .control-button:checked + .container > .testimonial-content > .control-icons > .fa-pause {
             display: none;
         }
         .testimonial-content {
             padding-bottom: 3rem;
-        }
-        .testimonial {
-        	
         }
         .testimonial.second {
             transform: translate(-50%, -50%);
@@ -346,6 +344,11 @@
             padding: .3rem;
             color: #01c301;
         }
+        .jump-to-top {
+            cursor: pointer;
+            float: right;
+            font-size: 1.2rem;
+        }
         
         @keyframes switch-testimonial {
             0% {
@@ -384,8 +387,8 @@
             }
         }
         
-        .left,
-        .right {
+        .from-left,
+        .from-right {
             animation-play-state: running;
             display: block;
         }
@@ -413,16 +416,17 @@
         }
         
         .combobox-widget {
-            width: 5rem;
             position: absolute;
-            right: 0;
-            top: 8rem;
+            width: 5rem;
             color: #fff;
+            top: 8rem;
+            right: 0;
         }
         .combobox-widget > label {
             background-color: navy;
             display: block;
             padding: 5px;
+            cursor: pointer;
         }
         .drop-down-list {
             transition-timing-function: linear;
@@ -431,18 +435,15 @@
             transition-delay: 1s;
         }
         .combobox-widget #collapseList:checked + .drop-down-list {
-            display: block;
             transition: display linear .5s;
+            display: block;
         }
         #collapseList:checked + .drop-down-list {
         	visibility: visible;
         }
         .drop-down-item {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: gray;
             border-bottom: 1px solid;
+            background: gray;
             text-align: left;
             transform: perspective(600px) rotateX(-90deg);
             transform-style:preserve-3d;
@@ -458,6 +459,11 @@
         #collapseList:checked + .drop-down-list > .drop-down-item {
         	transform: rotateX(0deg);
         }
+        .drop-down-item > label {
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+        }
         .drop-down-item > #labelLight {
             transition-delay: .1s;
         }
@@ -470,7 +476,7 @@
         }
         
         /* MOBILE viewport */
-        @media screen and (max-width: 765px) {
+        @media only screen and (max-width: 765px) {
 
             html {
               font-size: 70%;
@@ -479,11 +485,13 @@
                 margin-bottom: 3rem;
                 margin-top: 0;
             }
-            .mobile-menu[role="button"] {
-                margin: 0;
+            .mobile-menu-button {
+                cursor: pointer;
                 z-index: 30;
+                margin: 0;
             }
-            .mobile-menu {
+            .mobile-menu-button,
+            .mobile-menu-icons {
                 text-align: center;
                 position: fixed;
                 height: 1.6rem;
@@ -491,16 +499,17 @@
                 right: 1rem;
                 top: 1rem;
             }
-            .mobile-menu {
+            .mobile-menu-icons {
+                font-size: 1.3rem;
             	z-index: 20;
             }
-            .mobile-menu[type="checkbox"]:checked ~ .menu-container .fa-times {
+            .mobile-menu-button:checked ~ .menu-container .fa-times {
                 display: inline-block;
             }
-            .mobile-menu[type="checkbox"]:checked ~ .menu-container .fa-bars {
+            .mobile-menu-button:checked ~ .menu-container .fa-bars {
                 display: none;
             }
-            .mobile-menu[type="checkbox"]:checked ~ .menu-container>.menu-content {
+            .mobile-menu-button:checked ~ .menu-container > .menu-content {
             	display: block;
             }
             .menu-content {
@@ -524,7 +533,11 @@
                 transform: translateX(.5rem);
             }
             .masthead {
+                margin: 12rem 0 3rem;
             	width: 90%;
+            }
+            .jump-to-main {
+                display: none;
             }
             .testimonial.second {
             	padding: 0 var(--pd-container);
@@ -536,7 +549,7 @@
         }
         
         /* DESKTOP viewport */
-        @media screen and (min-width: 766px) {
+        @media only screen and (min-width: 766px) {
             .container {
                 width: 70%;
             }
@@ -544,8 +557,8 @@
                 margin-bottom: 3rem;
                 margin-top: 0;
             }
-            .mobile-menu,
-            .mobile-menu {
+            .mobile-menu-button,
+            .mobile-menu-icons {
                 display: none;
             }
             #page-menu {
@@ -577,24 +590,26 @@
                 text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
                 color: black;
             }
-            .skills-levels {
-            	width: 200px;
+           	.masthead {
+           	    margin-top: 11rem;
+           	    width: 500px;
            	}
             .testimonial {
                 width: 500px;
             }
+            
         }
     </style>
 </head>
 <body role="document">
     <div class="page-container">
         <div id="page-menu" class="main-menu">
-            <input type="checkbox" class="mobile-menu crystallized" role="button" tabindex="-1">
+            <input type="checkbox" class="mobile-menu-button crystallized" role="button" tabindex="-1">
             <div class="menu-container">
-                <a class="mobile-menu icon-actionable" tabindex="-1">
+                <div class="mobile-menu-icons" tabindex="-1">
                     <i class="fas fa-bars"></i>
                     <i class="fas fa-times" hidden></i>
-                </a>
+                </div>
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
                         <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
@@ -634,8 +649,8 @@
                     </select>
                 </div>
             </div>
-            <a class="icon-actionable" role="button" onclick="window.scrollTo({top: (document.getElementById('page-content').offsetTop), behavior: 'smooth'});">
-                <i class="fas fa-arrow-down"></i>
+            <a class="jump-to-main" role="button" onclick="window.scrollTo({top: (document.getElementById('page-content').offsetTop), behavior: 'smooth'});">
+                <i class="fas fa-arrow-circle-down"></i>
             </a>
             
         </div>
@@ -750,7 +765,7 @@
             
             <div id="testimonial-section">
             
-                <input type="checkbox" role="button" class="control-checkbox crystallized">
+                <input type="checkbox" role="button" class="control-button crystallized">
                 <div class="container">
                     <section class="testimonial-content" aria-label="Testimonials" role="region">
                         <h1>Testimonials</h1>
@@ -773,9 +788,9 @@
         For me it's a privilegie work together with professionals like him.</p>
                         </div>
                         
-                        <div class="control-btn icon-actionable" tabindex="-1">
-                            <i class="fas fa-play control-icons" hidden></i>
-                            <i class="fas fa-pause control-icons"></i>
+                        <div class="control-icons" tabindex="-1">
+                            <i class="fas fa-play" hidden></i>
+                            <i class="fas fa-pause"></i>
                         </div>
                     </section>
                 </div>
@@ -814,7 +829,7 @@
             	    <i class="fab fa-jsfiddle"></i>
             	    <i class="fab fa-codepen"></i>
             	    <i class="fab fa-github"></i>
-            	    <a class="icon-actionable right" role="button" onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
+            	    <a class="jump-to-top" role="button" onclick="javascript:window.scrollTo({top: 0, behavior: 'smooth'});">
             	        <i class="fas fa-chevron-up"></i>
             	    </a>
             	    
@@ -840,8 +855,8 @@
                     navigation.classList.toggle('small', (heightY > 200));
                     console.log(`about top ${about.offsetTop}`, `skill top ${skills.offsetTop}`, `window height ${heightY}`);
                     
-                    skills.classList.add('right', (heightY > 750));
-                    about.classList.add('left', (heightY > 1440));
+                    skills.classList.add('from-right', (heightY > 750));
+                    about.classList.add('from-left', (heightY > 1440));
                 }
                 window.addEventListener('scroll', function(e) {
                   last_known_scroll_position = window.scrollY;
