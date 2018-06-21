@@ -711,28 +711,6 @@
                     <h1 class="masthead-title">Hi, welcome to my personal website</h1>
                     <p class="masthead-intro">My name is <mark>Daniel Mascena</mark> and I'm a <strong>&lt;front-end &#47;&gt;</strong> developer who loves <i>Web Standards</i></p>
                 </header>
-                
-                <div class="combobox-widget">
-                    <label for="collapseList" role="button">Theme</label>
-                    <input id="collapseList" type="checkbox" hidden>
-                    <div class="drop-down-list invisible" role="listbox">
-                        <label class="drop-down-item">
-                            <input type="radio" name="myselect" value="light" hidden onclick="document.body.style.setProperty('--bg-body', 'white');document.body.style.setProperty('--color-body', 'black');">
-                            <span role="option">Light</span>
-                        </label>
-                        <label class="drop-down-item">
-                            <input type="radio" name="myselect" value="dark" hidden onclick="document.body.style.setProperty('--bg-body', 'black');document.body.style.setProperty('--color-body', 'white');">
-                            <span role="option">Dark</span>
-                        </label>
-                    </div>
-                    
-                    <select name="theme" hidden>
-                        <option value="light">Light</option>
-                        <option value="dark">Dark</option>
-                    </select>
-                </div>
-                
-                
             </div>
             <a class="jump-to-main" role="button" onclick="window.scrollTo({top: (document.getElementById('page-content').offsetTop), behavior: 'smooth'});">
                 <i class="fas fa-arrow-circle-down"></i>
@@ -886,6 +864,28 @@
                     <section class="location-content" aria-label="Location" role="region">
                         <h1>Where I'm</h1>
                         <div>Natal, RN, Brazil <i class="fas fa-map-marker-alt"></i></div>
+                        
+                        <div class="combobox-widget">
+                            <label for="collapseList" role="button">Theme</label>
+                            <input id="collapseList" type="checkbox" hidden>
+                            <div class="drop-down-list invisible" role="listbox">
+                                <label class="drop-down-item">
+                                    <input type="radio" name="myselect" value="light" hidden onclick="">
+                                    <span role="option">Light</span>
+                                </label>
+                                <label class="drop-down-item">
+                                    <input type="radio" name="myselect" value="dark" hidden onclick="">
+                                    <span role="option">Dark</span>
+                                </label>
+                            </div>
+                            
+                            <select name="theme" hidden>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                
+                
                     </section>
                 </div>
             </div>
