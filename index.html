@@ -487,6 +487,10 @@
                 margin-bottom: 3rem;
                 margin-top: 0;
             }
+            #page-menu {
+                width: 40vw;
+            }
+
             .mobile-menu-button {
                 cursor: pointer;
                 z-index: 30;
@@ -498,26 +502,38 @@
                 position: fixed;
                 height: 1.6rem;
                 width: 1.4rem;
-                right: 1rem;
-                top: 1rem;
+                left: 1rem;
+                top: 2rem;
             }
             .mobile-menu-icons {
                 font-size: 1.3rem;
             	z-index: 20;
             }
+            .fa-times {
+                transform: rotate(360deg);
+                transition: transform 1s;
+                visibility: hidden;
+            }
             .mobile-menu-button:checked ~ .menu-container .fa-times {
-                display: inline-block;
+                transform: rotate(0);
+                visibility: visible;
             }
             .mobile-menu-button:checked ~ .menu-container .fa-bars {
                 display: none;
             }
             .mobile-menu-button:checked ~ .menu-container > .menu-content {
-            	display: block;
+            	transform: translate(0%);
+            	height: 100vh;
+            	opacity: 1;
             }
             .menu-content {
-            	box-shadow: 0 0 .1rem rgba(0,0,0, .5);
+            	box-shadow: 0 0 .1rem rgba(0, 0, 0, .5);
+                transition: transform .5s ease .1s, height .1s;
+                transform: translate(-100%);
             	background-color: #eee;
-            	display: none;
+                padding: 5rem 0 0 2rem;
+            	opacity: 0;
+            	height: 0;
             }
             .menu-item {
                 margin: .5rem 1rem;
@@ -592,13 +608,10 @@
                 text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
                 color: black;
             }
-           	.masthead {
-           	    margin-top: 11rem;
+           	.masthead,
+           	.testimonial {
            	    width: 500px;
            	}
-            .testimonial {
-                width: 500px;
-            }
             
         }
     </style>
@@ -610,7 +623,7 @@
             <div class="menu-container">
                 <div class="mobile-menu-icons" tabindex="-1">
                     <i class="fas fa-bars"></i>
-                    <i class="fas fa-times" hidden></i>
+                    <i class="fas fa-times"></i>
                 </div>
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
@@ -628,7 +641,7 @@
             <div class="container">
                 <header class="masthead" role="banner">
                     <h1 class="masthead-title">Hi, welcome to my personal website</h1>
-                    <p class="masthead-intro">My name is Daniel Mascena and I'm a <strong>&lt;front-end &#47;&gt;</strong> developer who loves Web Standards</p>
+                    <p class="masthead-intro">My name is <mark>Daniel Mascena</mark> and I'm a <strong>&lt;front-end &#47;&gt;</strong> developer who loves <i>Web Standards</i></p>
                 </header>
                 
                 <div class="combobox-widget">
