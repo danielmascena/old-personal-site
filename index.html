@@ -545,6 +545,9 @@
                 color: #000;
             	z-index: 20;
             }
+            body.night .mobile-menu-icons > .fa-bars {
+                color: #fff;
+            }
             .fa-times {
                 transform: rotate(360deg);
                 transition: transform 1s;
@@ -558,6 +561,7 @@
                 bottom: 1rem;
                 top: initial;
                 left: 1rem;
+                opacity: 0;
             }
             .mobile-menu-button:checked ~ .menu-container .fa-times {
                 transform: rotate(0);
@@ -573,8 +577,9 @@
             	opacity: 1;
             }
             .mobile-menu-button:checked ~ .menu-container > .switch-widget {
-                transition: visibility .1s ease .4s;
+                transition: visibility .1s, opacity .4s ease-out .1s;
                 visibility: visible;
+                opacity: 1;
             }
             .menu-content {
                 transition: transform .5s ease .1s, height .1s;
