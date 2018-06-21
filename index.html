@@ -616,6 +616,34 @@
            	}
             
         }
+        
+        .switch-widget {
+            width: 4rem;
+            height: 2rem;
+            border: 2px solid;
+            background: #000;
+            border-radius: 2rem;
+            position: relative;
+            box-sizing: content-box;
+        }
+        .switch-button {
+            display: none;
+        }
+        .switch-slider {
+            width: 2rem;
+            background: #345;
+            height: 2rem;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            transition: 1s;
+            transform-origin: 75% 100%;
+            transform-style: preserve-3d;
+        }
+        .switch-button:checked + .switch-slider {
+            background: #ccc;
+            transform: translate(1rem) rotateY(180deg);
+        }
     </style>
 </head>
 <body role="document">
@@ -666,9 +694,9 @@
                     </select>
                 </div>
                 
-                <div class="switch-button">
+                <div class="switch-widget">
                     <label>
-                        <input type="checkbox">
+                        <input class="switch-button" type="checkbox" role="button">
                         <span class="switch-slider"></span>
                     </label>
                 </div>
