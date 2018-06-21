@@ -417,7 +417,7 @@
         
         .combobox-widget {
             position: absolute;
-            width: 5rem;
+            min-width: 5rem;
             color: #fff;
             top: 8rem;
             right: 0;
@@ -442,6 +442,7 @@
         	visibility: visible;
         }
         .drop-down-item {
+            display: block;
             border-bottom: 1px solid;
             background: gray;
             text-align: left;
@@ -453,13 +454,12 @@
             transition-timing-function: ease-in;
         }
         .drop-down-list > input:checked + .drop-down-item {
-            transform: rotateX(80deg);
             padding-left: 20px;
         }
         #collapseList:checked + .drop-down-list > .drop-down-item {
         	transform: rotateX(0deg);
         }
-        .drop-down-item > label {
+        .drop-down-item > span {
             display: block;
             padding: 10px;
             cursor: pointer;
@@ -650,20 +650,24 @@
                     <label for="collapseList" role="button">Theme</label>
                     <input id="collapseList" type="checkbox" hidden>
                     <div class="drop-down-list invisible" role="listbox">
-                        <div class="drop-down-item">
-                            <input type="radio" name="myselect" id="optionLight" value="light" hidden onclick="document.body.style.setProperty('--bg-body', 'white');document.body.style.setProperty('--color-body', 'black');">
-                            <label role="option" id="labelLight" for="optionLight">Light</label>
-                        </div>
-                        <div class="drop-down-item">
-                            <input type="radio" name="myselect" id="optionDark" value="dark" hidden onclick="document.body.style.setProperty('--bg-body', 'black');document.body.style.setProperty('--color-body', 'white');">
-                            <label role="option" id="labelDark" for="optionDark">Dark</label>
-                        </div>
+                        <label class="drop-down-item">
+                            <input type="radio" name="myselect" value="light" hidden onclick="document.body.style.setProperty('--bg-body', 'white');document.body.style.setProperty('--color-body', 'black');">
+                            <span role="option">Light</span>
+                        </label>
+                        <label class="drop-down-item">
+                            <input type="radio" name="myselect" value="dark" hidden onclick="document.body.style.setProperty('--bg-body', 'black');document.body.style.setProperty('--color-body', 'white');">
+                            <span role="option">Dark</span>
+                        </label>
                     </div>
                     
                     <select name="theme" hidden>
                         <option value="light">Light</option>
                         <option value="dark">Dark</option>
                     </select>
+                </div>
+                
+                <div class="switch-button">
+                    <label></label>
                 </div>
             </div>
             <a class="jump-to-main" role="button" onclick="window.scrollTo({top: (document.getElementById('page-content').offsetTop), behavior: 'smooth'});">
