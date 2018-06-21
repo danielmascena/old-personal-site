@@ -464,11 +464,13 @@
             padding: 10px;
             cursor: pointer;
         }
-        .drop-down-item > #labelLight {
+        #collapseList:checked + .drop-down-list > .drop-down-item:first-child,
+        #collapseList + .drop-down-list > .drop-down-item:last-child {
             transition-delay: .1s;
         }
-        .drop-down-item > #labelDark {
-            transition-delay: .5s;
+        #collapseList:checked + .drop-down-list > .drop-down-item:last-child,
+        #collapseList + .drop-down-list > .drop-down-item:first-child {
+            transition-delay: .8s;
         }
         
         @supports (display: flex) {
