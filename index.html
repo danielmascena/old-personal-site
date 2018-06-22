@@ -14,8 +14,6 @@
         :root {
             -webkit-font-smoothing: antialiased;
             --pd-container: 3rem;
-            --bg-body: #fff;
-            --color-body: #000;
         }
         *,
         *::before,
@@ -33,7 +31,7 @@
             color: var(--color-body, black);
             transition: all linear 1s;
         }
-        body.night {
+        body.night-mode {
             background-color: #000;
             color: #fff;
         }
@@ -118,11 +116,15 @@
             color: #000;
         }
         .skills-levels {
-        	background-color: ghostwhite;
+            background-color: ghostwhite;
+            background: -webkit-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
+            background: -moz-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
+            background: -o-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
+            background: linear-gradient(#ece4d9 0%, #e9dfd1 100%);
             padding: 5%;
             max-width: 30rem;
             margin: auto;
-        }
+        }    
         .progress-widget {
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
             vertical-align: bottom;
@@ -133,26 +135,32 @@
         .progress-widget label:before {
         	display: inline-block;
         }
-        .progress-widget.css3 {
-        	color: dodgerblue;
+        .progress-widget.css3 label {
+        	color: #126dc5;
         }
         .progress-widget.css3 label:before {
             background-color: #fff;
             content: "\f38b";
+            color: dodgerblue;
          }
-         .progress-widget.html5 {
-         	color: orangered;
+         .progress-widget.html5 label {
+         	color: #ad3103;
         }
         .progress-widget.html5 label:before {
             background-color: #fff;
             content: "\f13b";
+            color: orangered;
         }
-        .progress-widget.js {
-        	color: gold;
+        .progress-widget.js label {
+            color: #c3a60a;
         }
         .progress-widget.js label:before {
             background-color: #000;
             content: "\f3b8";
+            color: gold;
+        }
+        .progress-widget label {
+            letter-spacing: -2px;
         }
         .progress-widget label:before {
             vertical-align: middle;
@@ -493,7 +501,7 @@
             display: none;
         }
         .switch-slider {
-            transition: transform .5s ease-in;
+            transition: transform .5s ease-in, background .1s linear .3s;
             transform-origin: 65%;
             border-radius: 50%;
             position: absolute;
@@ -577,7 +585,7 @@
             	opacity: 1;
             }
             .mobile-menu-button:checked ~ .menu-container > .switch-widget {
-                transition: visibility .1s, opacity .4s ease-out .1s;
+                transition: visibility .1s, opacity .6s ease-out .1s;
                 visibility: visible;
                 opacity: 1;
             }
@@ -698,7 +706,7 @@
                 </nav>
                 <div class="switch-widget">
                     <label>
-                        <input class="switch-button" type="checkbox" role="button" onclick="document.body.classList.toggle('night')">
+                        <input class="switch-button" type="checkbox" role="button" onclick="document.body.classList.toggle('night-mode')">
                         <span class="switch-slider"></span>
                     </label>
                 </div>
