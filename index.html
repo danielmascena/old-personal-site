@@ -124,6 +124,7 @@
             padding: 5%;
             max-width: 30rem;
             margin: auto;
+            border-radius: 20px;
         }    
         .progress-widget {
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
@@ -174,6 +175,7 @@
             background-color: #aaa;
             margin-top: .2rem;
             font-size: 1rem;
+            
         }
         .progress-content {
             box-shadow: 0 0 5px black;
@@ -431,8 +433,8 @@
             position: absolute;
             min-width: 5rem;
             color: #fff;
-            top: 8rem;
-            right: 0;
+            top: 50%;
+            left: 50%;
         }
         .combobox-widget > label {
             background-color: navy;
@@ -871,25 +873,23 @@
                 <div class="container">
                     <section class="location-content" aria-label="Location" role="region">
                         <h1>Where I'm</h1>
-                        <div>Natal, RN, Brazil <i class="fas fa-map-marker-alt"></i></div>
-                        
                         <div class="combobox-widget">
-                            <label for="collapseList" role="button">Theme</label>
+                            <label for="collapseList" role="button">Location <i class="fas fa-map-marker-alt"></i></label>
                             <input id="collapseList" type="checkbox" hidden>
                             <div class="drop-down-list invisible" role="listbox">
                                 <label class="drop-down-item">
-                                    <input type="radio" name="myselect" value="light" hidden onclick="">
-                                    <span role="option">Light</span>
+                                    <input type="radio" name="myselect" id="city" value="nat" hidden onclick="">
+                                    <span role="option">Natal, RN</span>
                                 </label>
                                 <label class="drop-down-item">
-                                    <input type="radio" name="myselect" value="dark" hidden onclick="">
-                                    <span role="option">Dark</span>
+                                    <input type="radio" name="myselect" id="countri" value="br" hidden onclick="">
+                                    <span role="option">Brazil</span>
                                 </label>
                             </div>
                             
                             <select name="theme" hidden>
-                                <option value="light">Light</option>
-                                <option value="dark">Dark</option>
+                                <option id="city" value="nat">Light</option>
+                                <option id="country" value="br">Brazil</option>
                             </select>
                         </div>
                 
