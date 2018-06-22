@@ -441,6 +441,7 @@
             display: block;
             padding: 5px;
             cursor: pointer;
+            border-radius: 5px 5px 0 0;
         }
         .drop-down-list {
             transition-timing-function: linear;
@@ -466,6 +467,9 @@
             transition-duration: .5s;
             transition-property: transform;
             transition-timing-function: ease-in;
+        }
+        .drop-down-item:last-child {
+            border-radius: 0 0 5px 5px;
         }
         .drop-down-list > input:checked + .drop-down-item {
             padding-left: 20px;
