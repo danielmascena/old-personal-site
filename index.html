@@ -489,8 +489,7 @@
         #collapseList:checked + .drop-down-list > .drop-down-item:last-child,
         #collapseList + .drop-down-list > .drop-down-item:first-child {
             transition-delay: .8s;
-        }
-        
+        }  
         .switch-widget {
             box-sizing: content-box;
             border: 2px solid #fff;
@@ -528,7 +527,7 @@
         @media only screen and (max-width: 765px) {
 
             html {
-              font-size: 70%;
+              font-size: 80%;
             }
             .container h1 {
                 margin-bottom: 3rem;
@@ -571,11 +570,18 @@
                 border-color: #303030;
                 visibility: hidden;
                 margin-top: 0;
+                height: 2rem;
+                width: 4rem;
                 right: initial;
-                bottom: 1rem;
+                bottom: 15vh;
                 top: initial;
                 left: 1rem;
                 opacity: 0;
+            }
+            .switch-slider {
+            	height: 2rem;
+            width: 2rem;
+            transform-origin: 75%;
             }
             .mobile-menu-button:checked ~ .menu-container .fa-times {
                 transform: rotate(0);
