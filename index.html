@@ -117,9 +117,9 @@
         }
         .skills-levels {
             background-color: ghostwhite;
-            background: -webkit-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
-            background: -moz-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
-            background: -o-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
+            background: -webkit-linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
+            background: -moz-linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
+            background: -o-linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
             background: linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
             border-radius: 20px;
             max-width: 30rem;
@@ -140,7 +140,6 @@
         	color: #126dc5;
         }
         .progress-widget.css3 label:before {
-            background-color: #fff;
             content: "\f38b";
             color: dodgerblue;
          }
@@ -148,26 +147,39 @@
          	color: #ad3103;
         }
         .progress-widget.html5 label:before {
-            background-color: #fff;
             content: "\f13b";
             color: orangered;
         }
+        .progress-widget.css3 label,
+        .progress-widget.html5 label {
+background: linear-gradient(to right, white 0%, white 10%, transparent 15%, transparent 100%);
+        }
         .progress-widget.js label {
-            color: #c3a60a;
+            background: rgba(5,5,5,1);
+background: -moz-linear-gradient(left, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 16%, rgba(246,246,246,1) 20%, transparent 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(5,5,5,1)), color-stop(16%, rgba(5,5,5,1)), color-stop(20%, rgba(246,246,246,1)), color-stop(100%, transparent));
+background: -webkit-linear-gradient(left, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 16%, rgba(246,246,246,1) 20%, transparent 100%);
+background: -o-linear-gradient(left, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 16%, rgba(246,246,246,1) 20%, transparent 100%);
+background: -ms-linear-gradient(left, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 16%, rgba(246,246,246,1) 20%, transparent 100%);
+background: linear-gradient(to right, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 16%, transparent 20%, transparent 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050505', endColorstr='transparent', GradientType=1);
+color: #c3a60a;
         }
         .progress-widget.js label:before {
-            background-color: #000;
             content: "\f3b8";
             color: gold;
         }
         .progress-widget label {
             letter-spacing: -1px;
+            padding-right: .3rem;
+            border-radius: 15px;
         }
         .progress-widget label:before {
             vertical-align: middle;
+            margin-right: .5rem;
             font-size: 1.3rem;
-            margin-right: 5px;
-            line-height: .8;
+            line-height: .6;
+            margin-left: -2px;
         }
         .progress-box {
             box-shadow: 0 0 5px black;
@@ -175,7 +187,6 @@
             background-color: #aaa;
             margin-top: .2rem;
             font-size: 1rem;
-            
         }
         .progress-content {
             box-shadow: 0 0 5px black;
