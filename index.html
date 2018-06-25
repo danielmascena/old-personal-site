@@ -111,8 +111,8 @@
         .jump-to-main {
             display: inline-block;
             margin-bottom: 1rem;
-            cursor: pointer;
             font-size: 2rem;
+            cursor: pointer;
             color: #000;
         }
         .skills-levels {
@@ -120,17 +120,17 @@
             background: -webkit-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
             background: -moz-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
             background: -o-linear-gradient(#ece4d9 0%, #e9dfd1 100%);
-            background: linear-gradient(#ece4d9 0%, #e9dfd1 100%);
-            padding: 5%;
+            background: linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
+            border-radius: 20px;
             max-width: 30rem;
             margin: auto;
-            border-radius: 20px;
+            padding: 5%;
         }    
         .progress-widget {
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
             vertical-align: bottom;
-            margin-top: 1rem;
             font-weight: 600;
+            margin-top: 1rem;
             font-size: 1rem;
         }
         .progress-widget label:before {
@@ -161,7 +161,7 @@
             color: gold;
         }
         .progress-widget label {
-            letter-spacing: -2px;
+            letter-spacing: -1px;
         }
         .progress-widget label:before {
             vertical-align: middle;
@@ -194,10 +194,6 @@
             width: 60%;
         }
         .progress-content:after {
-            color: #fff;
-            display: block;
-            font-weight: 600;
-            height: 100%;
             background: black;
             background: -webkit-linear-gradient(black, gray);
             background: -moz-linear-gradient(black, gray);
@@ -208,6 +204,10 @@
             position: absolute;
             padding-left: 5px;
             font-size: .8rem;
+            font-weight: 600;
+            display: block;
+            height: 100%;
+            color: #fff;
             z-index: 10;
             width: 100%;
             top: 0px;
@@ -363,6 +363,10 @@
             float: right;
             font-size: 1.2rem;
         }
+        .jump-to-top:hover {
+            color: darkred;
+            text-shadow: 0 0 5px ghostwhite, 0 0 5px slategray;
+        }
         
         @keyframes switch-testimonial {
             0% {
@@ -442,6 +446,9 @@
             padding: 5px;
             cursor: pointer;
             border-radius: 5px 5px 0 0;
+        }
+        .combobox-widget > label:hover {
+            background-color: #03033e;
         }
         .drop-down-list {
             transition-timing-function: linear;
