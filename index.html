@@ -81,7 +81,6 @@
         #page-header {
             background: lime url("frontcode.png") no-repeat fixed center top;
             text-align: center;
-            position: relative;
         }
         #page-header:after {
         	vertical-align: middle;
@@ -108,13 +107,6 @@
         .masthead-intro {
             padding-bottom: 4rem;
         }
-        .jump-to-main {
-            display: inline-block;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #000;
-        }
         .skills-levels {
             background-color: ghostwhite;
             background: -webkit-linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
@@ -125,16 +117,16 @@
             max-width: 30rem;
             margin: auto;
             padding: 5%;
-        }    
+        }
+        .progress-component {
+            padding: 1rem;
+            border: 1px solid;
+            box-shadow: 0 0 4px rgba(0,0,0,.5), 0 0 5px rgba(0,0,0,.3);
+        }
         .progress-widget {
             font-family: 'Roboto', Font Awesome\ 5 Brands, Arial;
-            vertical-align: bottom;
             font-weight: 600;
-            margin-top: 1rem;
-            font-size: 1rem;
-        }
-        .progress-widget label:before {
-        	display: inline-block;
+            margin: 1rem 0 .5rem;
         }
         .progress-widget.css3 label {
         	color: #126dc5;
@@ -708,11 +700,23 @@ color: #c3a60a;
                 text-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
                 color: black;
             }
+            #page-header {
+                position: relative;
+                height: 100vh;
+            }
            	.masthead,
            	.testimonial {
            	    width: 500px;
            	}
-            
+            .jump-to-main {
+                display: inline-block;
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                cursor: pointer;
+                position: absolute;
+                bottom: 0;
+                color: #000;
+            }
         }
         
         
@@ -787,8 +791,9 @@ color: #c3a60a;
                         modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
                         in futurum.</p>
                         
-                        <div class="skills-levels" role="group">
-                            <div class="progress-widget css3" role="progressbar">
+                        <div class="skills-levels" >
+                            <div class="progress-component" role="group">
+                                <div class="progress-widget css3" role="progressbar">
                                 <label>CSS3</label>
                                 <div class="progress-box">
                                     <div class="progress-content" aria-label="80%"></div>
@@ -811,6 +816,8 @@ color: #c3a60a;
                                 </div>
                                 <progress value="60" max="100" hidden>60%</progress>
                             </div>
+                            </div>
+                            
                         </div>
                     </section>
                 </div>
