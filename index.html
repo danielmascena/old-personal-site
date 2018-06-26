@@ -443,16 +443,18 @@ color: #c3a60a;
         .combobox-widget {
             position: absolute;
             min-width: 5rem;
+            font-size: .8rem;
             color: #fff;
             top: 50%;
             left: 50%;
         }
         .combobox-widget > label {
-            background-color: navy;
-            display: block;
-            padding: 5px;
-            cursor: pointer;
             border-radius: 5px 5px 0 0;
+            text-transform: uppercase;
+            background-color: navy;
+            cursor: pointer;
+            display: block;
+            padding: .8rem;
         }
         .combobox-widget > label:hover {
             background-color: #03033e;
@@ -472,8 +474,7 @@ color: #c3a60a;
         }
         .drop-down-item {
             display: block;
-            border-bottom: 1px solid;
-            background: gray;
+            background-color: #666;
             text-align: left;
             transform: perspective(600px) rotateX(-90deg);
             transform-style:preserve-3d;
@@ -482,19 +483,21 @@ color: #c3a60a;
             transition-property: transform;
             transition-timing-function: ease-in;
         }
+        .drop-down-item:hover {
+            background-color: ghostwhite;
+            color: #666;
+        }
         .drop-down-item:last-child {
             border-radius: 0 0 5px 5px;
-        }
-        .drop-down-list > input:checked + .drop-down-item {
-            padding-left: 20px;
         }
         #collapseList:checked + .drop-down-list > .drop-down-item {
         	transform: rotateX(0deg);
         }
         .drop-down-item > span {
-            display: block;
-            padding: 10px;
+            text-transform: uppercase;
             cursor: pointer;
+            display: block;
+            padding: .8rem;
         }
         #collapseList:checked + .drop-down-list > .drop-down-item:first-child,
         #collapseList + .drop-down-list > .drop-down-item:last-child {
@@ -593,9 +596,9 @@ color: #c3a60a;
                 opacity: 0;
             }
             .switch-slider {
+                transform-origin: 75%;
             	height: 2rem;
-            width: 2rem;
-            transform-origin: 75%;
+                width: 2rem;
             }
             .mobile-menu-button:checked ~ .menu-container .fa-times {
                 transform: rotate(0);
@@ -611,7 +614,7 @@ color: #c3a60a;
             	opacity: 1;
             }
             .mobile-menu-button:checked ~ .menu-container > .switch-widget {
-                transition: visibility .1s, opacity .6s ease-in .3s;
+                transition: visibility .1s, opacity .3s linear .3s;
                 visibility: visible;
                 opacity: 1;
             }
