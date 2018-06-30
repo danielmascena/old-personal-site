@@ -12,7 +12,6 @@
     <style>
     
         :root {
-            -webkit-font-smoothing: antialiased;
             --pd-container: 3rem;
         }
         *,
@@ -24,6 +23,8 @@
         }
         body {
             font-family: 'Roboto', Helvetica,  sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             text-align: justify;
             line-height: 1.5;
             margin: 0;
@@ -976,7 +977,7 @@ color: #c3a60a;
     
         //if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 701) {
             document.body.style.display = 'none';
-            
+            //document.addEventListener('DOMContentLoaded',function() {
             window.addEventListener('load', function() {
                 document.body.style.display = 'block';
                 var last_known_scroll_position = 0;
