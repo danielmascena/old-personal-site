@@ -804,7 +804,7 @@ color: #c3a60a;
                                 <div class="progress-box">
                                     <div class="progress-content" aria-label="80%"></div>
                                 </div>
-                                <progress value="80" max="100" hidden>80%</progress>
+                                <progress value="80" max="100" hidden aria-hidden="true">80%</progress>
                             </div>
                             
                             <div class="progress-widget html5" role="progressbar">
@@ -812,7 +812,7 @@ color: #c3a60a;
                                 <div class="progress-box">
                                     <div class="progress-content" aria-label="70%"></div>
                                 </div>
-                                <progress value="70" max="100" hidden>70%</progress>
+                                <progress value="70" max="100" hidden aria-hidden="true">70%</progress>
                             </div>
                             
                             <div class="progress-widget js" role="progressbar">
@@ -820,7 +820,7 @@ color: #c3a60a;
                                 <div class="progress-box">
                                     <div class="progress-content" aria-label="60%"></div>
                                 </div>
-                                <progress value="60" max="100" hidden>60%</progress>
+                                <progress value="60" max="100" hidden aria-hidden="true">60%</progress>
                             </div>
                             </div>
                             
@@ -918,19 +918,19 @@ color: #c3a60a;
                         <h1>Where I'm</h1>
                         <div class="combobox-widget">
                             <label for="collapseList" role="button">Location <i class="fas fa-map-marker-alt"></i></label>
-                            <input id="collapseList" type="checkbox" hidden>
+                            <input id="collapseList" type="checkbox" hidden aria-haspopup="true">
                             <div class="drop-down-list invisible" role="listbox">
                                 <label class="drop-down-item">
                                     <input type="radio" name="myselect" id="city" value="nat" hidden onclick="">
                                     <span role="option">Natal, RN</span>
                                 </label>
                                 <label class="drop-down-item">
-                                    <input type="radio" name="myselect" id="countri" value="br" hidden onclick="">
+                                    <input type="radio" name="myselect" id="country" value="br" hidden onclick="">
                                     <span role="option">Brazil</span>
                                 </label>
                             </div>
                             
-                            <select name="theme" hidden>
+                            <select name="theme" hidden aria-hidden="true">
                                 <option id="city" value="nat">Light</option>
                                 <option id="country" value="br">Brazil</option>
                             </select>
