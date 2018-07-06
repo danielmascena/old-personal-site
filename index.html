@@ -717,18 +717,42 @@ color: #c3a60a;
             .jump-to-main {
                 display: inline-block;
                 margin-bottom: 1rem;
+                position: absolute;
                 font-size: 2rem;
                 cursor: pointer;
-                position: absolute;
-                bottom: 0;
                 color: #000;
+                bottom: 0;
             }
         }
         
-        
+        .loading {
+            position: relative;
+        }
+        .loading:after {
+            border: 1px solid red;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border-radius: 50%;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            animation: loading 500ms infinite linear;
+        }
+        @keyframes loading {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body role="document">
+    <!-- <div class="loading">loading...</div> -->
     <div class="page-container">
         <div id="page-menu" class="main-menu">
             <input type="checkbox" class="mobile-menu-button crystallized" role="button" tabindex="-1">
@@ -977,8 +1001,8 @@ color: #c3a60a;
     
         //if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 701) {
             document.body.style.display = 'none';
-            //document.addEventListener('DOMContentLoaded',function() {
-            window.addEventListener('load', function() {
+            document.addEventListener('DOMContentLoaded',function() {
+            //window.addEventListener('load', function() {
                 document.body.style.display = 'block';
                 var last_known_scroll_position = 0;
                 var ticking = false;
