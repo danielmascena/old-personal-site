@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="author" content="Daniel Mascena">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <style>
     
         :root {
@@ -31,6 +30,17 @@
             background-color: var(--bg-body, white);
             color: var(--color-body, black);
             transition: all linear 1s;
+        }
+        ul {list-style: none;}
+        li {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        li:hover {
+            transform: scale(1.5);
+            color: deepskyblue;
+            transition: transform .5s;
         }
         body.night-mode {
             background-color: #000;
@@ -798,7 +808,7 @@ color: #c3a60a;
                 <div class="container">
                     <section class="skills-content" aria-label="Skills" role="region">
                         <h1>Skills</h1>
-                        <span style="font-size: 2rem">Technologies:</span>
+                        <p style="font-size: 2rem">Technologies:</p>
                         <ul>
                             <li><i class="fab fa-css3-alt"></i></li>
                             <li><i class="fab fa-html5"></i></li>
@@ -815,7 +825,7 @@ color: #c3a60a;
                             <h1>Certifications <i class="fas fa-certificate" style="color: yellow; text-shadow: 0 0 10px black"></i></h1>
                             <section>
                                 <h1><i style="font-weight: normal" class="fab fa-microsoft"></i> Microsoft Certified Professional</h1>
-                                <p>Exam 480: Programming in HTML5 with  JavaScript and CSS3 validates a candidate’s ability to access and secure data as well as implement document structures, objects, and program flow.</p>
+                                <p><em>Exam 480: Programming in HTML5 with  JavaScript and CSS3</em> validates a candidate’s ability to access and secure data as well as implement document structures, objects, and program flow.</p>
                         	    <a href="https://www.youracclaim.com/badges/6c7b2fec-501c-4c18-8514-0eca04436369/linked_in" target="_blank"><img width="202" src="MS_Cert_Professional_logo_Blk_rgb.png" alt="Microsoft Certified Professional"></a>
                             </section>
                             <section>
