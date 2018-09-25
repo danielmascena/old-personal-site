@@ -11,7 +11,7 @@
     <style>
     
         :root {
-            --pd-container: 3rem;
+            --pd-container: 1.5rem 3rem;
         }
         *,
         *::before,
@@ -132,6 +132,7 @@
         }
         #certifications h1 {
             text-transform: uppercase;
+            margin: 50px 0 20px;
         }
         #certifications h1 > sub {
             text-transform: lowercase;
@@ -150,6 +151,19 @@
             transform: scale(1.5);
             color: deepskyblue;
             transition: transform .5s;
+        }
+        .badges {
+            box-shadow: 0 -5px;
+            margin-top: 40px;
+        }
+        #mcp {
+            float: right;
+            width: calc(100% - 150px);
+        }
+        #jcp {
+            font-size: 3rem;
+            width: 22rem;
+            text-align: center;
         }
         .skills-levels {
             background-color: #ccc;
@@ -887,14 +901,43 @@ color: #c3a60a;
                             <article>
                                 <h1><i class="fab fa-microsoft"></i> Microsoft Certification <sub>achieved in <time>2017</time></sub></h1>
                                 <p>The <strong>Microsoft Certified Solutions Associate (<abbr title="Microsoft Certified Solutions Associate">MCSA</abbr>): Web Applications</strong>
-                                    demonstrates the expertise at implementing modern web apps using the Web Application Development. The achievement from the <strong>exam 480: Programming in HTML5 with JavaScript and CSS3</strong>: <blockquote cite="https://www.youracclaim.com/badges/6c7b2fec-501c-4c18-8514-0eca04436369/linked_in">validates a candidate’s ability to access and secure data as well as implement document structures, objects, and program flow.</blockquote>
-                                </p>
-                        	    <a href="https://www.youracclaim.com/badges/6c7b2fec-501c-4c18-8514-0eca04436369/linked_in" target="_blank"><img width="202" src="MS_Cert_Professional_logo_Blk_rgb.png" alt="Microsoft Certified Professional"></a>
-                            </article>
+                                    demonstrates the expertise at implementing modern web apps using the Web Application Development. The achievement from the 
+                                    <strong>exam 480: Programming in HTML5 with JavaScript and CSS3</strong>:                                </p>
+                                <blockquote cite="https://www.youracclaim.com/badges/6c7b2fec-501c-4c18-8514-0eca04436369/linked_in">validates a candidate’s ability to access and secure data as well as implement document structures, objects, and program flow.<sup>*</sup></blockquote>
+                                <small>
+                                    <cite><a href="https://www.youracclaim.com/badges/6c7b2fec-501c-4c18-8514-0eca04436369/linked_in" target="_blank">* reference URL</a></cite></sub>
+                                    and more info <a href="https://www.microsoft.com/en-us/learning/exam-70-480.aspx">here</a>.
+                                </small>
+                                <aside class="badges">
+                                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6c7b2fec-501c-4c18-8514-0eca04436369"></div>
+                                    <script type="text/javascript">
+                                        (function() {
+                                          var s = document.createElement('script');
+                                          s.type = 'text/javascript';
+                                          s.async = true;
+                                          s.src = '//cdn.youracclaim.com/assets/utilities/embed.js';
+                                          var o = document.getElementsByTagName('script')[0];
+                                          o.parentNode.insertBefore(s, o);
+                                          })();
+                                    </script>
+    
+                            	    <img id="mcp" src="MS_Cert_Professional_logo_Blk_rgb.png" alt="Microsoft Certified Professional">
+                                </aside>
+                           </article>
                             <article>
                                 <h1><i class="fab fa-java"></i>Java/Sun Certification <sub>achieved in <time>2010</time></sub></h1>
-                                <p>The <strong>Sun Certified Programmer for Java Platform, Standard Edition 6</strong> — old version of <em>Oracle's Certified Professional Java SE Programmer (<abbr title="Oracle's Certified Professional Java SE Programmer">OCPJP</abbr>)</em> — exam is the fundamental exam required to demonstrate solid understanding of Java and some of its SE APIs. The <strong>Sun Certified Java Programmer (<abbr tittle="Sun Certified Java Programmer">SCJP</abbr>)</strong>: <blockquote cite="http://www.oracle.com/technetwork/topics/newtojava/certification-140469.html">verifies that you have a base set of knowledge that enables entry into a career in application development or software project management using Java technology.</blockquote>
+                                <p>The <strong>Sun Certified Programmer for Java Platform, Standard Edition 6</strong> — old version of 
+                                    <em>Oracle's Certified Professional, Java SE 6 Programmer (<abbr title="Oracle's Certified Professional Java SE Programmer">OCPJP 6</abbr>)</em> — exam is the fundamental exam required to demonstrate solid understanding of Java and some of its SE APIs. The 
+                                    <strong>Sun Certified Java Programmer (<abbr tittle="Sun Certified Java Programmer">SCJP</abbr>)</strong>: 
                                 </p>
+                                <blockquote cite="http://www.oracle.com/technetwork/topics/newtojava/certification-140469.html">verifies that you have a base set of knowledge that enables entry into a career in application development or software project management using Java technology.<sup>*</sup></blockquote>
+                                <small>
+                                    <cite><a href="http://www.oracle.com/technetwork/topics/newtojava/certification-140469.html">* reference URL</a></cite>
+                                    and more info <a href="https://education.oracle.com/java/java-se/product_267?certPage=true">here</a>.
+                                </small>
+                                <aside class="badges">
+                                    <h1 id="jcp">Java<br>Certified Professional<br></h1>
+                                </aside>
                             </article>
                         </article>
                     </section>
