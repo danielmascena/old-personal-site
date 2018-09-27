@@ -160,9 +160,12 @@
         #mcp {
             display: inline-block;
             width: calc(100% - 155px);
+            text-align: right;
+            vertical-align: top;
         }
         #mcp img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 300px;
         }
         .skills-levels {
             background-color: #ccc;
@@ -714,6 +717,14 @@ color: #c3a60a;
                 margin: 12rem 0 3rem;
             	width: 90%;
             }
+            .badges iframe {
+                display: block;
+                margin: auto;
+            }
+            #mcp {
+                width: 100%;
+                text-align: center;
+            }
             .jump-to-main {
                 display: none;
             }
@@ -828,7 +839,7 @@ color: #c3a60a;
                 </div>
                 <nav class="menu-content" role="navigation">
                     <ol class="menu-list">
-                        <li class="menu-item"><a href="#aboutme-section" class="menu-link">About Me</a></li>
+                        <li class="menu-item"><a href="#aboutme-section" class="menu-link">about Me</a></li>
                         <li class="menu-item"><a href="#skills-section" class="menu-link">Skills</a></li>
                         <li class="menu-item"><a href="#portfolio-section" class="menu-link">Portfolio</a></li>
                         <li class="menu-item"><a href="#testimonial-section" class="menu-link">Testimonials</a></li>
@@ -869,7 +880,6 @@ color: #c3a60a;
                             <li><i class="fab fa-js"></i></li>
                             <li><i class="fab fa-react"></i></li>
                             <li><i class="fab fa-sass"></i></li>
-                            <li><i class="fab fa-node-js"></i></li>
                             <li><i class="fab fa-node"></i></li>
                             <li><i class="fab fa-java"></i></li>
                             <li><i class="fas fa-mobile-alt"></i></li>
